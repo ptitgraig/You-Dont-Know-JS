@@ -1,7 +1,7 @@
-# You Don't Know JS: Up & Going
+# You Don't Know JS: Demarrage
 # Chapter 1: Into Programming
 
-Welcome to the *You Don't Know JS* (*YDKJS*) series.
+Bienvenu dans la serie *You Don't Know JS* (*YDKJS*).
 
 *Up & Going* is an introduction to several basic concepts of programming -- of course we lean toward JavaScript (often abbreviated JS) specifically -- and how to approach and understand the rest of the titles in this series. Especially if you're just getting into programming and/or JavaScript, this book will briefly explore what you need to get *up and going*.
 
@@ -29,21 +29,21 @@ In a computer language, a group of words, numbers, and operators that performs a
 a = b * 2;
 ```
 
-The characters `a` and `b` are called *variables* (see "Variables"), which are like simple boxes you can store any of your stuff in. In programs, variables hold values (like the number `42`) to be used by the program. Think of them as symbolic placeholders for the values themselves.
+Les caracteres `a` et `b` sont appele *variables* (voir "Variables"), qui sont de simples boites dans lesquelles tu peux stocker ce que tu veux. Dans un programme, les variables contiennent des valeurs (comme le nombre `42`) qui vont etre utilisees par le programme. Vois les comme de conteneurs symbolique pour les valeurs elles-meme.
 
-By contrast, the `2` is just a value itself, called a *literal value*, because it stands alone without being stored in a variable.
+En comparaison, le `2` est juste une valeur, apelle une *valeur literale*, parcequ'elle est seule et n'est pas stocke dans une variable.
 
-The `=` and `*` characters are *operators* (see "Operators") -- they perform actions with the values and variables such as assignment and mathematic multiplication.
+Les caracteres `=` et `*` sont des *operateurs* (see "Operateurs") -- ils accomplissent des actions avec les valeurs et variables telles que l'affectation et la multiplication.
 
-Most statements in JavaScript conclude with a semicolon (`;`) at the end.
+La plupart des declarations en JavaScript se termine avec un point-virgule(`;`).
 
-The statement `a = b * 2;` tells the computer, roughly, to get the current value stored in the variable `b`, multiply that value by `2`, then store the result back into another variable we call `a`.
+La declaration `a = b * 2;` dit a l'ordinateur, en gros, de prendre la valeur stockee dans la variable `b`, de multiplier cette valeur par `2`, et ensuite de stocker le resultat dans une autre variable qu'on a apelle `a`.
 
-Programs are just collections of many such statements, which together describe all the steps that it takes to perform your program's purpose.
+Les programmes sont juste une collections de plusieurs declaration comme celles-ci, qui ensemble, decrivent toutes les etapes necessaires pour atteindre le but vise par le programme.
 
 ### Expressions
 
-Statements are made up of one or more *expressions*. An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.
+Les declarations sont faites d'une ou plusieurs *expressions*. Une expression represente n'importe qu'elle reference a une variable ou valeur ou a un ensemble de variable(s) et valeur(s) combines a des operateurs.
 
 For example:
 
