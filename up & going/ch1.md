@@ -1,105 +1,104 @@
 # You Don't Know JS: Démarrage
-# Chapter 1: Into Programming
+# Chapter 1: Dans la programmation
 
 Bienvenue dans la serie *You Don't Know JS* (*YDKJS*).
 
 *Mettre le pied a l'étrier* est un introduction à plusieurs concepts de base de la programmation -- nous nous penchons bien-sûr, sur JavaScript plus spécificquement (souvent appelé JS) -- et à comment approcher et comprendre le reste des livres de cette série. Si vous démarrez avec la programmation et/ou JavaScript, ce livre explorera ce que vous avez besoin de savoir pour *mettre le pied a l'étrier*
 
-This book starts off explaining the basic principles of programming at a very high level. It's mostly intended if you are starting *YDKJS* with little to no prior programming experience, and are looking to these books to help get you started along a path to understanding programming through the lens of JavaScript.
-
 Ce livre commence par expliquer globalement les principes de base de la programmation. Il est utile si vous démarrez *YDKJS* avec peu ou aucune expérience de la programmation, et si vous cherchez a ce que ces livres vous aides a comprendre la programmation au travers de JavaScript.
 
-L'approche du chapître 1 se veut 
-Chapter 1 should be approached as a quick overview of the things you'll want to learn more about and practice to get *into programming*. There are also many other fantastic programming introduction resources that can help you dig into these topics further, and I encourage you to learn from them in addition to this chapter.
+L'approche du chapître 1 se veut être un aperçu des choses que vous voudrez apprendre et des choses à mettre en pratique *dans la programmation*. Il existe aussi d'autres resources de très bonne qualité qui peuvent vous aider à creuser d'avantage ces sujets, je vous encourage à apprendre d'elles en plus de ce chapître.
 
-Once you feel comfortable with general programming basics, Chapter 2 will help guide you to a familiarity with JavaScript's flavor of programming. Chapter 2 introduces what JavaScript is about, but again, it's not a comprehensive guide -- that's what the rest of the *YDKJS* books are for!
+Une fois à l'aise avec les bases générales de la programmation, le Chapître 2 va vous guidez dans la familiarisation avec la façon de programmer avec JavaScript. Le Chapître 2 est une introduction à ce qu'est JavaScript, mais une fois de plus, il ne s'agit pas d'un guide exhaustif -- c'est la raison pourquoi il existe d'autres livres *YDKJS* !
 
-If you're already fairly comfortable with JavaScript, first check out Chapter 3 as a brief glimpse of what to expect from *YDKJS*, then jump right in!
+Si vous êtes déjà plutôt à l'aise avec JavaScript, dirigez-vous vers le Chapître 3 en premier lieu afin d'avoir de jeter un oeil sur quoi attendre de *YDKJS*, puis allez-y!
 
 ## Code
 
-Let's start from the beginning.
+Commençons avec le commencement.
 
-A program, often referred to as *source code* or just *code*, is a set of special instructions to tell the computer what tasks to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer console in a browser, which we'll cover shortly.
+Un programme, souvent appelé *code source* ou juste *code*, est un ensemble d'instructions spéciales qui disent à l'ordinateur quelles sont les tâches à executer. D'habitude, le code est suavegardé dans un fichier texte, bien qu'avec JavaScript vous puissiez saisir du code directement dans une console de développement navigateur, ce que nous couvrirons sous peu.
 
-The rules for valid format and combinations of instructions is called a *computer language*, sometimes referred to as its *syntax*, much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.
+L'ensemble des règles de formattage valide et de combinaisons d'instructions est appelé un *langage informatique*, parfois appelé *syntaxe*, très comparable à ce que la langue Anglaise définie comment épellé les mots et comment créer une phrase valide utilisant des mots et de la ponctutaion.
 
-### Statements
+### Déclarations
 
-In a computer language, a group of words, numbers, and operators that performs a specific task is a *statement*. In JavaScript, a statement might look as follows:
+Dans une langage informatique, un groupe de mots, nombres et opérateurs qui execute une tâche spécifique est une *déclaration*. En JavaScript, une déclaration peut ressemler à ce qi suit :
 
 ```js
 a = b * 2;
 ```
 
-Les caracteres `a` et `b` sont appele *variables* (voir "Variables"), qui sont de simples boites dans lesquelles tu peux stocker ce que tu veux. Dans un programme, les variables contiennent des valeurs (comme le nombre `42`) qui vont etre utilisees par le programme. Vois les comme de conteneurs symbolique pour les valeurs elles-meme.
+Les caracteres `a` et `b` sont appelés *variables* (voir "Variables"), qui sont de simples boîtes dans lesquelles vous pouvez stocker ce que vous voulez. Dans un programme, les variables contiennent des valeurs (comme le nombre `42`) qui vont être utilisées par le programme. Voyez-les comme de conteneurs symboliques pour les valeurs elles-meme.
 
-En comparaison, le `2` est juste une valeur, apelle une *valeur literale*, parcequ'elle est seule et n'est pas stocke dans une variable.
+En comparaison, le `2` est juste une valeur, appelée une *valeur literale*, parcequ'elle est seule et n'est pas stockée dans une variable.
 
-Les caracteres `=` et `*` sont des *operateurs* (see "Operateurs") -- ils accomplissent des actions avec les valeurs et variables telles que l'affectation et la multiplication.
+Les caractères `=` et `*` sont des *opérateurs* (voir "Opérateurs") -- ils accomplissent des actions avec les valeurs et variables telles que l'affectation et la multiplication.
 
-La plupart des declarations en JavaScript se termine avec un point-virgule(`;`).
+La plupart des déclarations en JavaScript se termine avec un point-virgule(`;`).
 
-La declaration `a = b * 2;` dit a l'ordinateur, en gros, de prendre la valeur stockee dans la variable `b`, de multiplier cette valeur par `2`, et ensuite de stocker le resultat dans une autre variable qu'on a apelle `a`.
+La déclaration `a = b * 2;` dit à l'ordinateur, en gros, de prendre la valeur stockée dans la variable `b`, de multiplier cette valeur par `2`, et ensuite de stocker le résultat dans une autre variable qu'on a apelle `a`.
 
-Les programmes sont juste une collections de plusieurs declaration comme celles-ci, qui ensemble, decrivent toutes les etapes necessaires pour atteindre le but vise par le programme.
+Les programmes sont juste une collections de plusieurs déclarations comme celles-ci, qui ensemble, décrivent toutes les étapes necessaires pour atteindre le but visé par le programme.
 
 ### Expressions
 
-Les declarations sont faites d'une ou plusieurs *expressions*. Une expression represente n'importe qu'elle reference a une variable ou valeur ou a un ensemble de variable(s) et valeur(s) combines a des operateurs.
+Les déclarations sont faites d'une ou plusieurs *expressions*. Une expression représente n'importe qu'elle réfèrence à une variable ou valeur ou a un ensemble de variable(s) et valeur(s) combinées à des opérateurs.
 
-For example:
+Par exemple:
 
 ```js
 a = b * 2;
 ```
 
-This statement has four expressions in it:
+Cette déclaration contient quatre expressions:
 
-* `2` is a *literal value expression*
-* `b` is a *variable expression*, which means to retrieve its current value
-* `b * 2` is an *arithmetic expression*, which means to do the multiplication
-* `a = b * 2` is an *assignment expression*, which means to assign the result of the `b * 2` expression to the variable `a` (more on assignments later)
+* `2` est une *expression de valeur literale*
+* `b` est une *expression de variable*, qui a pour intention de retrouver sa valeur actuelle
+* `b * 2` is an *expression arithmetique*, qui a pour intention d'effectuer la multiplication
+* `a = b * 2` is an *expression d'affectation*, qui a pour intention d'affecter le résultat de l'expression `b * 2` à la variable `a` (d'avantage d'affectations plus tard)
 
-A general expression that stands alone is also called an *expression statement*, such as the following:
+Une expression générale qui est seule est appelé également *déclaration d'expression*, comme par exemple:
 
 ```js
 b * 2;
 ```
 
-This flavor of expression statement is not very common or useful, as generally it wouldn't have any effect on the running of the program -- it would retrieve the value of `b` and multiply it by `2`, but then wouldn't do anything with that result.
+Cette forme de déclaration d'expression n'est pas très fréquente ou utile, en général elle n'aura aucun effet sur l'execution du programme --  elle rechercherait la valeur de `b` et la multiplierait par `2`, mais ne ferait rien avec le résultat.
 
-A more common expression statement is a *call expression* statement (see "Functions"), as the entire statement is the function call expression itself:
+Une déclaration d'expression plus commune est un *appel de déclaration d'expression (voir "Fonctions")*, car l'intégralité de la déclaration est l'expression d'appel à la fonction elle-même:
 
 ```js
 alert( a );
 ```
 
-### Executing a Program
+### Exécuter un programme
 
-How do those collections of programming statements tell the computer what to do? The program needs to be *executed*, also referred to as *running the program*.
+Comment est ce que ces collections de déclarations de programmation disent à l'ordinateur que faire ? Le programme a besoin d'être *exécuté*, chose qu'on apelle aussi *lancer un programme*.
 
-Statements like `a = b * 2` are helpful for developers when reading and writing, but are not actually in a form the computer can directly understand. So a special utility on the computer (either an *interpreter* or a *compiler*) is used to translate the code you write into commands a computer can understand.
 
-For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program is run, which is usually called *interpreting* the code.
+Les déclarations telles que `a = b * 2` sont utiles pour les développeurs quand ils lisnet ou écrivent, mais ne sont pas directement sous une forme compréhensible par l'ordinateur. Ainsi donc, un utilitaire spécial est utilisé (soit un *intepreteur* ou un *compileur*) pour traduire le code que vous écrivez en commandes compréhensible par un oridnateur.
 
-For other languages, the translation is done ahead of time, called *compiling* the code, so when the program *runs* later, what's running is actually the already compiled computer instructions ready to go.
+Pour quelques langage informatique, cette traduction de commandes est faite de bas en haut, ligne par ligne, chaque fois que le programme est lancé, ce qui est apellé usuallement *intepréter le code*.
 
-It's typically asserted that JavaScript is *interpreted*, because your JavaScript source code is processed each time it's run. But that's not entirely accurate. The JavaScript engine actually *compiles* the program on the fly and then immediately runs the compiled code.
+Pour d'autres langages, la traduction est faite en avance de phase, on apelle ça la *compilation* de code, donc quand un programme se *lance* plus tard, ce qui est exécuté est en fait les instructions déjà compilées par l'ordinateur prêtes à l'emploi.
 
-**Note:** For more information on JavaScript compiling, see the first two chapters of the *Scope & Closures* title of this series.
+On affirme d'habitude que JavaScipt est *interprété*, parceque votre code source JavaScript est traité à chaque fois qu'il est lancé. Mais ce n'est tout à fait précis. En fait, le moteur JavaScript *comile* le program à la volée puis lance le code compilé immédiatement.
 
-## Try It Yourself
+**Note:** Pour plus d'informations sur la compilation JavaScript, voir les eux premiers chapître de *Portées et Fermetures* de cette série.
 
-This chapter is going to introduce each programming concept with simple snippets of code, all written in JavaScript (obviously!).
 
-It cannot be emphasized enough: while you go through this chapter -- and you may need to spend the time to go over it several times -- you should practice each of these concepts by typing the code yourself. The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.).
+## A vous d'essayer
 
-**Tip:** Typically, you can launch the developer console with a keyboard shortcut or from a menu item. For more detailed information about launching and using the console in your favorite browser, see "Mastering The Developer Tools Console" (http://blog.teamtreehouse.com/mastering-developer-tools-console). To type multiple lines into the console at once, use `<shift> + <enter>` to move to the next new line. Once you hit `<enter>` by itself, the console will run everything you've just typed.
+Ce chapître va vous introduire à chaque concept de programmation en utilisant un bout de code, tout écrit en JavaScript (évidemment !).
 
-Let's get familiar with the process of running code in the console. First, I suggest opening up an empty tab in your browser. I prefer to do this by typing `about:blank` into the address bar. Then, make sure your developer console is open, as we just mentioned.
+Je ne le soulignerais jamais assez : alors que vous parcourez ce chapître -- il est possible que vous le parcourirez plusieurs fois -- je vous conseil de mettre en pratique chacun de ces concepts en écrivant le code vous-même. La plus simple manière de faire cela est d'ouvrir la console pour développeur dans le navigateur de votre choix (Firefox, Chrome, IE, etc.).
 
-Now, type this code and see how it runs:
+**Astuce :** Vous pouvez lancer la console pour développeur avec un raccourci clavier ou à partir du menu. Pour plus d'informations sur le démarrage et l'utilisation de la console dans votre navigateur préféré, voir "Maîtrise La Console d'Outils pour Développeurs" (http://blog.teamtreehouse.com/mastering-developer-tools-console). Afin de saisir plusieurs lines dans la console en une seule fois, utilisez `<shift> + <enter>` pour aller à ala ligne. Une fois que vous tappez `<entrée>`, la console va exécuter tout ce que vous avez saisi.
+
+Familiarisons-nous avec l'action de lancer du code dans la console. Premièrement, je suggère d'ouvrir un onglet vide dans votre navigateur. Je préfère faire cela en tappant `about:blank` dans la barre d'adresse. Ensuite, assurez-vous que votre console pour dévelppeur est ouverte, comme je viens de le mentionner.
+
+Maintenant, tappez ce code est voyez comment il s'exécute:
 
 ```js
 a = 21;
@@ -109,57 +108,58 @@ b = a * 2;
 console.log( b );
 ```
 
-Typing the preceding code into the console in Chrome should produce something like the following:
+Ecrire le code précédent dans la console de Chrome devrait produire quelque chose comme ça:
 
 <img src="fig1.png" width="500">
 
-Go on, try it. The best way to learn programming is to start coding!
+Allez-y, essayez. La meilleur manière d'apprednre la programmation est de commencer à programmer!
 
-### Output
+### Sortie
 
-In the previous code snippet, we used `console.log(..)`. Briefly, let's look at what that line of code is all about.
+Dans le bout de code précédent, nous avons utilisé `console.log(..)`. Brièvement, regardons ce que signifie cette ligne de code.
 
-You may have guessed, but that's exactly how we print text (aka *output* to the user) in the developer console. There are two characteristics of that statement that we should explain.
+Vous l'avez sûrement deviné, mais c'est ainsi que nous affichons le texte (ou aussi *afficher* le texte à l'utilisateur) dans la console pour développeur. Il y a deux caractéristiques de cette déclaration que nous devrions expliquer.
 
-First, the `log( b )` part is referred to as a function call (see "Functions"). What's happening is we're handing the `b` variable to that function, which asks it to take the value of `b` and print it to the console.
+Premièrement, lq partie `log( b )` est apellé une appel de fonction (voir "Fonctions"). Ce qui se passe ici, c'est que nous passons la variable `b`  à cette fonction, laquelle prend la valeur de `b` et l'affiche dans la console.
 
-Second, the `console.` part is an object reference where the `log(..)` function is located. We cover objects and their properties in more detail in Chapter 2.
+Deuxièmement, la partie `console.` est une référence à un objet dans lequel se trouve la fonction `log(...)`. Nous couvrirons les objets et leurs propriétés plsus en détails dans le Chapître 2.
 
-Another way of creating output that you can see is to run an `alert(..)` statement. For example:
+Une autre manière d'afficher quelque chose de visible est de lancer une déclaration de type `alert(..)`. Par exemple :
 
 ```js
 alert( b );
 ```
 
-If you run that, you'll notice that instead of printing the output to the console, it shows a popup "OK" box with the contents of the `b` variable. However, using `console.log(..)` is generally going to make learning about coding and running your programs in the console easier than using `alert(..)`, because you can output many values at once without interrupting the browser interface.
+Si vous lancez ça, vous remarquerez qu'au lieu d'afficher la sortie dans la console, il s'affiche une boîte popup "OK" qui contient la valeur de la variable `b`. Cela étant dit, l'utilisation de `console.log(...)` va généralement rendre votre apprentissage de la programmation et l'execution de vos programmes plus simple que l'utilisation de `alert(..)`, car vous pouvez afficher plusieurs valeurs à la fois dans interrompre l'interface du navigateur.
 
-For this book, we'll use `console.log(..)` for output.
+Dans ce livre, nous utiliserons `console.log(..)` comme méthode d'affichage.
 
-### Input
+### Entrée
 
-While we're discussing output, you may also wonder about *input* (i.e., receiving information from the user).
+Alors que nous parlons de Sortie, vous vous posez peut-être la question de l'Entrée (c'est à dire recevoir des informations provenant de l'utilisateur).
 
-The most common way that happens is for the HTML page to show form elements (like text boxes) to a user that they can type into, and then using JS to read those values into your program's variables.
+La façon la plus fréquente pour obtenir cela est par le biais de page HTML qui montrent à l'utilisateur des élèments de formulaire (comme des boîtes de texte) dans lesquelles il peut saisir des valeurs, puis nous utilisons le JS pour lire ces valeurs et les utilisées dans les variables de notre programme.
 
-But there's an easier way to get input for simple learning and demonstration purposes such as what you'll be doing throughout this book. Use the `prompt(..)` function:
+Mais il existe une manière plus simple d'obtenir une entrée utilisateur. Et dans une soucis de simplifier l'apprentissage et à des fins de démonstration, c'est cette méthode que nous utiliserons tout au long de ce livre. La fonction `prompt(..)`:
 
 ```js
-age = prompt( "Please tell me your age:" );
+age = prompt( "Quel âge avez-vous:" );
 
 console.log( age );
 ```
 
-As you may have guessed, the message you pass to `prompt(..)` -- in this case, `"Please tell me your age:"` -- is printed into the popup.
+Comme vous l'avez probablement deviner, le message que vous passez à `prompt(..)` -- dans le cas présent `"Quel âge avez-vous:"` -- est affiché dans la popup.
 
-This should look similar to the following:
+Ca devrait ressemble à ceci:
 
 <img src="fig2.png" width="500">
 
-Once you submit the input text by clicking "OK," you'll observe that the value you typed is stored in the `age` variable, which we then *output* with `console.log(..)`:
+Une fois que vous avez soumis le texte saisi en cliquant sur "OK", vous remarquerez que la valeur que vous avez saisie est stockée dans la variable `age`, que nous affichons en *sortie* avec `console.log(..)` :
 
 <img src="fig3.png" width="500">
 
-To keep things simple while we're learning basic programming concepts, the examples in this book will not require input. But now that you've seen how to use `prompt(..)`, if you want to challenge yourself you can try to use input in your explorations of the examples.
+Afin de garder les choses le plus simple possible lors de notre apprentissage des concepts de bases de la programmation, les exemples de ce livre ne requiert pas de sasie. Mais maintenant que vous avez vu comment utiliser `prompt(...)`, si vous voulez, vous pouvez vous mettre au défi d'essayer d'utiliser les méthodes de saisie d'Entrée dans votre exploration des exemples.
+
 
 ## Operators
 
