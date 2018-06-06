@@ -160,29 +160,28 @@ Une fois que vous avez soumis le texte saisi en cliquant sur "OK", vous remarque
 
 Afin de garder les choses le plus simple possible lors de notre apprentissage des concepts de bases de la programmation, les exemples de ce livre ne requiert pas de sasie. Mais maintenant que vous avez vu comment utiliser `prompt(...)`, si vous voulez, vous pouvez vous mettre au défi d'essayer d'utiliser les méthodes de saisie d'Entrée dans votre exploration des exemples.
 
+## Opérateurs
 
-## Operators
+Les opérateurs sont comment nous exécutons des actions sur des variables et valeurs. Nous avons déjà vu deux opérateurs, le `=` et le `*`.
 
-Operators are how we perform actions on variables and values. We've already seen two JavaScript operators, the `=` and the `*`.
+L'opérateur `*` exécute une multiplication. Simple non ?
 
-The `*` operator performs mathematic multiplication. Simple enough, right?
+L'opérateur `=` est utilisé pour l'*affectation* -- nous calculons premièrement la valeur à *droite* (la valeur source) de `=` et ensuite nous la placons dans la variable que nous spécifions à gauche (variable cible).
 
-The `=` equals operator is used for *assignment* -- we first calculate the value on the *right-hand side* (source value) of the `=` and then put it into the variable that we specify on the *left-hand side* (target variable).
+**Attention** Cette façon de specifier une déclaration à l'envers peut sembler étrange. Au lieu de `a = 42`, certains préférent changer l'ordre de manière à ce que la valeur source soit à gauche et la variable cible à droite, comme `42 -> a` (ce n'est pas du JavaScript valide !). Malheureusement, la forme ordonnée comme `a = 42`, et autres variations similaires, est relativement prévalante dans les langages de programmation mordernes. C'est quelque peu non-naturel, passez simplement un peu de temps à repasser cet ordre dans votre tête afin de vous y habituer.
 
-**Warning:** This may seem like a strange reverse order to specify assignment. Instead of `a = 42`, some might prefer to flip the order so the source value is on the left and the target variable is on the right, like `42 -> a` (this is not valid JavaScript!). Unfortunately, the `a = 42` ordered form, and similar variations, is quite prevalent in modern programming languages. If it feels unnatural, just spend some time rehearsing that ordering in your mind to get accustomed to it.
-
-Consider:
+Considérez:
 
 ```js
 a = 2;
 b = a + 1;
 ```
 
-Here, we assign the `2` value to the `a` variable. Then, we get the value of the `a` variable (still `2`), add `1` to it resulting in the value `3`, then store that value in the `b` variable.
+Ici , nous affectons la valeur `2` à la variable `a`. Ensuite, nous prenons la valeur de la variable `a` (toujours `2`), y ajoutons `1`, résultant à la valeur `3`, puis stockons cette valeur dans la variable `b`.
 
-While not technically an operator, you'll need the keyword `var` in every program, as it's the primary way you *declare* (aka *create*) *var*iables (see "Variables").
+Bien que le mot-clé `var` ne soit pas,techniquement, un opérateur, vous en aurez besoin dans tous vos programmes; car c'est la principale façcon de *déclarer* (ou *créer*) des *var*iables (voir "Variables").
 
-You should always declare the variable by name before you use it. But you only need to declare a variable once for each *scope* (see "Scope"); it can be used as many times after that as needed. For example:
+Vous devriez toujours déclarer le nom de la variable avant de l'utiliser. Mais vous n'avez besoin de déclarer qu'une seule fois une variable par *portée* (voir "Portée"); après ça, elle peut-être utilisé autant de fois que nécessaires. Par exemple :
 
 ```js
 var a = 20;
