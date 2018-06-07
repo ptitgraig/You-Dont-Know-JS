@@ -1,6 +1,6 @@
-# You Don't Know JS (book series)
+# You Don't Know JS (collection de livres)
 
-This is a series of books diving deep into the core mechanisms of the JavaScript language. The first edition of the series is now complete.
+Cette collection de livres plongent dans les mécanismes de base du langage JavaScript. La première édition de cette collection est désormais complète.
 
 <a href="http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/"><img src="up %26 going/cover.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/1647631/you-don-t-know-js-scope-closures/simpson-kyle/"><img src="scope %26 closures/cover.jpg" width="75"></a>&nbsp;
@@ -9,49 +9,50 @@ This is a series of books diving deep into the core mechanisms of the JavaScript
 <a href="http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/"><img src="async %26 performance/cover.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/"><img src="es6 %26 beyond/cover.jpg" width="75"></a>
 
-Please feel free to contribute to the quality of this content by submitting PR's for improvements to code snippets, explanations, etc. While typo fixes are welcomed, they will likely be caught through normal editing processes, and are thus not necessarily as important for this repository.
+Sentez-vous libre de contribuer la qualité du contenu en soumettant des PRs afin d'améliorer les extraits de code, explicationsm ect.
+Bien que les correction d'erreurs de frappes soient les bienvenues, elles seront très probablement découvertes lors du processus d'édition, and ainsi donc ne sont pas nécessairement très importantes pour ce repo.
 
-**To read more about the motivations and perspective behind this book series, check out the [Preface](preface.md).**
+**Pour en savoir plus sur les motivations et perspectives derrière cette collection de livres, allez voir la [Preface](preface.md).**
 
-## Titles
+## Titres
 
-* Read online (free!): ["Up & Going"](up\%20&\%20going/README.md#you-dont-know-js-up--going), Published: [Buy Now](http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/) in print, but the ebook format is free!
-* Read online (free!): ["Scope & Closures"](scope\%20&\%20closures/README.md#you-dont-know-js-scope--closures), Published: [Buy Now](http://www.ebooks.com/1647631/you-don-t-know-js-scope-closures/simpson-kyle/)
-* Read online (free!): ["this & Object Prototypes"](this\%20&\%20object\%20prototypes/README.md#you-dont-know-js-this--object-prototypes), Published: [Buy Now](http://www.ebooks.com/1734321/you-don-t-know-js-this-object-prototypes/simpson-kyle/)
-* Read online (free!): ["Types & Grammar"](types\%20&\%20grammar/README.md#you-dont-know-js-types--grammar), Published: [Buy Now](http://www.ebooks.com/1935541/you-don-t-know-js-types-grammar/simpson-kyle/)
-* Read online (free!): ["Async & Performance"](async\%20&\%20performance/README.md#you-dont-know-js-async--performance), Published: [Buy Now](http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/)
-* Read online (free!): ["ES6 & Beyond"](es6\%20&\%20beyond/README.md#you-dont-know-js-es6--beyond), Published: [Buy Now](http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/)
+* Lire en ligne (gratuit !) : ["Up & Going"](up\%20&\%20going/README.md#you-dont-know-js-up--going), Publié: [Acheter maintenant](http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/) en format papier, mais le format electronique ebook est gratuit !
+* Lire en ligne (gratuit !) : ["Portée et fermetures"](scope\%20&\%20closures/README.md#you-dont-know-js-scope--closures), Publié: [Acheter maintenant](http://www.ebooks.com/1647631/you-don-t-know-js-scope-closures/simpson-kyle/)
+* Lire en ligne (gratuit !) : ["this & Object Prototypes"](this\%20&\%20object\%20prototypes/README.md#you-dont-know-js-this--object-prototypes), Publié: [Acheter maintenant](http://www.ebooks.com/1734321/you-don-t-know-js-this-object-prototypes/simpson-kyle/)
+* Lire en ligne (gratuit !) : ["Types & Grammar"](types\%20&\%20grammar/README.md#you-dont-know-js-types--grammar), Publié: [Acheter maintenant](http://www.ebooks.com/1935541/you-don-t-know-js-types-grammar/simpson-kyle/)
+* Lire en ligne (gratuit !) : ["Async & Performance"](async\%20&\%20performance/README.md#you-dont-know-js-async--performance), Publié: [Acheter maintenant](http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/)
+* Lire en ligne (gratuit !) : ["ES6 & Beyond"](es6\%20&\%20beyond/README.md#you-dont-know-js-es6--beyond), Publié: [Acheter maintenant](http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/)
 
-## Publishing
+## Publication
 
-These books are being released here as drafts, free to read, but are also being edited, produced, and published through O'Reilly.
+Ces livres sont délivrés ici en tant que brouillons, libre à la lecture, mais sont aussi édités, produits, et publiés au travers d'O'Reilly.
 
-If you like the content you find here, and want to support more content like it, please purchase the books once they are available for sale, through your normal book sources. :)
+Si vous aimez le contenu trouvé ici, et souhaiter soutenir d'avantage de contenu comme celui-çi, s'il-vous-plaît achetez les livres une fois qu'ils sont disponible à la vente, par le biais de votre libraire habituel.
 
-If you'd like to contribute financially towards the effort (or any of my other OSS work) aside from purchasing the books, I do have a [patreon](https://www.patreon.com/getify) that I would always appreciate your generosity towards.
+Si vous souhaitez contribuer de manière financière à cet effort (ou à n'import lequel de mes projets open-source) sans acheter ces livres, j'ai un [patreon](https://www.patreon.com/getify) envers lequel j'apprécierai tout geste de générosité. 
 
 <a href="https://www.patreon.com/getify">[![patreon.png](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/getify)</a>
 
-## In-person Training
+## Formation personne-à-personne
 
-The content for these books derives heavily from a series of training materials I teach professionally (in both public and private-corporate workshop format): "Deep JavaScript Foundations", "Rethinking Async", and "ES6: The Right Parts" workshops.
+Le contenu des ces livres s'inspirent fortement d'une série d'outils de formation que j'enseigne au niveau professionel (à la fois sous la forme d'atelier public et privé en entreprise): "Fondations solides en JavaScript", "Re-penser l'Asynchronisme", et "ES6 : les bonnes parties".
 
-If you like this content and would like to contact me regarding conducting training on these, or other various JS/HTML5/node.js topics, please reach out to me through email: getify @ gmail
+Si vous aimez ce contenu et que vous souhaitez me contacter concernant la conduite de ces formatins, ou d'autres sujets variés comme JS/HTML5/node.js, s'il-vous-plaît, contactez-moi par email getify @ gmail
 
-## Online Video Training
+## Formation Video en ligne
 
-I also have some JS training material available in on-demand video format. I teach courses through [Frontend Masters](https://FrontendMasters.com), like my [Deep JavaScript Foundations](https://frontendmasters.com/courses/javascript-foundations/) workshop. You can find [all my courses here](https://frontendmasters.com/kyle-simpson/).
+J'ai aussi du matériel de formation disponible disponible à la demande au format vidéo. J'enseigne au travers de [Frontend Masters](https://FrontendMasters.com), comme mon atelier [Fondations solides en JavaScript](https://frontendmasters.com/courses/javascript-foundations/). Vous pouvez trouver [tous mes cours](https://frontendmasters.com/kyle-simpson/).
 
-Some of those courses are also distributed on other platforms, like Pluralsight, Lynda.com, and O'Reilly Safari Online.
+Quelqu'uns de ces cours sont aussi distribués sur d'autres plate-formesm comme Pluralsight, Lynda.com, et O'Reilly Safari Online.
 
 ## Contributions
 
-Any contributions you make to this effort **are of course greatly appreciated**.
+Toutes contributions faites envers cet effort **sont grandement appréciées**.
 
-But **PLEASE** read the [Contributions Guidelines](CONTRIBUTING.md) carefully before submitting a PR.
+Mais **SVP** lisez les [Lignes Directrices de Contributions](CONTRIBUTING.md) avec soin avant de soumettre une PR.
 
 ## License & Copyright
 
-The materials herein are all (c) 2013-2017 Kyle Simpson.
+Le matériel ici-présent est entièrement (c) 2013-2017 Kyle Simpson.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ce travail est fourni sous la license <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
