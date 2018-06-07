@@ -277,34 +277,35 @@ Cependant, la coercition implicite est une mécanique qui *peut être apprise*, 
 
 **Remarque:** Pour plus d'informations sur la coercition, voir le Chapître 2 de ce titre et le Chapître 4 du titre *Types & Grammaire* de cette série.
 
-## Code Comments
+## Commentaires de code
 
-The phone store employee might jot down some notes on the features of a newly released phone or on the new plans her company offers. These notes are only for the employee -- they're not for customers to read. Nevertheless, these notes help the employee do her job better by documenting the hows and whys of what she should tell customers.
+Il se peut que l'employé du magasin de téléphone prennent quelques notes au sujet des caractéristiques d'un nouveau téléphone ou au sujet des nouvelles offres de son entreprise.
+Ces notes sont seulement pour les employés -- elles n'ont pas pour but d'être lues par les clients. Néanmoins, ces notes aident les employés à fournir un meilleur travail en documentant les comments et pourquois de ce qu'ils devraient dire aux clients.
 
-One of the most important lessons you can learn about writing code is that it's not just for the computer. Code is every bit as much, if not more, for the developer as it is for the compiler.
+Une des leçons les plus importantes sur l'écriture de code est que le code n'est pas uniquement écrit pour l'ordinateur. Le code est tout autant, si ce n'est plus, pour le développeur que pour l'ordinateur.
 
-Your computer only cares about machine code, a series of binary 0s and 1s, that comes from *compilation*. There's a nearly infinite number of programs you could write that yield the same series of 0s and 1s. The choices you make about how to write your program matter -- not only to you, but to your other team members and even to your future self.
+Votre ordinateur ne se préoccupe que du code machine, une suite de 0s et 1s binaires, qui proviennent de la *compilation*. Vous pourriez écrire un quantité quasi infinie de programmes qui finiraient dans la même série de 0s et de 1s. Les choix que vous faites sur la manière d'écrire votre programme ont de l'importance -- non seulement pour vous, mais aussi pour les membres de votre équipe et même pour votre futur-vous.
 
-You should strive not just to write programs that work correctly, but programs that make sense when examined. You can go a long way in that effort by choosing good names for your variables (see "Variables") and functions (see "Functions").
+Vous devriez vous efforcer non seulement d'écrire des programmes qui fonctionnent, mais des programmes qui sont claires quand examinés. Vous pouvez allez loin dans cet effort en choisissant de bons noms pour vos variables (voir "Variables") et fonctions (voir "Functions).
 
-But another important part is code comments. These are bits of text in your program that are inserted purely to explain things to a human. The interpreter/compiler will always ignore these comments.
+Mais une autre part importante est le commentaire de code. Il s'agit de morceaux de textes dans votre programme qui sont ajoutés purement pour expliquer les choses à un être-humain. L'interpreteur/compilateur ignorera toujours ces commentaires.
 
-There are lots of opinions on what makes well-commented code; we can't really define absolute universal rules. But some observations and guidelines are quite useful:
+Il existe des tas d'opinions sur ce qu'est un code bien commenté; nous ne pouvons pas définir des règles absolues et universelles. Mais il y a  quelques observations et lignes directrices se révèlent assez utiles:
 
-* Code without comments is suboptimal.
-* Too many comments (one per line, for example) is probably a sign of poorly written code.
-* Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
+* Du code sans commentaires est sous-optimal.
+* Trop de commenataires (un par ligne, par exemple) est probablement le signe d'un code mal écrit.
+* Les commentaires devraient expliquer le *pourquoi*, non pas le *comment*. Ils peuvent occasionnellement expliquer le *comment* si le code est particulièrement déroutant.
 
-In JavaScript, there are two types of comments possible: a single-line comment and a multiline comment.
+En JavaScript, il y a deux types de commentaires possibles : les commentaires mono-ligne et les multi-lignes.
 
-Consider:
+Considérez:
 
 ```js
-// This is a single-line comment
+// Ceci est un commentaire mono-ligne
 
-/* But this is
-       a multiline
-             comment.
+/* Mais celui-çi
+       est un commentaire
+             multi-ligne.
                       */
 ```
 
