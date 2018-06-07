@@ -181,7 +181,7 @@ Ici , nous affectons la valeur `2` à la variable `a`. Ensuite, nous prenons la 
 
 Bien que le mot-clé `var` ne soit pas,techniquement, un opérateur, vous en aurez besoin dans tous vos programmes; car c'est la principale façcon de *déclarer* (ou *créer*) des *var*iables (voir "Variables").
 
-Vous devriez toujours déclarer le nom de la variable avant de l'utiliser. Mais vous n'avez besoin de déclarer qu'une seule fois une variable par *portée* (voir "Portée"); après ça, elle peut-être utilisé autant de fois que nécessaires. Par exemple :
+Vous devriez toujours déclarer le nom de la variable avant de l'utiliser vous l'utilisiez. Mais vous n'avez besoin de déclarer qu'une seule fois une variable par *portée* (voir "Portée"); après ça, elle peut-être utilisé autant de fois que nécessaires. Par exemple :
 
 ```js
 var a = 20;
@@ -192,44 +192,48 @@ a = a * 2;
 console.log( a );	// 42
 ```
 
-Here are some of the most common operators in JavaScript:
+Voici quelqu'uns des opérateurs les plus communs en JavaScript :
 
-* Assignment: `=` as in `a = 2`.
-* Math: `+` (addition), `-` (subtraction), `*` (multiplication), and `/` (division), as in `a * 3`.
-* Compound Assignment: `+=`, `-=`, `*=`, and `/=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`).
-* Increment/Decrement: `++` (increment), `--` (decrement), as in `a++` (similar to `a = a + 1`).
-* Object Property Access: `.` as in `console.log()`.
+* Affectation: `=` comme dans `a = 2`
+* Math: `+` (addition), `-` (soustraction), `*` (multiplication), et `/` (division), comme dans `a * 3`.
+* Affectation composée: `+=`, `-=`, `*=`, et `/=` sont des opérateurs composés qui combinent une opération mathématique avec une affectation, comme dans `a += 2` (pareil avec `a = a + 2`).
+* Incrementation/Decrementation: `++` (incrementation), `--` (decrementation), comme dans `a++` (similaire à `a = a + 1`).
+* Accès aux Propriétés d'un Objet: `.` comme dans `console.log()`.
 
-   Objects are values that hold other values at specific named locations called properties. `obj.a` means an object value called `obj` with a property of the name `a`. Properties can alternatively be accessed as `obj["a"]`. See Chapter 2.
-* Equality: `==` (loose-equals), `===` (strict-equals), `!=` (loose not-equals), `!==` (strict not-equals), as in `a == b`.
+   Les objets sont des valeurs qui contiennent d'autres valeurs à des endroits qui portent un nom spécifique appelés propriétés. `obj.a` signifie qu'il y a un objet `obj` avec une propriété nommée `a`. On peut aussi accéder à une propriété par `obj["a"]`. Voir Chapître 2.
+* Egalité: `==` (égalité-lâche), `===` (égalité-stricte), `!=` (inégalité-lâche), `!==` (inégalité-stricte), comme dans `a == b`.
 
-   See "Values & Types" and Chapter 2.
-* Comparison: `<` (less than), `>` (greater than), `<=` (less than or loose-equals), `>=` (greater than or loose-equals), as in `a <= b`.
+   Voir "Valeurs & Types" dans le Chapître 2.
+* Comparaison: `<` (inférieur à), `>` (supérieur à), `<=` (inférieur à ou égalité-lâche), `>=` (supérieur à ou égalité-lâche), comme dans `a <= b`.
 
-   See "Values & Types" and Chapter 2.
-* Logical: `&&` (and), `||` (or), as in `a || b` that selects either `a` *or* `b`.
+   Voir "Valeurs & Types" dans le Chapître 2.
+* Logique: `&&` (et), `||` (ou), comme dans `a || b` qui selectionne soit `a` *ou* `b`.
 
-   These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
+   Ces opérateurs sont utilisés pour exprimer des conditions composées (voir "Conditions"), comme soit `a` *ou* `b` est vrai (true).
 
 **Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
 
-## Values & Types
+**Note:** Pour beaucoup plus de détails et couverture des opérateurs non-mentionnés ici, voir le Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
 
-If you ask an employee at a phone store how much a certain phone costs, and they say "ninety-nine, ninety-nine" (i.e., $99.99), they're giving you an actual numeric dollar figure that represents what you'll need to pay (plus taxes) to buy it. If you want to buy two of those phones, you can easily do the mental math to double that value to get $199.98 for your base cost.
+## Valeurs et Types
 
-If that same employee picks up another similar phone but says it's "free" (perhaps with air quotes), they're not giving you a number, but instead another kind of representation of your expected cost ($0.00) -- the word "free."
+Si vous demandez à un employé d'un magasin de téléphone combien coûte un certain téléphone, et qu'il vous réponde "quatre-vingt-dix-neuf, quatre-vingt-dix-neuf" (99,99 EUR), il vous donne un véritable nombre en euro qui représente ce que vous aurez besoin de payer pour l'acheter. Si vous vouslez acheter deux examplaires de ce model, vous pouvez facilement faire un calcul mental pour doubler cette valeur et obtenir 199.98 EUR.
 
-When you later ask if the phone includes a charger, that answer could only have been either "yes" or "no."
+Si ce même employé choisi un autre model similaire mais dit "c'est gratuit" (peut-être en faisant signe de guillement avec ses doigts), il ne vous donne pas un nombre, mais une autre représentation du prix attendu (0.00 EUR) -- le mot "gratuit".
 
-In very similar ways, when you express values in a program, you choose different representations for those values based on what you plan to do with them.
+Quand plus tard vous demandez si le téléphone inclut un chargeur, cette réponse ne peut être que "oui" ou "non".
 
-These different representations for values are called *types* in programming terminology. JavaScript has built-in types for each of these so called *primitive* values:
+De façon très similaire, quand vous exprimez des valeurs dans une programme, vous choisissez différentes représentations pour ces valeurs, basé sur ce que vous plannifiez de faire avec elles.
 
-* When you need to do math, you want a `number`.
-* When you need to print a value on the screen, you need a `string` (one or more characters, words, sentences).
-* When you need to make a decision in your program, you need a `boolean` (`true` or `false`).
+Dans la terminologie de programmation, ces différentes représentations de valeurs sont apellées *types*. JavaScript possède des types encastrés pour chacune de ces soit-disantes valeurs *primitives*
+
+* Quand vous faites des maths, vous voulez un `number` (nombre).
+* Quand vous affichez une valeur sur l'écran, vous avez besoin d'une `string` (un ou plusieurs caractère, mots, phrases).
+* Quand vous avez besoin de prendre une décision dans votre programme, vous avez besoin d'un `booleen` (`true` ou `false` -- `vrai` ou `faux`).
 
 Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
+
+Les valeurs qui sont inclusent directement dans le code source sont appelées *litérales*. Les litérales de type `string` sont encerclées par des guillemets double `"..."` ou des guillements simples (`'...'`) -- la seule différence est stylistique. Les litérales `number` et `boolean` sont présentés telles quelle (c'est à dire `42`, `true`, etc.).
 
 Consider:
 
