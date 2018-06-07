@@ -290,7 +290,7 @@ Vous devriez vous efforcer non seulement d'écrire des programmes qui fonctionne
 
 Mais une autre part importante est le commentaire de code. Il s'agit de morceaux de textes dans votre programme qui sont ajoutés purement pour expliquer les choses à un être-humain. L'interpreteur/compilateur ignorera toujours ces commentaires.
 
-Il existe des tas d'opinions sur ce qu'est un code bien commenté; nous ne pouvons pas définir des règles absolues et universelles. Mais il y a  quelques observations et lignes directrices se révèlent assez utiles:
+Il existe des tas d'opinions sur ce qu'est un code bien commenté; nous ne pouvons pas définir des règles absolues et universelles. Mais il y a  quelques observations et lignes directrices qui se révèlent assez utiles:
 
 * Du code sans commentaires est sous-optimal.
 * Trop de commenataires (un par ligne, par exemple) est probablement le signe d'un code mal écrit.
