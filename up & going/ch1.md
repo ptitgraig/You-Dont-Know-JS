@@ -309,22 +309,23 @@ Considérez:
                       */
 ```
 
-The `//` single-line comment is appropriate if you're going to put a comment right above a single statement, or even at the end of a line. Everything on the line after the `//` is treated as the comment (and thus ignored by the compiler), all the way to the end of the line. There's no restriction to what can appear inside a single-line comment.
+Le commentaire mono-ligne `//` est approprié si vous allez mettre un commentaire au-dessus d'une seule déclaration, ou-bien en fin de ligne.
+Tout ce qui suit `//` sur la ligne est traité comme commentaire (et ainsi ignoré par le compilateur), et ce jusqu'en fin de ligne. Il n'y a pas de restriction sur ce qui peut être écrit dans un commentaire mono-ligne.
 
-Consider:
+Considérez:
 
 ```js
 var a = 42;		// 42 is the meaning of life
 ```
 
-The `/* .. */` multiline comment is appropriate if you have several lines worth of explanation to make in your comment.
+Le commentaire multi-ligne `/* .. */` est approprié si vous avez plusieurs lignes d'explication qui en valent la peine dans votre commentaire.
 
-Here's a common usage of multiline comments:
+Voici un usage courant de commentaire multi-ligne :
 
 ```js
-/* The following value is used because
-   it has been shown that it answers
-   every question in the universe. */
+/* La valeur suivante est utilisée parceque
+   il a été montré qu'elle répond à
+   toutes les questions de l'univers. */
 var a = 42;
 ```
 
