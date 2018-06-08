@@ -211,9 +211,7 @@ Voici quelqu'uns des opérateurs les plus communs en JavaScript :
 
    Ces opérateurs sont utilisés pour exprimer des conditions composées (voir "Conditions"), comme soit `a` *ou* `b` est vrai (true).
 
-**Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
-
-**Note:** Pour beaucoup plus de détails et couverture des opérateurs non-mentionnés ici, voir le Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
+**Remarque:** Pour beaucoup plus de détails et couverture des opérateurs non-mentionnés ici, voir le Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
 
 ## Valeurs et Types
 
@@ -230,8 +228,6 @@ Dans la terminologie de programmation, ces différentes représentations de vale
 * Quand vous faites des maths, vous voulez un `number` (nombre).
 * Quand vous affichez une valeur sur l'écran, vous avez besoin d'une `string` (un ou plusieurs caractère, mots, phrases).
 * Quand vous avez besoin de prendre une décision dans votre programme, vous avez besoin d'un `booleen` (`true` ou `false` -- `vrai` ou `faux`).
-
-Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
 
 Les valeurs qui sont inclusent directement dans le code source sont appelées *litérales*. Les litérales de type `string` sont encerclées par des guillemets double `"..."` ou des guillements simples (`'...'`) -- la seule différence est stylistique. Les litérales `number` et `boolean` sont présentéss telles quelle (c'est à dire `42`, `true`, etc.).
 
@@ -276,8 +272,6 @@ Pour vous aider dans ces fréquentes situations, JavaScript va parfois coercer *
 Donc si on utilise l'opérateur de faible égalité `==` pour faire la comparaison `"99.99" == 99.99`, JavaScript va convertir le `"99.99"` de gauche en son équivalment numérique (`number`) `99.99`. La comparaison devient donc `99.99 == 99.99`, qui est bien sur vraie `true`.
 
 Bien que conçue pour vous aidez, la coercition implicite peut être source de confusion si vous n'avez pas pris le temps d'apprendre les règles qui gouvernent son comportement. La plupart des développeurs JS ne l'ont jamais pris, ainsi le sentiment général est que la coercition implicite est belle et bien source de confusion et endommage le programme par la présence de bugs innatentus, et donc devrait être éviter. Cela a même parfois été appelé un défaut de conception du langage.
-
-However, implicit coercion is a mechanism that *can be learned*, and moreover *should be learned* by anyone wishing to take JavaScript programming seriously. Not only is it not confusing once you learn the rules, it can actually make your programs better! The effort is well worth it.
 
 Cependant, la coercition implicite est une mécanique qui *peut être apprise*, et de surcroit *devrait être apprise* par quiconque souhaitant sérieusement programmer en JavaScript. Non seulement, le sentiment de confusion se dissipe une fois les règles apprises, mais elle peut améliorer vos programmes ! L'effort vaut le coup.
 
