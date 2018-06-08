@@ -329,17 +329,17 @@ Voici un usage courant de commentaire multi-ligne :
 var a = 42;
 ```
 
-It can also appear anywhere on a line, even in the middle of a line, because the `*/` ends it. For example:
+On peut aussi le mettre n'importe où sur une ligne, même au milieu parceque `*/` termine le commentaire. Par exemple :
 
 ```js
-var a = /* arbitrary value */ 42;
+var a = /* valeur artbitraire */ 42;
 
 console.log( a );	// 42
 ```
 
-The only thing that cannot appear inside a multiline comment is a `*/`, because that would be interpreted to end the comment.
+La seule chose que ne peux pas apparaître dans un commentaire multi-ligne est le `*/` parcequ'il serait intérpreté comme fin de commentaire.
 
-You will definitely want to begin your learning of programming by starting off with the habit of commenting code. Throughout the rest of this chapter, you'll see I use comments to explain things, so do the same in your own practice. Trust me, everyone who reads your code will thank you!
+Il est définitivement conseillé de commencer votre apprentissage de la programmation en prenant l'habitude de commenter votre code. Tout au long du reste de ce chapître, vous verez que j'utilise des commentaires pour expliquer les choses, ainsi donc, faites la même chose lors de votre mise en pratique. Croyez-moi, quiconque lira votre code vous remerciera !
 
 ## Variables
 
