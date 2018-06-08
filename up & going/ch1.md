@@ -201,10 +201,10 @@ Voici quelqu'uns des opérateurs les plus communs en JavaScript :
 * Accès aux Propriétés d'un Objet: `.` comme dans `console.log()`.
 
    Les objets sont des valeurs qui contiennent d'autres valeurs à des endroits qui portent un nom spécifique appelés propriétés. `obj.a` signifie qu'il y a un objet `obj` avec une propriété nommée `a`. On peut aussi accéder à une propriété par `obj["a"]`. Voir Chapître 2.
-* Egalité: `==` (égalité-lâche), `===` (égalité-stricte), `!=` (inégalité-lâche), `!==` (inégalité-stricte), comme dans `a == b`.
+* Egalité: `==` (égalité-faible), `===` (égalité-stricte), `!=` (inégalité-faible), `!==` (inégalité-stricte), comme dans `a == b`.
 
    Voir "Valeurs & Types" dans le Chapître 2.
-* Comparaison: `<` (inférieur à), `>` (supérieur à), `<=` (inférieur à ou égalité-lâche), `>=` (supérieur à ou égalité-lâche), comme dans `a <= b`.
+* Comparaison: `<` (inférieur à), `>` (supérieur à), `<=` (inférieur à ou égalité-faible), `>=` (supérieur à ou égalité-faible), comme dans `a <= b`.
 
    Voir "Valeurs & Types" dans le Chapître 2.
 * Logique: `&&` (et), `||` (ou), comme dans `a || b` qui selectionne soit `a` *ou* `b`.
@@ -233,9 +233,9 @@ Dans la terminologie de programmation, ces différentes représentations de vale
 
 Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
 
-Les valeurs qui sont inclusent directement dans le code source sont appelées *litérales*. Les litérales de type `string` sont encerclées par des guillemets double `"..."` ou des guillements simples (`'...'`) -- la seule différence est stylistique. Les litérales `number` et `boolean` sont présentés telles quelle (c'est à dire `42`, `true`, etc.).
+Les valeurs qui sont inclusent directement dans le code source sont appelées *litérales*. Les litérales de type `string` sont encerclées par des guillemets double `"..."` ou des guillements simples (`'...'`) -- la seule différence est stylistique. Les litérales `number` et `boolean` sont présentéss telles quelle (c'est à dire `42`, `true`, etc.).
 
-Consider:
+Considérer:
 
 ```js
 "I am a string";
@@ -247,13 +247,13 @@ true;
 false;
 ```
 
-Beyond `string`/`number`/`boolean` value types, it's common for programming languages to provide *arrays*, *objects*, *functions*, and more. We'll cover much more about values and types throughout this chapter and the next.
+Au delà des types de valeur `string`/`number`/`boolean` value types, il est commun pour un langage de programmation de fournir des *arrays* (tableau), *objects* (objets), *functions* (fonctions), et plus encore. Nous couvrirons d'avantage le sujet des valeurs et des types tout au long de ce chapître et du prochain.
 
-### Converting Between Types
+### Conversion entre types
 
-If you have a `number` but need to print it on the screen, you need to convert the value to a `string`, and in JavaScript this conversion is called "coercion." Similarly, if someone enters a series of numeric characters into a form on an ecommerce page, that's a `string`, but if you need to then use that value to do math operations, you need to *coerce* it to a `number`.
+Si vous avez un `number` mais que vous avez besoin de l'afficher à l'écran, il faudra convertir la valeur en `string`, et en JavaScript cette conversion est appelé "coercion" (coercition ou contrainte). De la même manière, si quelqu'un saisi une série de caractères numériques dans un formulaire sur un site e-commerce, on a affaire à une `string`, mais si vous avez ensuite besoin d'utiliser cette valeur pour faire des opération mathématiques, vous devez la "contraindre" ou "coercer" à un nombre.
 
-JavaScript provides several different facilities for forcibly coercing between *types*. For example:
+JavaScript fourni plusieurs outils pour forcer une coercition entre *types*. Par exemple :
 
 ```js
 var a = "42";
@@ -265,19 +265,23 @@ console.log( b );	// 42
 
 Using `Number(..)` (a built-in function) as shown is an *explicit* coercion from any other type to the `number` type. That should be pretty straightforward.
 
-But a controversial topic is what happens when you try to compare two values that are not already of the same type, which would require *implicit* coercion.
+Ici, l'utilisation de `Number(..)` (une fonction encastrée) est un exemple de coercition *explicite* de n'importe quel type vers le type `number`. C'est plutôt simple et direct.
 
-When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent. But they're not exactly the same, are they? It's the same value in two different representations, two different *types*. You could say they're "loosely equal," couldn't you?
+Cependant, la comparaison deux valeurs qui ne sont pas du même type, qui implique une *coercition* implicite, est une sujet controversé.
 
-To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
+Lorsqu'on compare la `string` `"99.99"` au nombre `99.99`, la plupart des gens dirait qu'ils sont équivalent. Mais ils ne sont pas exactement identiques, n'est pas ? C'est la même valeir sous deux représentations différentes, deux différents *types*. On pourrait dire qu'ils sont "faiblement égales" ?
 
-So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
+Pour vous aider dans ces fréquentes situations, JavaScript va parfois coercer *implicitement* les valeurs vers les types correspondants. 
 
-While designed to help you, implicit coercion can create confusion if you haven't taken the time to learn the rules that govern its behavior. Most JS developers never have, so the common feeling is that implicit coercion is confusing and harms programs with unexpected bugs, and should thus be avoided. It's even sometimes called a flaw in the design of the language.
+Donc si on utilise l'opérateur de faible égalité `==` pour faire la comparaison `"99.99" == 99.99`, JavaScript va convertir le `"99.99"` de gauche en son équivalment numérique (`number`) `99.99`. La comparaison devient donc `99.99 == 99.99`, qui est bien sur vraie `true`.
+
+Bien que conçue pour vous aidez, la coercition implicite peut être source de confusion si vous n'avez pas pris le temps d'apprendre les règles qui gouvernent son comportement. La plupart des développeurs JS ne l'ont jamais pris, ainsi le sentiment général est que la coercition implicite est belle et bien source de confusion et endommage le programme par la présence de bugs innatentus, et donc devrait être éviter. Cela a même parfois été appelé un défaut de conception du langage.
 
 However, implicit coercion is a mechanism that *can be learned*, and moreover *should be learned* by anyone wishing to take JavaScript programming seriously. Not only is it not confusing once you learn the rules, it can actually make your programs better! The effort is well worth it.
 
-**Note:** For more information on coercion, see Chapter 2 of this title and Chapter 4 of the *Types & Grammar* title of this series.
+Cependant, la coercition implicite est une mécanique qui *peut être apprise*, et de surcroit *devrait être apprise* par quiconque souhaitant sérieusement programmer en JavaScript. Non seulement, le sentiment de confusion se dissipe une fois les règles apprises, mais elle peut améliorer vos programmes ! L'effort vaut le coup.
+
+**Remarque:** Pour plus d'informations sur la coercition, voir le Chapître 2 de ce titre et le Chapître 4 du titre *Types & Grammaire* de cette série.
 
 ## Code Comments
 
