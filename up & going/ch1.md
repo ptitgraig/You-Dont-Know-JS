@@ -1,4 +1,4 @@
-# You Don't Know JS: Démarrage
+# You Don't Know JS: Mettre le pied à l'étrier
 # Chapter 1: Dans la programmation
 
 Bienvenue dans la serie *You Don't Know JS* (*YDKJS*).
@@ -85,7 +85,7 @@ Pour d'autres langages, la traduction est faite en avance de phase, on apelle ç
 
 On affirme d'habitude que JavaScipt est *interprété*, parceque votre code source JavaScript est traité à chaque fois qu'il est lancé. Mais ce n'est tout à fait précis. En fait, le moteur JavaScript *comile* le program à la volée puis lance le code compilé immédiatement.
 
-**Note:** Pour plus d'informations sur la compilation JavaScript, voir les eux premiers chapître de *Portées et Fermetures* de cette série.
+**Remarque :** Pour plus d'informations sur la compilation JavaScript, voir les eux premiers chapître de *Portées et Fermetures* de cette série.
 
 
 ## A vous d'essayer
@@ -489,7 +489,7 @@ var amount = 99.99;
 
 amount = amount * 2;
 
-// Pouvous-nous nous permettre un achat supplémentaire ?
+// Pouvons-nous nous permettre un achat supplémentaire ?
 if ( amount < bank_balance ) {
 	console.log( "Je vais prendre l'accessoire !" );
 	amount = amount + ACCESSORY_PRICE;
