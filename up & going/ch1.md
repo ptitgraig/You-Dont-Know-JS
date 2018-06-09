@@ -424,23 +424,23 @@ A ce propos, ce genre de "protection" contre les erreurs est similaire au renfor
 
 *Remarque :* Pour plus d'informations sur comment peuvent être utilisées les différentes valeurs dans les variables dans vos programmes, voir le titre *Types & Grammaire* de cette collection.
 
-## Blocks
+## Blocs
 
-The phone store employee must go through a series of steps to complete the checkout as you buy your new phone.
+L'employé du magasin de téléphone doit passer par une série d'étapes pour terminer la vérification lorsque vous achetez votre nouveau téléphone.
 
-Similarly, in code we often need to group a series of statements together, which we often call a *block*. In JavaScript, a block is defined by wrapping one or more statements inside a curly-brace pair `{ .. }`. Consider:
+De la même façon, quand on code, nous avons besoin souvent de grouper une série de déclaration ensemble, ce qu'on appel souvent un *bloc*. En JavaScript un bloc est définie comme enveloppant une ou plusieurs déclaration entre une paire d'accolades `{ .. }`. Voyez :
 
 ```js
 var amount = 99.99;
 
-// a general block
+// un bloc général
 {
 	amount = amount * 2;
 	console.log( amount );	// 199.98
 }
 ```
 
-This kind of standalone `{ .. }` general block is valid, but isn't as commonly seen in JS programs. Typically, blocks are attached to some other control statement, such as an `if` statement (see "Conditionals") or a loop (see "Loops"). For example:
+Ce genre de bloc autonome général `{ .. }` est valide, mais n'est pas très fréquemment vu dans les programmes JS. Typiquement, les blocs sont attachés à d'autres déclarations de contrôle, telle que la déclaration `if` (si) (voir "Conditions") ou une boucle (voir "Boucles"). Par exemple :
 
 ```js
 var amount = 99.99;
@@ -452,17 +452,21 @@ if (amount > 10) {			// <-- block attached to `if`
 }
 ```
 
-We'll explain `if` statements in the next section, but as you can see, the `{ .. }` block with its two statements is attached to `if (amount > 10)`; the statements inside the block will only be processed if the conditional passes.
+Nous expliquerons les déclarations `if` dans la prochaine section, mais comme vous pouvez le voir, le bloc `{ .. }` avec des deux déclarations est attaché à `if (amount > 10)`; les déclarations à l'intérieur du bloc ne seront traitées seulement si la condition passe.
 
-**Note:** Unlike most other statements like `console.log(amount);`, a block statement does not need a semicolon (`;`) to conclude it.
+**Remarque :** A l'inverse de la plupart des autres déclarations comme `console.log(amount);`, une déclaration de type bloc n'a pas besoin de point-virgule (;) pour se terminer.
 
-## Conditionals
+## Conditions
 
-"Do you want to add on the extra screen protectors to your purchase, for $9.99?" The helpful phone store employee has asked you to make a decision. And you may need to first consult the current *state* of your wallet or bank account to answer that question. But obviously, this is just a simple "yes or no" question.
+"Voulez-vous ajouter des protecteurs d'écran supplémentaires à votre achat, pour 9,99 $?" L'employé du magasin de téléphone vous a demandé de prendre une décision. Et vous devrez peut-être d'abord consulter l'*état* de votre portefeuille ou de votre compte bancaire pour répondre à cette question. Mais évidemment, ce n'est qu'une simple question qui se répond par «oui ou non»
 
-There are quite a few ways we can express *conditionals* (aka decisions) in our programs.
+
+
+Il existe pas mal de manières d'exprimer des "conditions" (autrement-dit décisions) dans nos programmes.
 
 The most common one is the `if` statement. Essentially, you're saying, "*If* this condition is true, do the following...". For example:
+
+La façon la plus commune est la déclaration `if`. Essentiellement, vous dites, *If* (Si) cette condition est vraie (true), faire la chose suivante...". Par exemple :
 
 ```js
 var bank_balance = 302.13;
@@ -473,9 +477,9 @@ if (amount < bank_balance) {
 }
 ```
 
-The `if` statement requires an expression in between the parentheses `( )` that can be treated as either `true` or `false`. In this program, we provided the expression `amount < bank_balance`, which indeed will either evaluate to `true` or `false` depending on the amount in the `bank_balance` variable.
+La déclaration `if` requiert une expression entre les parenthères `()` qui peut être résolue comme soit `true` (vraie) ou `false` (fausse). Dans ce programme, nous lui avons fourni l'expression `amount < bank_balance`, qui en effet va être évaluée soit `true` (vraie) soit `false` (fausse) en fonction du montant qu'il y a dans la variable `bank_balance`.
 
-You can even provide an alternative if the condition isn't true, called an `else` clause. Consider:
+Vous pouvez même fournir une alternative si la condition n'est pas vraie, appelé une clause `else` (sinon). Considérez :
 
 ```js
 const ACCESSORY_PRICE = 9.99;
@@ -485,77 +489,77 @@ var amount = 99.99;
 
 amount = amount * 2;
 
-// can we afford the extra purchase?
+// Pouvous-nous nous permettre un achat supplémentaire ?
 if ( amount < bank_balance ) {
-	console.log( "I'll take the accessory!" );
+	console.log( "Je vais prendre l'accessoire !" );
 	amount = amount + ACCESSORY_PRICE;
 }
-// otherwise:
+// sinon:
 else {
-	console.log( "No, thanks." );
+	console.log( "Non, merci." );
 }
 ```
 
-Here, if `amount < bank_balance` is `true`, we'll print out `"I'll take the accessory!"` and add the `9.99` to our `amount` variable. Otherwise, the `else` clause says we'll just politely respond with `"No, thanks."` and leave `amount` unchanged.
+Ici, si `amount < bank_balance` est `true`, nous afficherons `Je vais prendre l'accessoire !` et ajouter `9.99` à notre variable `amount`. Sinon, la clause `else` dira que nous répondrons poliement `"Non, merci."` et laisserons le montant tel quel.
 
-As we discussed in "Values & Types" earlier, values that aren't already of an expected type are often coerced to that type. The `if` statement expects a `boolean`, but if you pass it something that's not already `boolean`, coercion will occur.
+Comme nous l'avons vu plus tôt dans "Valeurs & Types", les valeurs qui ne sont pas déjà du type attendu sont souvent coercées dans ce type. La déclaration `if` s'attend à un `boolean`, mais si vous lui passez quelque chose qui n'est pas un `boolean`, il va y avoir coercition.
 
-JavaScript defines a list of specific values that are considered "falsy" because when coerced to a `boolean`, they become `false` -- these include values like `0` and `""`. Any other value not on the "falsy" list is automatically "truthy" -- when coerced to a `boolean` they become `true`. Truthy values include things like `99.99` and `"free"`. See "Truthy & Falsy" in Chapter 2 for more information.
+JavaScript défini une liste de valeurs spécifiques qui sont considérées comme "falsy" (falsifiable) car quand elles sont coercées en `boolean`, elles deviennent `false` --  comme les valeurs `0` et `""`. Toutes autres valeurs qui ne sont pas sur la liste des valeurs "falsy" sont automatiquement "thruthy" (véridiques). -- quand coercées dans un `boolean` elles deviennent `true`. Les valeurs dites véridiques sont par exemple `99.99` et `"free"`. Voir le Chapître "Truthy & Falsy" dans le Chapître 2 pour plus d'informations.
 
-*Conditionals* exist in other forms besides the `if`. For example, the `switch` statement can be used as a shorthand for a series of `if..else` statements (see Chapter 2). Loops (see "Loops") use a *conditional* to determine if the loop should keep going or stop.
+Les *Conditions* existent sous d'autres formes en dehors des `if`. Par exemple, la déclation `switch` peut être utilisée comme raccourci pour une série de déclarations `if..else` (voir Chapître 2). Les boucles (voir "Boucles") utilisent une *condition* pour déterminer si la boucle doit continuer ou stopper.
 
-**Note:** For deeper information about the coercions that can occur implicitly in the test expressions of *conditionals*, see Chapter 4 of the *Types & Grammar* title of this series.
+**Remarque :** Pour creuser d'avantage le sujet de la coercition qui peut se produire implicitement dans les expressions de test d'une *condition*, voir le Chapître 4 de *Types & Grammaire* de cette collection.
 
-## Loops
+## Boucles
 
-During busy times, there's a waiting list for customers who need to speak to the phone store employee. While there's still people on that list, she just needs to keep serving the next customer.
+Lors des heures de pointes, il y a une file d'attente de clients qui ont besoin de parler à l'employé de magasin de téléphone. Bien qu'il est toujours des gens sur cette file, l'employé doit continuer à servir le client suivant.
 
-Repeating a set of actions until a certain condition fails -- in other words, repeating only while the condition holds -- is the job of programming loops; loops can take different forms, but they all satisfy this basic behavior.
+Répéter une série d'actions jusqu'à ce qu'une condition échoue -- en d'autres mots, répéter seulement pendant que la condition est maintenue -- est le travail d'une boucle de programmation; les boucles peuvent prendre différentes formes, mais elles répondent toutes à une comportement de base.
 
-A loop includes the test condition as well as a block (typically as `{ .. }`). Each time the loop block executes, that's called an *iteration*.
+Une boucle inclue une condition de test ainsi qu'un bloc (typiquement `{ .. }`). Chaque fois que le bloc de la boucle s'éxecute, on appel ça une *itération*.
 
-For example, the `while` loop and the `do..while` loop forms illustrate the concept of repeating a block of statements until a condition no longer evaluates to `true`:
+Par exemple, les boucles de forme `while` (tant que) et `do..while` (faire..tant que) illustrent le concept de répétition d'un bloc de déclaration jusqu'à ce que la condition ne soit plus `true` (vraie) :
 
 ```js
-while (numOfCustomers > 0) {
-	console.log( "How may I help you?" );
+while (nombreDeClients > 0) {
+	console.log( "Comment puis-je vous aider ?" );
 
-	// help the customer...
+	// aider le client...
 
-	numOfCustomers = numOfCustomers - 1;
+	nombreDeClients = nombreDeClients - 1;
 }
 
-// versus:
+// à l'inverse de
 
 do {
-	console.log( "How may I help you?" );
+	console.log( "Comment puis-je vous aider ?" );
 
-	// help the customer...
+	// aider le client...
 
-	numOfCustomers = numOfCustomers - 1;
-} while (numOfCustomers > 0);
+	nombreDeClients = nombreDeClients - 1;
+} while (nombreDeClients > 0);
 ```
 
-The only practical difference between these loops is whether the conditional is tested before the first iteration (`while`) or after the first iteration (`do..while`).
+La seule différence pratique entre ces deux boucles est que dans l'une d'entre elle, la condition est testée avant la première itération (`while`), et dans l'autre, la condition est testée après la première itération (`do..while`).
 
-In either form, if the conditional tests as `false`, the next iteration will not run. That means if the condition is initially `false`, a `while` loop will never run, but a `do..while` loop will run just the first time.
+Dans un cas comme dans l'aitre,  si le test de la condition est `false`, la prochaine itération n'aura pas lieu. Cela siginifie que si la condition est initiallement `false`, une boucle `while` ne s'éxecutera jamais, alors qu'une boucle `do..while` s'éxecutera juste la première fois.
 
-Sometimes you are looping for the intended purpose of counting a certain set of numbers, like from `0` to `9` (ten numbers). You can do that by setting a loop iteration variable like `i` at value `0` and incrementing it by `1` each iteration.
+Parfois, vous utilisez une boucle dans le but de parcourir un certain ensemble de chiffres, comme par exemple l'ensemble de `0` à `9` (10 chiffres). Vous pouvez faire cela en affectant une variable d'itération de boucle comme `i` à la valeur `0` et l'incrémenter d'`1` à chaque itération.
 
-**Warning:** For a variety of historical reasons, programming languages almost always count things in a zero-based fashion, meaning starting with `0` instead of `1`. If you're not familiar with that mode of thinking, it can be quite confusing at first. Take some time to practice counting starting with `0` to become more comfortable with it!
+**Attention :** Pour plusieurs de raisons historiques, les langage des programmation comptent presque toujours les choses en commençant par zero, c'est à dire qu'ils commencent avec `0` au lieu de `1`. Si ce mode de pensée ne vous est pas familier, cela peut être déroutant au début. Prennez le temps de pratiquer à compter à partir de `0` afin de vous sentir plus à l'aise !
 
-The conditional is tested on each iteration, much as if there is an implied `if` statement inside the loop.
+La condition est testée au moment de chaque itération, presque comme si il y avait une déclaration `if` dans la boucle.
 
-We can use JavaScript's `break` statement to stop a loop. Also, we can observe that it's awfully easy to create a loop that would otherwise run forever without a `break`ing mechanism.
+Nous pouvons utiliser la déclaration `break` pour stopper une boucle. Aussi, on pourra observer qu'il est terriblement facile de créer une boucle qui continuerait pour toujours sans une mécanique de `break`.
 
-Let's illustrate:
+Illustration :
 
 ```js
 var i = 0;
 
-// a `while..true` loop would run forever, right?
+// une boucle `while..true` qui bouclerait pour toujours, pas vrai ?
 while (true) {
-	// stop the loop?
+	// stooper la boucle ?
 	if ((i <= 9) === false) {
 		break;
 	}
@@ -566,9 +570,9 @@ while (true) {
 // 0 1 2 3 4 5 6 7 8 9
 ```
 
-**Warning:** This is not necessarily a practical form you'd want to use for your loops. It's presented here for illustration purposes only.
+**Attention :** Ceci n'est pas nécessairement une forme pratique d'utilisation des boucles. C'est présenté ici à titre d'illustration seulement.
 
-While a `while` (or `do..while`) can accomplish the task manually, there's another syntactic form called a `for` loop for just that purpose:
+Alors qu'un `while` (ou `do..while`) peuvent accomplir la tâche manuellement, il existe une autre forme syntaxique appelée une boucle `for` (pour) pour ce but précis :
 
 ```js
 for (var i = 0; i <= 9; i = i + 1) {
@@ -577,9 +581,11 @@ for (var i = 0; i <= 9; i = i + 1) {
 // 0 1 2 3 4 5 6 7 8 9
 ```
 
-As you can see, in both cases the conditional `i <= 9` is `true` for the first 10 iterations (`i` of values `0` through `9`) of either loop form, but becomes `false` once `i` is value `10`.
+Comme vous le voyez, dans les deux cas, la condition `i <= 9` est `true` pour les 10 premières itérations (`i` prennant les valeurs `0` à `9`) dans l'une et l'autre forme de boucle, mais devient `false` une fois que `i` prend la valeur `10`.
 
 The `for` loop has three clauses: the initialization clause (`var i=0`), the conditional test clause (`i <= 9`), and the update clause (`i = i + 1`). So if you're going to do counting with your loop iterations, `for` is a more compact and often easier form to understand and write.
+
+
 
 There are other specialized loop forms that are intended to iterate over specific values, such as the properties of an object (see Chapter 2) where the implied conditional test is just whether all the properties have been processed. The "loop until a condition fails" concept holds no matter what the form of the loop.
 
