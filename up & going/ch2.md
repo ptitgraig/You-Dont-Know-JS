@@ -1,17 +1,16 @@
-# Tu connais pas le JS: Up & Going
-# Chapter 2: Into JavaScript
+# You Don't Know JS: Mise en route
+# Chapître 2: Dans le JavaScript
 
-Dans le chapitre précédent, j'ai fait l'introduction des bloc de base de construction d'un programme, tels que les variables, les boucles, les conditions et les fonctions. Bien sûr, tout le code affiché est écrit en JavaScript. Mais dans ce chapître, nous voulons nous focaliser de manière plus spécifique sur les choses que tu as besoin de savoir au sujet de JavaScript afin de mettre le pied à l'étrier en tant que développeur JS.
+Dans le chapître précédent, j'ai fait l'introduction des blocs de base de construction d'un programme, tels que les variables, les boucles, les conditions et les fonctions. Bien sûr, tout le code affiché est écrit en JavaScript. Mais dans ce chapître, nous voulons nous focaliser de manière plus spécifique sur les choses que vous avez besoin de savoir au sujet de JavaScript afin de mettre le pied à l'étrier en tant que développeur JS.
 
 Nous allons présenter plusieurs concepts dans ce chapître qui ne seront explorés que plus tard dans d'autres livres *YDKJS*.
 You pouvez considerer ce chapître comme un survol des différents sujets couverts en détail au travers du reste de cette série.
 
-Si vous êtes nouveau en JavaScript, attendez-vous à passer un peu de temps 
-Especially if you're new to JavaScript, you should expect to spend quite a bit of time reviewing the concepts and code examples here multiple times. Any good foundation is laid brick by brick, so don't expect that you'll immediately understand it all the first pass through.
+Si vous êtes nouveau en JavaScript, attendez-vous à passer un peu de temps à passer en revue plusieurs fois les concepts et exemples de code. Toute bonne fondation est posée brique par brique, donc ne vous attendez pas à tout comprendre lors de la première passe !
 
-Your journey to deeply learn JavaScript starts here.
+Votre voyage pour apprendre profondemment JavaScript commence là.
 
-**Note:** As I said in Chapter 1, you should definitely try all this code yourself as you read and work through this chapter. Be aware that some of the code here assumes capabilities introduced in the newest version of JavaScript at the time of this writing (commonly referred to as "ES6" for the 6th edition of ECMAScript -- the official name of the JS specification). If you happen to be using an older, pre-ES6 browser, the code may not work. A recent update of a modern browser (like Chrome, Firefox, or IE) should be used.
+**Remarque :** Comme je l'ai dit dans le chapître 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapître. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" for 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
 
 ## Values & Types
 
@@ -101,7 +100,7 @@ obj[b];			// "hello world"
 obj["b"];		// 42
 ```
 
-**Note:** For more information on JavaScript `object`s, see the *this & Object Prototypes* title of this series, specifically Chapter 3.
+ For more information on JavaScript `object`s, see the *this & Object Prototypes* title of this series, specifically Chapter 3.
 
 There are a couple of other value types that you will commonly interact with in JavaScript programs: *array* and *function*. But rather than being proper built-in types, these should be thought of more like subtypes -- specialized versions of the `object` type.
 
@@ -124,7 +123,7 @@ arr.length;		// 3
 typeof arr;		// "object"
 ```
 
-**Note:** Languages that start counting at zero, like JS does, use `0` as the index of the first element in the array.
+**Remarque :** Languages that start counting at zero, like JS does, use `0` as the index of the first element in the array.
 
 It may be helpful to think of `arr` visually:
 
@@ -154,7 +153,7 @@ typeof foo.bar;		// "string"
 
 Again, functions are a subtype of `objects` -- `typeof` returns `"function"`, which implies that a `function` is a main type -- and can thus have properties, but you typically will only use function object properties (like `foo.bar`) in limited cases.
 
-**Note:** For more information on JS values and their types, see the first two chapters of the *Types & Grammar* title of this series.
+**Remarque :** For more information on JS values and their types, see the first two chapters of the *Types & Grammar* title of this series.
 
 ### Built-In Type Methods
 
@@ -179,7 +178,7 @@ When you use a primitive value like `"hello world"` as an `object` by referencin
 
 A `string` value can be wrapped by a `String` object, a `number` can be wrapped by a `Number` object, and a `boolean` can be wrapped by a `Boolean` object. For the most part, you don't need to worry about or directly use these object wrapper forms of the values -- prefer the primitive value forms in practically all cases and JavaScript will take care of the rest for you.
 
-**Note:** For more information on JS natives and "boxing," see Chapter 3 of the *Types & Grammar* title of this series. To better understand the prototype of an object, see Chapter 5 of the *this & Object Prototypes* title of this series.
+**Remarque :** For more information on JS natives and "boxing," see Chapter 3 of the *Types & Grammar* title of this series. To better understand the prototype of an object, see Chapter 5 of the *this & Object Prototypes* title of this series.
 
 ### Comparing Values
 
@@ -289,7 +288,7 @@ b == c;		// true
 a == b;		// false
 ```
 
-**Note:** For more information about the `==` equality comparison rules, see the ES5 specification (section 11.9.3) and also consult Chapter 4 of the *Types & Grammar* title of this series; see Chapter 2 for more information about values versus references.
+**Remarque :** For more information about the `==` equality comparison rules, see the ES5 specification (section 11.9.3) and also consult Chapter 4 of the *Types & Grammar* title of this series; see Chapter 2 for more information about values versus references.
 
 #### Inequality
 
@@ -327,7 +326,7 @@ Wait, how can all three of those comparisons be `false`? Because the `b` value i
 
 The `==` comparison fails for a different reason. `a == b` could fail if it's interpreted either as `42 == NaN` or `"42" == "foo"` -- as we explained earlier, the former is the case.
 
-**Note:** For more information about the inequality comparison rules, see section 11.8.5 of the ES5 specification and also consult Chapter 4 of the *Types & Grammar* title of this series.
+**Remarque :** For more information about the inequality comparison rules, see section 11.8.5 of the ES5 specification and also consult Chapter 4 of the *Types & Grammar* title of this series.
 
 ## Variables
 
@@ -337,7 +336,7 @@ An identifier must start with `a`-`z`, `A`-`Z`, `$`, or `_`. It can then contain
 
 Generally, the same rules apply to a property name as to a variable identifier. However, certain words cannot be used as variables, but are OK as property names. These words are called "reserved words," and include the JS keywords (`for`, `in`, `if`, etc.) as well as `null`, `true`, and `false`.
 
-**Note:** For more information about reserved words, see Appendix A of the *Types & Grammar* title of this series.
+**Remarque :** For more information about reserved words, see Appendix A of the *Types & Grammar* title of this series.
 
 ### Function Scopes
 
@@ -438,7 +437,7 @@ foo();
 
 Because of using `let` instead of `var`, `b` will belong only to the `if` statement and thus not to the whole `foo()` function's scope. Similarly, `c` belongs only to the `while` loop. Block scoping is very useful for managing your variable scopes in a more fine-grained fashion, which can make your code much easier to maintain over time.
 
-**Note:** For more information about scope, see the *Scope & Closures* title of this series. See the *ES6 & Beyond* title of this series for more information about `let` block scoping.
+**Remarque :** For more information about scope, see the *Scope & Closures* title of this series. See the *ES6 & Beyond* title of this series for more information about `let` block scoping.
 
 ## Conditionals
 
@@ -518,7 +517,7 @@ If the test expression (`a > 41` here) evaluates as `true`, the first clause (`"
 
 The conditional operator doesn't have to be used in an assignment, but that's definitely the most common usage.
 
-**Note:** For more information about testing conditions and other patterns for `switch` and `? :`, see the *Types & Grammar* title of this series.
+**Remarque :** For more information about testing conditions and other patterns for `switch` and `? :`, see the *Types & Grammar* title of this series.
 
 ## Strict Mode
 
@@ -571,7 +570,7 @@ If you turn on strict mode in your code, and you get errors, or code starts beha
 
 Not only will strict mode keep your code to a safer path, and not only will it make your code more optimizable, but it also represents the future direction of the language. It'd be easier on you to get used to strict mode now than to keep putting it off -- it'll only get harder to convert later!
 
-**Note:** For more information about strict mode, see the Chapter 5 of the *Types & Grammar* title of this series.
+**Remarque :** For more information about strict mode, see the Chapter 5 of the *Types & Grammar* title of this series.
 
 ## Functions As Values
 
@@ -810,7 +809,7 @@ There are four rules for how `this` gets set, and they're shown in those last fo
 
 Bottom line: to understand what `this` points to, you have to examine how the function in question was called. It will be one of those four ways just shown, and that will then answer what `this` is.
 
-**Note:** For more information about `this`, see Chapters 1 and 2 of the *this & Object Prototypes* title of this series.
+**Remarque :** For more information about `this`, see Chapters 1 and 2 of the *this & Object Prototypes* title of this series.
 
 ## Prototypes
 
@@ -846,7 +845,7 @@ This linkage may seem like a strange feature of the language. The most common wa
 
 But a more natural way of applying prototypes is a pattern called "behavior delegation," where you intentionally design your linked objects to be able to *delegate* from one to the other for parts of the needed behavior.
 
-**Note:** For more information about prototypes and behavior delegation, see Chapters 4-6 of the *this & Object Prototypes* title of this series.
+**Remarque :** For more information about prototypes and behavior delegation, see Chapters 4-6 of the *this & Object Prototypes* title of this series.
 
 ## Old & New
 
@@ -876,7 +875,7 @@ if (!Number.isNaN) {
 
 The `if` statement guards against applying the polyfill definition in ES6 browsers where it will already exist. If it's not already present, we define `Number.isNaN(..)`.
 
-**Note:** The check we do here takes advantage of a quirk with `NaN` values, which is that they're the only value in the whole language that is not equal to itself. So the `NaN` value is the only one that would make `x !== x` be `true`.
+**Remarque :** The check we do here takes advantage of a quirk with `NaN` values, which is that they're the only value in the whole language that is not equal to itself. So the `NaN` value is the only one that would make `x !== x` be `true`.
 
 Not all new features are fully polyfillable. Sometimes most of the behavior can be polyfilled, but there are still small deviations. You should be really, really careful in implementing a polyfill yourself, to make sure you are adhering to the specification as strictly as possible.
 

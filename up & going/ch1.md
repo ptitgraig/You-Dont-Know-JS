@@ -1,5 +1,5 @@
 # You Don't Know JS: Mettre le pied à l'étrier
-# Chapter 1: Dans la programmation
+# Chapître 1: Dans la programmation
 
 Bienvenue dans la serie *You Don't Know JS* (*YDKJS*).
 
