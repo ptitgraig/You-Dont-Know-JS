@@ -12,18 +12,18 @@ Votre voyage pour apprendre profondemment JavaScript commence là.
 
 **Remarque :** Comme je l'ai dit dans le chapître 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapître. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" for 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
 
-## Values & Types
+## Valeurs & Types
 
-As we asserted in Chapter 1, JavaScript has typed values, not typed variables. The following built-in types are available:
+Comme nous l'avons affirmer dans le Chapître 1, JavaScript possède des valeurs typées, pas des variables typées. Les types imbriqués suivants sont disponibles :
 
 * `string`
 * `number`
 * `boolean`
-* `null` and `undefined`
+* `null` et `undefined`
 * `object`
-* `symbol` (new to ES6)
+* `symbol` (nouveau dans ES6)
 
-JavaScript provides a `typeof` operator that can examine a value and tell you what type it is:
+JavaScript fourni un opérateur `typeof` qui peut examiner une valeur et vous dire de quel type il s'agit :
 
 ```js
 var a;
@@ -48,19 +48,19 @@ a = { b: "c" };
 typeof a;				// "object"
 ```
 
-The return value from the `typeof` operator is always one of six (seven as of ES6! - the "symbol" type) string values. That is, `typeof "abc"` returns `"string"`, not `string`.
+La valeur de retour de l'opérateur `typeof` est toujours l'une des six (sept en ES6 ! - le type symbole) chaîne de caractères. C'est à dire, `typeof "abc"` returns `"string"`, et non pas `string`.
 
-Notice how in this snippet the `a` variable holds every different type of value, and that despite appearances, `typeof a` is not asking for the "type of `a`", but rather for the "type of the value currently in `a`." Only values have types in JavaScript; variables are just simple containers for those values.
+Remarquez comment dans cet extrait, la variable `a` contient tous les différents types de valeurs, et en dépit des apparences, `typeof a` ne demande pas le "type de `a`" mais plutôt le "type de la valeur qui est en ce moment dans `a`". Seule les valeurs ont des types en JavaScript; les variables sont de simples conteneurs pour ces valeurs.
 
-`typeof null` is an interesting case, because it errantly returns `"object"`, when you'd expect it to return `"null"`.
+`typeof null` est un cas intéresant parcequ'il retourne de manière erronée `"objet"` , alors qu'on s'attendrait à ce qu'il retourne `"null"`.
 
-**Warning:** This is a long-standing bug in JS, but one that is likely never going to be fixed. Too much code on the Web relies on the bug and thus fixing it would cause a lot more bugs!
+**Attention :** Il s'agit d'un bug qui est là depuis un moment en JS, mais qui a très peu de chance d'être corrigé. Il existe bien trop de code qui s'appuit sur ce bug et ainsi donc, le corriger causerait encore d'avantage de bugs !
 
-Also, note `a = undefined`. We're explicitly setting `a` to the `undefined` value, but that is behaviorally no different from a variable that has no value set yet, like with the `var a;` line at the top of the snippet. A variable can get to this "undefined" value state in several different ways, including functions that return no values and usage of the `void` operator.
+Aussi, notez `a = undefined`. Nous mettons explicitement `a` à la valeur `undefined`, mais cela n'a aucune différence comportementale avec une variable qui n'aurait aucune valeur, comme avec la ligne `var a;` au début de l'extrait de code. Une variable peut obtenir cet état "undefined" de plusieurs manières, comme par exemple les fonctions qui ne retourne aucune valeurs ou l'utilisation de l'opérateur `void`.
 
 ### Objects
 
-The `object` type refers to a compound value where you can set properties (named locations) that each hold their own values of any type. This is perhaps one of the most useful value types in all of JavaScript.
+Le type `objet` se réfère à une valeur composée à laquelle vous pouvez affecter des propriétés (que l'on nomme locations) qui possèdent toutes leurs propres valeurs de quelconque type.
 
 ```js
 var obj = {
@@ -78,11 +78,11 @@ obj["b"];	// 42
 obj["c"];	// true
 ```
 
-It may be helpful to think of this `obj` value visually:
+Il peut-être utile de représenter cette valeur `obj` visuellement :
 
 <img src="fig4.png">
 
-Properties can either be accessed with *dot notation* (i.e., `obj.a`) or *bracket notation* (i.e., `obj["a"]`). Dot notation is shorter and generally easier to read, and is thus preferred when possible.
+On peut accèder aux propriétés avec la *notation par point* (c'est à dire, `obj.a`) ou avec la *notation par crochets* (c'est à dire, `obj["a"]`). La notation par point est généralement facile à lire et ainsi préférable autant que possible.
 
 Bracket notation is useful if you have a property name that has special characters in it, like `obj["hello world!"]` -- such properties are often referred to as *keys* when accessed via bracket notation. The `[ ]` notation requires either a variable (explained next) or a `string` *literal* (which needs to be wrapped in `" .. "` or `' .. '`).
 
