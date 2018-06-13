@@ -14,7 +14,7 @@ Votre voyage pour apprendre profondemment JavaScript commence là.
 
 ## Valeurs & Types
 
-Comme nous l'avons affirmer dans le Chapître 1, JavaScript possède des valeurs typées, pas des variables typées. Les types imbriqués suivants sont disponibles :
+Comme nous l'avons affirmer dans le Chapître 1, JavaScript possède des valeurs typées, pas des variables typées. Les types natifs suivants sont disponibles :
 
 * `string`
 * `number`
@@ -102,7 +102,7 @@ obj["b"];		// 42
 
  Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapître 3.
 
-Il existe un certain nombre d'autres types de valeurs avec lesquels vous intéragirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types imbriqués de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
+Il existe un certain nombre d'autres types de valeurs avec lesquels vous intéragirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types natifs de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
 
 #### Tableaux
 
@@ -137,7 +137,7 @@ L'approche la meilleure et la plus naturelle est d'utiliser des tableaux pour le
 
 #### Fonctions
 
-The other `object` subtype you'll use all over your JS programs is a function:
+L'autre sous-type `object` que vous utiliserez dans vos programmes JS est la fonction :
 
 ```js
 function foo() {
@@ -151,15 +151,17 @@ typeof foo();		// "number"
 typeof foo.bar;		// "string"
 ```
 
-Again, functions are a subtype of `objects` -- `typeof` returns `"function"`, which implies that a `function` is a main type -- and can thus have properties, but you typically will only use function object properties (like `foo.bar`) in limited cases.
+Une fois de plus, les fonctions sont des sous-types d'`objects` -- `typeof` retourne `"function"` ce qui suggère qu'une `function` est un type majeur -- et peut donc avoir des propriétés, mais vous n'allez utilisé les propriétés des objets fonctions (comme `foo.bar`) dans très peu de cas.
 
-**Remarque :** For more information on JS values and their types, see the first two chapters of the *Types & Grammar* title of this series.
+**Remarque :** Pour plus d'informations sur les valeurs et leurs types en JS, voir les deux premiers chapître de *Types & Grammaire* de cette collection.
 
-### Built-In Type Methods
+### Méthodes des types natifs
 
 The built-in types and subtypes we've just discussed have behaviors exposed as properties and methods that are quite powerful and useful.
 
-For example:
+Les types natifs et sous-types, dont on vient de parler, ont des comportements qui sont exposés en tant que propriétés ainsi que des méthodes qui sont relativement puissantes et utiles.
+
+Par exemple :
 
 ```js
 var a = "hello world";
@@ -170,13 +172,15 @@ a.toUpperCase();		// "HELLO WORLD"
 b.toFixed(4);			// "3.1416"
 ```
 
-The "how" behind being able to call `a.toUpperCase()` is more complicated than just that method existing on the value.
+Le "comment" derrière le fait d'être capable d'appeler `a.toUpperCase()` est plus compliqué que simplement l'existance d'une méthode sur cette valeur.
 
-Briefly, there is a `String` (capital `S`) object wrapper form, typically called a "native," that pairs with the primitive `string` type; it's this object wrapper that defines the `toUpperCase()` method on its prototype.
+En gros, il existe une forme "wrapper" (ou enrobeur) d'objet nommé `String` (avec `S` majuscule), qu'on appel une "native", qui fait pair avec le type natif `string`; c'est cet "enrobeur" d'objet qui définit la méthode `toUpperCase()` sur son prototype.
 
-When you use a primitive value like `"hello world"` as an `object` by referencing a property or method (e.g., `a.toUpperCase()` in the previous snippet), JS automatically "boxes" the value to its object wrapper counterpart (hidden under the covers).
+Quand vous utilisez une valeur native comme `"hello world"` en tant qu'objet en référencant une propriété ou une méthode (`a.toUpperCase()` dans l'extrait de code précédent), JS "emboîte" automatiquement la valeur dans sa contre-partie l'"enrobeur" d'objet (cachée sous le capot).
 
 A `string` value can be wrapped by a `String` object, a `number` can be wrapped by a `Number` object, and a `boolean` can be wrapped by a `Boolean` object. For the most part, you don't need to worry about or directly use these object wrapper forms of the values -- prefer the primitive value forms in practically all cases and JavaScript will take care of the rest for you.
+
+
 
 **Remarque :** For more information on JS natives and "boxing," see Chapter 3 of the *Types & Grammar* title of this series. To better understand the prototype of an object, see Chapter 5 of the *this & Object Prototypes* title of this series.
 
