@@ -82,11 +82,11 @@ Il peut-être utile de représenter cette valeur `obj` visuellement :
 
 <img src="fig4.png">
 
-On peut accèder aux propriétés avec la *notation par point* (c'est à dire, `obj.a`) ou avec la *notation par crochets* (c'est à dire, `obj["a"]`). La notation par point est généralement facile à lire et ainsi préférable autant que possible.
+On peut accèder aux propriétés avec la *notation par point* (c'est à dire, `obj.a`) ou avec la *notation par crochets* (c'est à dire, `obj["a"]`). La notation par point est généralement facile à lire et donc préférable autant que possible.
 
-Bracket notation is useful if you have a property name that has special characters in it, like `obj["hello world!"]` -- such properties are often referred to as *keys* when accessed via bracket notation. The `[ ]` notation requires either a variable (explained next) or a `string` *literal* (which needs to be wrapped in `" .. "` or `' .. '`).
+La notation par crochet est utile si le nom d'une propriété a des caractères spéciaux, comme `obj["hello world!"]` -- de telles propriétés sont souvent appelées *clés* quand on y accède via la notation par crochets. La notation `[]` requiert soit une variable (voir plus tard pour explication) ou une litérale de type `string` (qu'il faut entouré de `" .. "` ou `' .. '`).
 
-Of course, bracket notation is also useful if you want to access a property/key but the name is stored in another variable, such as:
+Evidemment, la notation par crochets est aussi utile si vous voulez accèder à une propriété/clé mais dont le nom est stocké dans une autre variable, tel que :
 
 ```js
 var obj = {
@@ -100,13 +100,13 @@ obj[b];			// "hello world"
 obj["b"];		// 42
 ```
 
- For more information on JavaScript `object`s, see the *this & Object Prototypes* title of this series, specifically Chapter 3.
+ Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapître 3.
 
-There are a couple of other value types that you will commonly interact with in JavaScript programs: *array* and *function*. But rather than being proper built-in types, these should be thought of more like subtypes -- specialized versions of the `object` type.
+Il existe un certain nombre d'autres types de valeurs avec lesquels vous intéragirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types imbriqués de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
 
-#### Arrays
+#### Tableaux
 
-An array is an `object` that holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions. For example:
+Un tableau est un `object` qui contient des valeurs (de quelconque type) non pas forcement dans des propriétés/clés nommées, mais plutôt dans des positions indéxées numériquement.
 
 ```js
 var arr = [
@@ -123,19 +123,19 @@ arr.length;		// 3
 typeof arr;		// "object"
 ```
 
-**Remarque :** Languages that start counting at zero, like JS does, use `0` as the index of the first element in the array.
+**Remarque :** Les langages qui commencent à compter à partir de zéro, comme le JS, utilise `0` comme index du premier élément.
 
-It may be helpful to think of `arr` visually:
+Il peut-être utile de représenter `arr` visuellement :
 
 <img src="fig5.png">
 
-Because arrays are special objects (as `typeof` implies), they can also have properties, including the automatically updated `length` property.
+Comme les tableaux sont des objets spéciaux (comme `typeof` le suggère), ils peuvent aussi avoir des propriétés, y compris la propriété mise à jour automatiquement `length` (longueur).
 
-You theoretically could use an array as a normal object with your own named properties, or you could use an `object` but only give it numeric properties (`0`, `1`, etc.) similar to an array. However, this would generally be considered improper usage of the respective types.
+Vous pourriez en théorie utiliser un tableau comme un objet normal avec vos propres propriétés nommées, ou bien vous pourriez utiliser `object` et seulement lui donner des propriétés numériques (`0`, `1`, etc.) comme à un tableau. Cependant, c'est considérer généralement comme une mauvaise utilisation des types respectifs.
 
-The best and most natural approach is to use arrays for numerically positioned values and use `object`s for named properties.
+L'approche la meilleure et la plus naturelle est d'utiliser des tableaux pour les valeurs positionnées numériquement et utiliser les `object`s pour les propriétés nommées.
 
-#### Functions
+#### Fonctions
 
 The other `object` subtype you'll use all over your JS programs is a function:
 
