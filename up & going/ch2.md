@@ -240,13 +240,13 @@ Toute autre valeur qui n'est pas liste "falsy" est "truthy". Voici quelques exem
 
 It's important to remember that a non-`boolean` value only follows this "truthy"/"falsy" coercion if it's actually coerced to a `boolean`. It's not all that difficult to confuse yourself with a situation that seems like it's coercing a value to a `boolean` when it's not.
 
-#### Equality
+#### Egalité
 
-There are four equality operators: `==`, `===`, `!=`, and `!==`. The `!` forms are of course the symmetric "not equal" versions of their counterparts; *non-equality* should not be confused with *inequality*.
+Il y a quatre opérateurs d'égalité : `==`, `===`, `!=`, et `!==`. Les formes `!` sont bien sûr les versions symétriques "non-égales" de leurs contreparties; la *non-égalité* ne devrait pas être confondue avec l'*inégalité*.
 
-The difference between `==` and `===` is usually characterized that `==` checks for value equality and `===` checks for both value and type equality. However, this is inaccurate. The proper way to characterize them is that `==` checks for value equality with coercion allowed, and `===` checks for value equality without allowing coercion; `===` is often called "strict equality" for this reason.
+La différence entre `==` et `===` est habituellement caractérisé par le fait que `==` vérifie l'égalité de valeur et `===` vérifie l'égalité de valeur et de type. Cependant, c'est imprécis. La façon convenable de les caractérisés est que `==` vérifie l'égalité de valeur avec la coercition autorisée, et `===` vérifie l'égalité de valeur sans permettre que la coercition intervienne; `===` est souvent appelé "égalité strict" pour cette raison.
 
-Consider the implicit coercion that's allowed by the `==` loose-equality comparison and not allowed with the `===` strict-equality:
+Considérez la coercition implicite qui est autorisée par la comparaison d'égalité-faible `==` et pas autorisé avec l'égalité-stricte `===` :
 
 ```js
 var a = "42";
@@ -256,15 +256,17 @@ a == b;			// true
 a === b;		// false
 ```
 
-In the `a == b` comparison, JS notices that the types do not match, so it goes through an ordered series of steps to coerce one or both values to a different type until the types match, where then a simple value equality can be checked.
+Dans la comparaison `a == b`, JS remarque que les types ne concordent pas, donc il passe par une série ordonnée d'étapes pour coercé l'une ou les deux  valeurs dans un type différent jusqu'à ce que les types concordent, là où alors une simple égalité de valeur peut être vérifiée.
 
-If you think about it, there's two possible ways `a == b` could give `true` via coercion. Either the comparison could end up as `42 == 42` or it could be `"42" == "42"`. So which is it?
+Si vous y réfléchissez, il y a deux façons possibles que `a == b` donne `true` via coercition. Soit on fini par comparer `42 == 42` soit `"42" == "42"`. De laquelle s'agit-il ?
 
-The answer: `"42"` becomes `42`, to make the comparison `42 == 42`. In such a simple example, it doesn't really seem to matter which way that process goes, as the end result is the same. There are more complex cases where it matters not just what the end result of the comparison is, but *how* you get there.
+La réponse est : `"42"` devient `42`, pour effectuer la comparaison `42 == 42`. Dans un exemple si simple, ça n'a pas l'air d'avoir de l'importance de quelle manière le processus s'effectue, car au final le résultat est le même. Il existe des cas plus complexes où l'important n'est pas seulement le résultat mais *comment* on y arrive.
 
-The `a === b` produces `false`, because the coercion is not allowed, so the simple value comparison obviously fails. Many developers feel that `===` is more predictable, so they advocate always using that form and staying away from `==`. I think this view is very shortsighted. I believe `==` is a powerful tool that helps your program, *if you take the time to learn how it works.*
+Le `a === b` produit `false`, car la coercition n'est pas autorisé, donc la comparaison de simple valeur échoue évidemment. Plusieurs développeurs sentent que `===` est plus prévisible, donc ils insistent toujours sur l'utilisation de cette forme et préconisent de rester éloigner de la forme `==`. Je pense que cette perspective est vraiment étroite. Je crois que `==` est un outil puissant qui est utile dans vos programmes, *si vous prenez le temps d'apprendre comment ça marche.*
 
 We're not going to cover all the nitty-gritty details of how the coercion in `==` comparisons works here. Much of it is pretty sensible, but there are some important corner cases to be careful of. You can read section 11.9.3 of the ES5 specification (http://www.ecma-international.org/ecma-262/5.1/) to see the exact rules, and you'll be surprised at just how straightforward this mechanism is, compared to all the negative hype surrounding it.
+
+Nous n'allons pas couvrir tous les détails graveleux de comment la coercition fonctionne dans la comparaison `==`. La majeur partie a du sens, mais il existe des cas 
 
 To boil down a whole lot of details to a few simple takeaways, and help you know whether to use `==` or `===` in various situations, here are my simple rules:
 
