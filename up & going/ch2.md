@@ -178,27 +178,25 @@ En gros, il existe une forme "wrapper" (ou enrobeur) d'objet nommé `String` (av
 
 Quand vous utilisez une valeur native comme `"hello world"` en tant qu'objet en référencant une propriété ou une méthode (`a.toUpperCase()` dans l'extrait de code précédent), JS "emboîte" automatiquement la valeur dans sa contre-partie l'"enrobeur" d'objet (cachée sous le capot).
 
-A `string` value can be wrapped by a `String` object, a `number` can be wrapped by a `Number` object, and a `boolean` can be wrapped by a `Boolean` object. For the most part, you don't need to worry about or directly use these object wrapper forms of the values -- prefer the primitive value forms in practically all cases and JavaScript will take care of the rest for you.
+Une valeur `string` peut être wrappée par un objet `String`, un `number` peut être wrappé par un objet `Number`, et un `boolean` peut être wrappé par un objet `Boolean`. Le plus souvent, vous n'avez pas besoin de vous soucier d'utiliser directement cette forme d'objet wrappers de valeurs -- préférez la forme native dans pratiquement tous les cas et JavaScript prendra soin du reste pour vous.
 
+**Remarque :** Pour plus d'informations sur les natifs JS et l'"emboîtement", voir le Chapître 3 de *Types & Grammaire* de cette collection. Afin de mieux comprendre le prototype d'un objet, voir le Chapître 5 de *this & Prototypes d'Objets* de cette collection.
 
+### Comparer les valeurs
 
-**Remarque :** For more information on JS natives and "boxing," see Chapter 3 of the *Types & Grammar* title of this series. To better understand the prototype of an object, see Chapter 5 of the *this & Object Prototypes* title of this series.
+Il y a deux principaux types de comparaison de valeur dont vous aurez besoin dans vos programmes JS : *égalité* et *inégalité*. Le résultat de quelconque comparaison est une valeur `boolean` au sens strict (`true` ou `false`), quels que soient les types de valeurs comparés.
 
-### Comparing Values
+#### Coercition
 
-There are two main types of value comparison that you will need to make in your JS programs: *equality* and *inequality*. The result of any comparison is a strictly `boolean` value (`true` or `false`), regardless of what value types are compared.
+Nous avons vu brièvement la coercition dans le chapître 1, revisitons cela maintenant.
 
-#### Coercion
+La coercition se présente sous deux formes en JavaScript : *explicite* et *implicite*. La coercition explicite, c'est simplement quand vous pouvez voir de manière évidente dans le code qu'une conversion d'un type à un autre va se produire, alors que la coercition implicite est quand la conversion de type se passe plus comme un effet de bord d'une autre opération.
 
-We talked briefly about coercion in Chapter 1, but let's revisit it here.
+Vous avez probablement entendu dire que la "coercition c'est le mal" du fait qu'il y a clairement des endroites où la coercition peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
 
-Coercion comes in two forms in JavaScript: *explicit* and *implicit*. Explicit coercion is simply that you can see obviously from the code that a conversion from one type to another will occur, whereas implicit coercion is when the type conversion can happen as more of a non-obvious side effect of some other operation.
+La coercition n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec coercition de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapître 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
 
-You've probably heard sentiments like "coercion is evil" drawn from the fact that there are clearly places where coercion can produce some surprising results. Perhaps nothing evokes frustration from developers more than when the language surprises them.
-
-Coercion is not evil, nor does it have to be surprising. In fact, the majority of cases you can construct with type coercion are quite sensible and understandable, and can even be used to *improve* the readability of your code. But we won't go much further into that debate -- Chapter 4 of the *Types & Grammar* title of this series covers all sides.
-
-Here's an example of *explicit* coercion:
+Voici un exemple de coercition *explicite* :
 
 ```js
 var a = "42";
@@ -206,32 +204,32 @@ var a = "42";
 var b = Number( a );
 
 a;				// "42"
-b;				// 42 -- the number!
+b;				// 42 -- le nombre !
 ```
 
-And here's an example of *implicit* coercion:
+Et voici un exemple de coercition implicite :
 
 ```js
 var a = "42";
 
-var b = a * 1;	// "42" implicitly coerced to 42 here
+var b = a * 1;	// "42" coercé implicitement en 42 ici
 
 a;				// "42"
-b;				// 42 -- the number!
+b;				// 42 -- le nombre !
 ```
 
 #### Truthy & Falsy
 
-In Chapter 1, we briefly mentioned the "truthy" and "falsy" nature of values: when a non-`boolean` value is coerced to a `boolean`, does it become `true` or `false`, respectively?
+Dans le Chapître 1, nous avons brièvement mentionné la nature "truthy" et "falsy" des valeurs : quand une valeur non-`boolean` est contrainte en un `boolean`, est ce qu'elle devient `true` ou `false`, respectivement ?
 
-The specific list of "falsy" values in JavaScript is as follows:
+La liste des valeurs "falsy" en JavaScript est comme suit :
 
-* `""` (empty string)
-* `0`, `-0`, `NaN` (invalid `number`)
+* `""` (chaîne vide)
+* `0`, `-0`, `NaN` (`number` invalide)
 * `null`, `undefined`
 * `false`
 
-Any value that's not on this "falsy" list is "truthy." Here are some examples of those:
+Toute autre valeur qui n'est pas liste "falsy" est "truthy". Voici quelques exemples de celles-ci :
 
 * `"hello"`
 * `42`
