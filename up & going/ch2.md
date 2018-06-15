@@ -264,15 +264,13 @@ La réponse est : `"42"` devient `42`, pour effectuer la comparaison `42 == 42`.
 
 Le `a === b` produit `false`, car la coercition n'est pas autorisé, donc la comparaison de simple valeur échoue évidemment. Plusieurs développeurs sentent que `===` est plus prévisible, donc ils insistent toujours sur l'utilisation de cette forme et préconisent de rester éloigner de la forme `==`. Je pense que cette perspective est vraiment étroite. Je crois que `==` est un outil puissant qui est utile dans vos programmes, *si vous prenez le temps d'apprendre comment ça marche.*
 
-We're not going to cover all the nitty-gritty details of how the coercion in `==` comparisons works here. Much of it is pretty sensible, but there are some important corner cases to be careful of. You can read section 11.9.3 of the ES5 specification (http://www.ecma-international.org/ecma-262/5.1/) to see the exact rules, and you'll be surprised at just how straightforward this mechanism is, compared to all the negative hype surrounding it.
+Nous n'allons pas couvrir tous les détails de comment la coercition fonctionne dans la comparaison `==`. La majeur partie fait sens, mais il existe des cas particuliers auxquels il faut faire attention. Vous pouvez lire la section 11.9.3 de la specification ES5 (http://www.ecma-international.org/ecma-262/5.1/) pour voir les règles exactes, et vous serez surpris par combien cette mécanique est simple et direct, comparée à toute la hype qui l'entoure.
 
-Nous n'allons pas couvrir tous les détails graveleux de comment la coercition fonctionne dans la comparaison `==`. La majeur partie a du sens, mais il existe des cas 
+Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aider à savoir quand utiliser `==` ou `===` dans diverses situations, voici mes règles simples :
 
-To boil down a whole lot of details to a few simple takeaways, and help you know whether to use `==` or `===` in various situations, here are my simple rules:
-
-* If either value (aka side) in a comparison could be the `true` or `false` value, avoid `==` and use `===`.
-* If either value in a comparison could be of these specific values (`0`, `""`, or `[]` -- empty array), avoid `==` and use `===`.
-* In *all* other cases, you're safe to use `==`. Not only is it safe, but in many cases it simplifies your code in a way that improves readability.
+* Si une des valeurs de la comparaison (droite ou gauche de l'opérateur) a une chance d'être la valeur `true` ou `false`, évitez `==` et utilisez `===`
+* Si une des valeurs de la comparaison a une chance d'être ces valeurs spécifiques (`0`, `""`, or `[]` -- tableau vide), évitez `==` et utiliser `===`.
+* Dans *tous* les autres cas, vous êtes sauf pour utiliser `==`. Non seulement c'est sûr, mais dans de nombreux cas cela simplifie votre code d'une manière qui améliore la lisibilité.
 
 What these rules boil down to is requiring you to think critically about your code and about what kinds of values can come through variables that get compared for equality. If you can be certain about the values, and `==` is safe, use it! If you can't be certain about the values, use `===`. It's that simple.
 
