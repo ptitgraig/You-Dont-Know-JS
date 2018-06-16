@@ -269,16 +269,16 @@ Nous n'allons pas couvrir tous les détails de comment la coercition fonctionne 
 Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aider à savoir quand utiliser `==` ou `===` dans diverses situations, voici mes règles simples :
 
 * Si une des valeurs de la comparaison (droite ou gauche de l'opérateur) a une chance d'être la valeur `true` ou `false`, évitez `==` et utilisez `===`
-* Si une des valeurs de la comparaison a une chance d'être ces valeurs spécifiques (`0`, `""`, or `[]` -- tableau vide), évitez `==` et utiliser `===`.
+* Si une des valeurs de la comparaison a une chance d'être ces valeurs spécifiques (`0`, `""`, or `[]` -- tableau vide), évitez `==` et utilisez `===`.
 * Dans *tous* les autres cas, vous êtes sauf pour utiliser `==`. Non seulement c'est sûr, mais dans de nombreux cas cela simplifie votre code d'une manière qui améliore la lisibilité.
 
-What these rules boil down to is requiring you to think critically about your code and about what kinds of values can come through variables that get compared for equality. If you can be certain about the values, and `==` is safe, use it! If you can't be certain about the values, use `===`. It's that simple.
+Ces règles se résument à vous conduire à avoir un oeil critique sur votre code et à penser à quelles sortes de valeurs peuvent se présenter dans les variables qui sont comparées par égalité. Si vous êtes certains de ces valeurs, et que `==` est sûr, utilisez le ! Si vous n'êtes pas sûr des valeurs, utilisez `===`. C'est aussi simple que ça.
 
-The `!=` non-equality form pairs with `==`, and the `!==` form pairs with `===`. All the rules and observations we just discussed hold symmetrically for these non-equality comparisons.
+La forme de non-égalité `!=` va de pair avec `==`, et la forme `!==` va de pair avec `===`. Toutes les règles et observations dont nous venons de discuter s'appliquent symétriquement aux comparaisons de non-égalité.
 
-You should take special note of the `==` and `===` comparison rules if you're comparing two non-primitive values, like `object`s (including `function` and `array`). Because those values are actually held by reference, both `==` and `===` comparisons will simply check whether the references match, not anything about the underlying values.
+Vous devriez faire particulièrement attention aux règles de comparaison `==` et `===` si vous comparez deux valeurs non-primitives, comme `objects` (cela inclut `function` et `array`). Car ces valeurs sont tenuent pour référence, les deux comparaisons `==` et `===`  vérifieront simplement si les références correspondent, mais rien de ce qui est des valeurs sous-jacentes.
 
-For example, `array`s are by default coerced to `string`s by simply joining all the values with commas (`,`) in between. You might think that two `array`s with the same contents would be `==` equal, but they're not:
+Par exemple, les `array`s sont par défaut coercés en `string` par le simple fait de joindre toutes les valeurs avec des virgules (`,`). Il se peut que vous pensiez que deux `array`s avec le même contenu soient égaux avec `==`, mais en fait il ne le sont pas :
 
 ```js
 var a = [1,2,3];
@@ -290,9 +290,9 @@ b == c;		// true
 a == b;		// false
 ```
 
-**Remarque :** For more information about the `==` equality comparison rules, see the ES5 specification (section 11.9.3) and also consult Chapter 4 of the *Types & Grammar* title of this series; see Chapter 2 for more information about values versus references.
+**Remarque :** Pour plus d'informations sur les règles de comparaison d'égalité avec `==`, voir la spécification ES5 (section 11.9.3) et aussi consultez le Chapître 4 de *Types & Grammaire* de cette collection; voir le Chapître 2 pour plus d'informations sur ce qui différencie valeurs et références.
 
-#### Inequality
+#### Inégalité
 
 The `<`, `>`, `<=`, and `>=` operators are used for inequality, referred to in the specification as "relational comparison." Typically they will be used with ordinally comparable values like `number`s. It's easy to understand that `3 < 4`.
 
