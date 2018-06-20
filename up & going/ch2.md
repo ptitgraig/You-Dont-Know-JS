@@ -294,13 +294,13 @@ a == b;		// false
 
 #### Inégalité
 
-The `<`, `>`, `<=`, and `>=` operators are used for inequality, referred to in the specification as "relational comparison." Typically they will be used with ordinally comparable values like `number`s. It's easy to understand that `3 < 4`.
+Les opérateurs `<`, `>`, `<=`, et `>=` sont utilisés pour l'inégalité, référencés dans la spécification comme "comparaison relationnelle". Typiquement, ils seront utilisés avec des valeurs comparables ordinairement comme les `number`s. Il est facile de comprendre que `3 < 4`.
 
-But JavaScript `string` values can also be compared for inequality, using typical alphabetic rules (`"bar" < "foo"`).
+Mais les valeurs JavaScript `string` peuvent aussi être comparées par inégalité, en utilisant les règles typiques alphabétiques (`"bar" < "foo"`).
 
-What about coercion? Similar rules as `==` comparison (though not exactly identical!) apply to the inequality operators. Notably, there are no "strict inequality" operators that would disallow coercion the same way `===` "strict equality" does.
+Quant est-il de la coercition ? Des règles similaires comme la comparaison `==` (bien que pas exactement identique) s'appliquent aux opérateurs d'inégalité. Notez qu'il n'existe pas d'opérateurs de "strict inégalité" qui empêcheraient la coercition de la même manière que l'opérateur `===` le fait.
 
-Consider:
+Voyez :
 
 ```js
 var a = 41;
@@ -311,9 +311,9 @@ a < b;		// true
 b < c;		// true
 ```
 
-What happens here? In section 11.8.5 of the ES5 specification, it says that if both values in the `<` comparison are `string`s, as it is with `b < c`, the comparison is made lexicographically (aka alphabetically like a dictionary). But if one or both is not a `string`, as it is with `a < b`, then both values are coerced to be `number`s, and a typical numeric comparison occurs.
+Que se passe t-il ici ? Dans la section 11.8.5 de la spécification ES5, il est dit que si les deux valeurs dans une comparaison `<` sont des `string`s, comme dans `b < c`, la comparaison est faite lexicographiquement (soit alphabétiquement comme un dictionnaire). Mais si l'une ou les deux n'est pas une `string`, comme dans `a < b`, alors les deux valeurs sont coercées en `number`s, et typiquement une comparaison numérique a lieu.
 
-The biggest gotcha you may run into here with comparisons between potentially different value types -- remember, there are no "strict inequality" forms to use -- is when one of the values cannot be made into a valid number, such as:
+Le plus gros piège dans lequel vous pourriez tombé ici dans le cas de comparaison entre deux types de valeurs potentiellement différents -- souvenez-vous, il n'existe pas de formes d'"inégalité strict" utilisable -- est quand une des valeurs ne peut pas être changée en un nombre valide, tel que :
 
 ```js
 var a = 42;
@@ -324,25 +324,27 @@ a > b;		// false
 a == b;		// false
 ```
 
-Wait, how can all three of those comparisons be `false`? Because the `b` value is being coerced to the "invalid number value" `NaN` in the `<` and `>` comparisons, and the specification says that `NaN` is neither greater-than nor less-than any other value.
+Un instant, comment est-ce que ces trois comparaisons peuvent-elles être toutes `false` ? Parceque la valeur `b` est coercée en une "valeur numérique invalide" `NaN` dans les comparaisons `<` et `>`, et la spécification dit que `NaN` n'est ni supérieur ni inférieur à quelconque autre valeur.
 
-The `==` comparison fails for a different reason. `a == b` could fail if it's interpreted either as `42 == NaN` or `"42" == "foo"` -- as we explained earlier, the former is the case.
+La comparaison `==` échoue pour d'autres raisons. `a == b` a des chances d'échouer si elle est intérprétée comme `42 == NaN` ou `"42" == "foo"` -- comme nous l'avons expliqué précédemment, le premier est en effet le cas.
 
-**Remarque :** For more information about the inequality comparison rules, see section 11.8.5 of the ES5 specification and also consult Chapter 4 of the *Types & Grammar* title of this series.
+**Remarque :** Pour plus d'informations au sujet des règles de comparaisons d'inégalité, voir la section 11.8.5 de la spécification ES5 et consulter également le Chapître 4 de *Types & Grammaire* de cette collection.
 
 ## Variables
 
-In JavaScript, variable names (including function names) must be valid *identifiers*. The strict and complete rules for valid characters in identifiers are a little complex when you consider nontraditional characters such as Unicode. If you only consider typical ASCII alphanumeric characters, though, the rules are simple.
+En JavaScript, les noms de variables (de même que les noms de fonctions) doivent être des *identifiants* valides. Les règles strictes et complètes pour les caractères valides dans les identifiants sont un peu complexes quand on considère les caractères non-traditionnels tel que l'Unicdode. Cependant, si vous considérez uniquement les caractères alphanumériques ASCII typiques, les règles sont simples.
 
-An identifier must start with `a`-`z`, `A`-`Z`, `$`, or `_`. It can then contain any of those characters plus the numerals `0`-`9`.
+Un identifiant doit commencer avec `a`-`z`, `A`-`Z`, `$`, ou `_`. Il peut alors contenir n'importe quel caractère en plus des numéros `0`-`9`.
 
-Generally, the same rules apply to a property name as to a variable identifier. However, certain words cannot be used as variables, but are OK as property names. These words are called "reserved words," and include the JS keywords (`for`, `in`, `if`, etc.) as well as `null`, `true`, and `false`.
+Générallement, la même règle s'applique aussi bien à un nom de propriété qu'à un identifiant de variable. Cependant, certains mots ne peuvent pas être utilisés comme des variables, mais sont valides pour des noms de propriété. 
+Ces mots sont appelés "mots réservés", et incluent les mots-clés JS (`for`, `in`, `if`, etc.) ainsi que `null`, `true`, et `false`.
 
-**Remarque :** For more information about reserved words, see Appendix A of the *Types & Grammar* title of this series.
 
-### Function Scopes
+**Remarque :** Pour plus d'information sur les mots réservés, voir l'Appendice 1 de *Types et Grammaire* de cette collection.
 
-You use the `var` keyword to declare a variable that will belong to the current function scope, or the global scope if at the top level outside of any function.
+### Portées de fonction
+
+Vous pouvez utiliser le mot-clé `var` pour déclarer une variable qui appartiendra à la portée de la fonction en cours, ou à la portée globale si déclarée au niveau le plus haut en dehors de toute fonction.
 
 #### Hoisting
 
