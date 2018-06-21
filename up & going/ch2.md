@@ -346,37 +346,37 @@ Ces mots sont appelés "mots réservés", et incluent les mots-clés JS (`for`, 
 
 Vous pouvez utiliser le mot-clé `var` pour déclarer une variable qui appartiendra à la portée de la fonction en cours, ou à la portée globale si déclarée au niveau le plus haut en dehors de toute fonction.
 
-#### Hoisting
+#### Hissage (hoisting)
 
-Wherever a `var` appears inside a scope, that declaration is taken to belong to the entire scope and accessible everywhere throughout.
+A chaque fois qu'une `var` apparaît dans une portée, cette déclaration est prise  pour appertenir à la oprtée entière et accessible partout et tout au long.
 
-Metaphorically, this behavior is called *hoisting*, when a `var` declaration is conceptually "moved" to the top of its enclosing scope. Technically, this process is more accurately explained by how code is compiled, but we can skip over those details for now.
+De manière métaphorique, le comportement est appelé *hissage*, quand une déclaration `var` est conceptuellement "déplacée" en haut de sa portée englobante. Techniquement, ce processus est expliqué plus précisement par comment le code est compilé, mais nous pouvons passer ces détails pour le moment.
 
-Consider:
+Voyez :
 
 ```js
 var a = 2;
 
-foo();					// works because `foo()`
-						// declaration is "hoisted"
+foo();					// fonctionne parceque la 
+						// déclaration `foo()` est "hissée"
 
 function foo() {
 	a = 3;
 
 	console.log( a );	// 3
 
-	var a;				// declaration is "hoisted"
-						// to the top of `foo()`
+	var a;				// la déclaration a est "hissée"
+						// en haut de `foo()`
 }
 
 console.log( a );	// 2
 ```
 
-**Warning:** It's not common or a good idea to rely on variable *hoisting* to use a variable earlier in its scope than its `var` declaration appears; it can be quite confusing. It's much more common and accepted to use *hoisted* function declarations, as we do with the `foo()` call appearing before its formal declaration.
+**Attention :** Il ni d'usage ni une bonne idée de s'appuyer sur le *hissage* pour utiliser une variable plus tôt dans sa portée avant que sa déclaration n'apparaîsse; ça peut être assez déroutant. Il est beaucoup plus courant et accepté d'utiliser les déclarations de fonctions *hissées*, comme nous le fesons avec l'appel `foo()` qui apparaît avant sa déclaration formelle.
 
-#### Nested Scopes
+#### Portées imbriquées
 
-When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes. For example:
+Quand vous déclarer une variable, elle est disponible n'importe où dans cette portée, ainsi que dans les portées inférieures/intérieures. Par example :
 
 ```js
 function foo() {
@@ -402,22 +402,23 @@ function foo() {
 foo();
 ```
 
-Notice that `c` is not available inside of `bar()`, because it's declared only inside the inner `baz()` scope, and that `b` is not available to `foo()` for the same reason.
+Remarquez que `c` n'est pas disponible dans `bar()`, parcequ'elle déclaré seulement à l'intérieur de la portée de `baz()`, et que `b` n'est pas disponible à `foo()` pour la même raison.
 
-If you try to access a variable's value in a scope where it's not available, you'll get a `ReferenceError` thrown. If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode"). Let's take a look:
+Si vous essayez d'accéder à la valeur d'une variable dans une portée dans laquelle elle n'est pas disponible, vous recevrez une erreur `ReferenceError`. Si vous essayez de définir une variable qui n'a pas été déclarée, vous allez soit finir par créer une variable dans la portée globale (c'est mal !) ou recevoir une erreur, en fonction du "mode strict" (voir "Mode Strict"). Regardons ça de plus près :
+
 
 ```js
 function foo() {
-	a = 1;	// `a` not formally declared
+	a = 1;	// `a` n'est pas formellement déclarée
 }
 
 foo();
-a;			// 1 -- oops, auto global variable :(
+a;			// 1 -- oops, automatiquement en variable globale :(
 ```
 
-This is a very bad practice. Don't do it! Always formally declare your variables.
+C'est une très mauvaise pratique. Ne le faites pas ! Déclarer toujours vos variables formellement.
 
-In addition to creating declarations for variables at the function level, ES6 *lets* you declare variables to belong to individual blocks (pairs of `{ .. }`), using the `let` keyword. Besides some nuanced details, the scoping rules will behave roughly the same as we just saw with functions:
+En plus de créer des déclarations pour variables au niveau des fonctions, ES6 vous permet (*let* en anglais) de déclarer des variables qui n'appartiennet qu'à des blocs individuels (paires de `{ .. }`), en utilisant le mot clé `let`. Hormis quelques détails nuancés, les règles de portées seront grossièrement les mêmes comme nous l'avons vu avec les fonctions :
 
 ```js
 function foo() {
@@ -439,75 +440,75 @@ foo();
 // 5 7 9
 ```
 
-Because of using `let` instead of `var`, `b` will belong only to the `if` statement and thus not to the whole `foo()` function's scope. Similarly, `c` belongs only to the `while` loop. Block scoping is very useful for managing your variable scopes in a more fine-grained fashion, which can make your code much easier to maintain over time.
+Parcequ'on utilise `let` au lieu de `var`, `b` appartiendra seulement à la déclaration `if` et ainsi pas à toute la portée de la fonction `foo()`. De manière similaire, `c` appartient seulement à la boucle `while`. Le portée de bloc est très utile pour gérer les portées de vos variables d'une manière plus fine, ce qui rend votre code plus maintenable au fil du temps.
 
-**Remarque :** For more information about scope, see the *Scope & Closures* title of this series. See the *ES6 & Beyond* title of this series for more information about `let` block scoping.
+**Remarque :** Pour plus d'informations au sujet des portées, voir *Portées & Fermetures* dans cette collection. Voir *ES6 et au delà* de cette collection pour plus d'informations au sujet de la portée de bloc `let`.
 
-## Conditionals
+## Conditions
 
-In addition to the `if` statement we introduced briefly in Chapter 1, JavaScript provides a few other conditionals mechanisms that we should take a look at.
+En addition à la déclaration `if` que nous avons introduite brièvement dans le Chapître 1, JavaScript fourni quelques autres mécanismes de conditions auxquels on devrait jeter un oeil.
 
-Sometimes you may find yourself writing a series of `if..else..if` statements like this:
+Parfois, vous vous retrouverez à écrire une série de déclarations `if..else.if` comme cela :
 
 ```js
 if (a == 2) {
-	// do something
+	// faire quelque chose
 }
 else if (a == 10) {
-	// do another thing
+	// faire autre chose
 }
 else if (a == 42) {
-	// do yet another thing
+	// faire encore autre chose
 }
 else {
-	// fallback to here
+	// solution de repli ici
 }
 ```
 
-This structure works, but it's a little verbose because you need to specify the `a` test for each case. Here's another option, the `switch` statement:
+Cette structure fonctionne, mais elle est un peu verbeuse parcequ'il faut définir `un` test pour chaque cas. Voici une autre option, la déclaratiion `switch`:
 
 ```js
 switch (a) {
 	case 2:
-		// do something
+		// faire quelque chose
 		break;
 	case 10:
-		// do another thing
+		// faire autre chose
 		break;
 	case 42:
-		// do yet another thing
+		// faire encore autre chose
 		break;
 	default:
-		// fallback to here
+		// solution de repli ici
 }
 ```
 
-The `break` is important if you want only the statement(s) in one `case` to run. If you omit `break` from a `case`, and that `case` matches or runs, execution will continue with the next `case`'s statements regardless of that `case` matching. This so called "fall through" is sometimes useful/desired:
+Le `break` est important si vous voulez que les déclarations dans un `cas` uniquement s'executent. Si vous omettez le `break` d'un `case`, et que ce `case` concorde ou s'execute, l'execution continuera dans les prochaines déclarations `case` même si ce `case` ne concorde pas. Ce soit-disant "échec" est parfois voulu/désiré :
 
 ```js
 switch (a) {
 	case 2:
 	case 10:
-		// some cool stuff
+		// des trucs cools
 		break;
 	case 42:
-		// other stuff
+		// d'autres trucs
 		break;
 	default:
-		// fallback
+		// solution de repli
 }
 ```
 
-Here, if `a` is either `2` or `10`, it will execute the "some cool stuff" code statements.
+Ici, si `a` est soit `2` ou `10`, le code "des trucs cools" sera executé.
 
-Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator." It's like a more concise form of a single `if..else` statement, such as:
+Une autre forme de condition en JavaScript est l'"opérateur de condition", souvent appelé "opérateur ternaire". C'est comme une version plus concise de la simple déclaration `if..else`, telle que :
 
 ```js
 var a = 42;
 
 var b = (a > 41) ? "hello" : "world";
 
-// similar to:
+// similaire à :
 
 // if (a > 41) {
 //    b = "hello";
@@ -517,68 +518,68 @@ var b = (a > 41) ? "hello" : "world";
 // }
 ```
 
-If the test expression (`a > 41` here) evaluates as `true`, the first clause (`"hello"`) results, otherwise the second clause (`"world"`) results, and whatever the result is then gets assigned to `b`.
+Si l'expression de test (`a < 41`) est évaluée comme `true`, la première clause (`"hello"`) sera le résultat, sinon ça sera la seconde clause (`"world"`), et quelque soit le résultat, il sera ensuite affecté à `b`.
 
-The conditional operator doesn't have to be used in an assignment, but that's definitely the most common usage.
+L'opérateur de condition n'a pas à être utilisé dans un affectation, mais c'est généralement l'usage le plus commun.
 
-**Remarque :** For more information about testing conditions and other patterns for `switch` and `? :`, see the *Types & Grammar* title of this series.
+**Remarque :** Pour plus d'informations sur les conditions de test et autres pattern pour `switch` et `? :`, voir *Types & Grammaire* dans cette collection.
 
-## Strict Mode
+## Mode Strict
 
-ES5 added a "strict mode" to the language, which tightens the rules for certain behaviors. Generally, these restrictions are seen as keeping the code to a safer and more appropriate set of guidelines. Also, adhering to strict mode makes your code generally more optimizable by the engine. Strict mode is a big win for code, and you should use it for all your programs.
+ES5 a ajouté au langage le "mode strict", qui renforce les règles pour certains comportements. Généralement, ces restrictions sont perçues comme utile pour rendre le code plus sûr et comme un ensemble de lignes directrices. Aussi, le fait d'adhérer au mode strict rendra votre code généralement plus optimisable par le moteur. Le Mode Strict est un gros gain pour le code, et vous devriez l'utiliser dans tous vos programmes.
 
-You can opt in to strict mode for an individual function, or an entire file, depending on where you put the strict mode pragma:
+Vous pouvez choisir le mode strict pour une seule fonction, ou pour un fichier entier, en fonction d'où est-ce que vous mettez le pragma du mode strict.
 
 ```js
 function foo() {
 	"use strict";
 
-	// this code is strict mode
+	// ce code est en mode strict
 
 	function bar() {
-		// this code is strict mode
+		// ce code est en mode strict
 	}
 }
 
-// this code is not strict mode
+// ce code n'est pas en mode strict
 ```
 
-Compare that to:
+Comparez cela à :
 
 ```js
 "use strict";
 
 function foo() {
-	// this code is strict mode
+	// ce code est en mode strict
 
 	function bar() {
-		// this code is strict mode
+		// ce code est en mode strict
 	}
 }
 
-// this code is strict mode
+// ce code est en mode strict
 ```
 
-One key difference (improvement!) with strict mode is disallowing the implicit auto-global variable declaration from omitting the `var`:
+Une différence clé (amélioration !) avec le mode strict est qu'il intérdit la déclaration implicite de variable globale automatique qui se produit quand on oubli le `var` :
 
 ```js
 function foo() {
-	"use strict";	// turn on strict mode
-	a = 1;			// `var` missing, ReferenceError
+	"use strict";	// enclenchement du mode strict
+	a = 1;			// `var` manquant, ReferenceError
 }
 
 foo();
 ```
 
-If you turn on strict mode in your code, and you get errors, or code starts behaving buggy, your temptation might be to avoid strict mode. But that instinct would be a bad idea to indulge. If strict mode causes issues in your program, almost certainly it's a sign that you have things in your program you should fix.
+Si vous enclenchez le mode strict dans votre code, et que vous recevez des erreurs, ou que votre code commence à se comporter étrangement, vous serez sûrement tenter d'éviter le mode strict. Mais ça serait une mauvaise idée de céder à cet instint. Si le mode strict provoque des problèmes dans votre programme, c'est un signe quasi-sûr qu'il a des choses à corriger dans votre programme.
 
-Not only will strict mode keep your code to a safer path, and not only will it make your code more optimizable, but it also represents the future direction of the language. It'd be easier on you to get used to strict mode now than to keep putting it off -- it'll only get harder to convert later!
+Non seulement le mode strict garde votre code sur le droit chemin, mais non seulement il le rendra plus optimisable, mais il représente aussi la direction future du langage. Il serait plus simple pour vous de vous habituer au mode strict maintenant que de sans cesse le repousser -- il sera juste plus dur de s'y mettre plus tard !
 
-**Remarque :** For more information about strict mode, see the Chapter 5 of the *Types & Grammar* title of this series.
+**Remarque :** Pour plus d'informations sur le mode strict, voir le Chapître 5 de *Types & Grammaire* de cette collection.
 
-## Functions As Values
+## Utiliser les fonctions comme valeurs
 
-So far, we've discussed functions as the primary mechanism of *scope* in JavaScript. You recall typical `function` declaration syntax as follows:
+Jusque là, nous avons parler des fonctions comme étant le principal mécanisme de *portée* en JavaScript. On se souvient de la syntaxe de la déclaration `function` comme ci-dessous :
 
 ```js
 function foo() {
@@ -586,13 +587,13 @@ function foo() {
 }
 ```
 
-Though it may not seem obvious from that syntax, `foo` is basically just a variable in the outer enclosing scope that's given a reference to the `function` being declared. That is, the `function` itself is a value, just like `42` or `[1,2,3]` would be.
+Bien que cela ne paraîsse pas évident en regardant la syntaxe, `foo` est en fait juste une variable située dans la portée englobante extérieure à laquelle est donnée une référence à la `function` déclarée. Ainsi, la `function` elle-même est une valeur, juste comme `42` ou `[1,2,3]` le seraient.
 
-This may sound like a strange concept at first, so take a moment to ponder it. Not only can you pass a value (argument) *to* a function, but *a function itself can be a value* that's assigned to variables, or passed to or returned from other functions.
+Cela peut sembler être un concept un peu étrange à première vue, donc prenez un temps pour y songer. Non seulement vous pouvez passer une valeur (argument) *à* une fonction, mais *une fonction elle-même* peut être une valeur, assignable à des variables, ou passée d'autres fonctions ou une retournée d'autres fonctions.
 
-As such, a function value should be thought of as an expression, much like any other value or expression.
+Ainsi, une fonction devrait être considérer comme une expression, tout comme quelconque autre valeur ou expression.
 
-Consider:
+Considérez :
 
 ```js
 var foo = function() {
@@ -604,17 +605,17 @@ var x = function bar(){
 };
 ```
 
-The first function expression assigned to the `foo` variable is called *anonymous* because it has no `name`.
+La première expression de fonction assigné à la variable `foo` est appelée *anonyme* parcequ'elle n'a pas de `nom`.
 
-The second function expression is *named* (`bar`), even as a reference to it is also assigned to the `x` variable. *Named function expressions* are generally more preferable, though *anonymous function expressions* are still extremely common.
+La seconde expression de fonction est *nommée* (`bar`), et on lui a référencé `x` comme variable assignée. Les *expressions de fonction nommées* sont généralement préférables, bien que les *expressions de fonction anonymes* soient encore très courantes.
 
-For more information, see the *Scope & Closures* title of this series.
+Pour plus d'information, voir *Portée & Fermetures* de cette collection.
 
-### Immediately Invoked Function Expressions (IIFEs)
+### Expression de Fonction Invoquée Immédiatement (IIFEs en anglais)
 
-In the previous snippet, neither of the function expressions are executed -- we could if we had included `foo()` or `x()`, for instance.
+Dans l'extrait de code précédent, aucun des expressions de fonction n'est executée -- nous le pourrions seulement si nous avions inclut `foo()` ou `x()`, par exemple.
 
-There's another way to execute a function expression, which is typically referred to as an *immediately invoked function expression* (IIFE):
+Il existe une autre manière d'excuter une expression de fonction, qu'on appel plus généralement *expression de fonction executée immédiatement* (IIFE) :
 
 ```js
 (function IIFE(){
@@ -623,27 +624,27 @@ There's another way to execute a function expression, which is typically referre
 // "Hello!"
 ```
 
-The outer `( .. )` that surrounds the `(function IIFE(){ .. })` function expression is just a nuance of JS grammar needed to prevent it from being treated as a normal function declaration.
+La notation `( .. )` extérieure qui entoure l'expression de fonction `(function IIFE(){ .. })` est juste une nuance de grammaire JS requise pour prévenir son traitement comme une déclaration de fonction normale.
 
-The final `()` on the end of the expression -- the `})();` line -- is what actually executes the function expression referenced immediately before it.
+Le `()` à la fin de l'expression -- la ligne `})();` -- est ce qui en fait exécute l'expression de fonction référencée immédiatement avant.
 
-That may seem strange, but it's not as foreign as first glance. Consider the similarities between `foo` and `IIFE` here:
+Ca peut paraître étrange, mais ça n'est pas aussi bizarre que ça en à l'air au premier coup d'oeil. Voyez les similitudes entre `foo` et `IIFE` ici :
 
 ```js
 function foo() { .. }
 
-// `foo` function reference expression,
-// then `()` executes it
+// expression de fonction en référence à `foo`,
+// puis `()` l'exécute
 foo();
 
-// `IIFE` function expression,
-// then `()` executes it
+// expression de fonction `IIFE`,
+// puis `()` l'exécute
 (function IIFE(){ .. })();
 ```
 
-As you can see, listing the `(function IIFE(){ .. })` before its executing `()` is essentially the same as including `foo` before its executing `()`; in both cases, the function reference is executed with `()` immediately after it.
+Comme vous pouvez le voir, écrire le `(function IIFE(){ .. })` avant son `()` exécuteur est essentiellement la même chose que d'inclure `foo` avant son exécuteur `()`; dans les deux cas, la référence à la fonction est exécutée avec `()` immédiatement après.
 
-Because an IIFE is just a function, and functions create variable *scope*, using an IIFE in this fashion is often used to declare variables that won't affect the surrounding code outside the IIFE:
+Puisqu'une IIFE est juste une fonction, et que les fonctions créent des *portées* de variables, utiliser une IIFE de cette manière est souvent utiliser pour déclarer des variables qui n'affecterons pas le code en dehors de la IIFE :
 
 ```js
 var a = 42;
@@ -656,7 +657,7 @@ var a = 42;
 console.log( a );		// 42
 ```
 
-IIFEs can also have return values:
+Les IIFEs peuvent aussi avoir des valeurs de retour :
 
 ```js
 var x = (function IIFE(){
@@ -666,65 +667,66 @@ var x = (function IIFE(){
 x;	// 42
 ```
 
-The `42` value gets `return`ed from the `IIFE`-named function being executed, and is then assigned to `x`.
+La valeur `42` est retournée par la fonction nommée `IIFE`, qui elle-même est executée, puis assignée à `x`;
 
-### Closure
+### Fermetures
 
-*Closure* is one of the most important, and often least understood, concepts in JavaScript. I won't cover it in deep detail here, and instead refer you to the *Scope & Closures* title of this series. But I want to say a few things about it so you understand the general concept. It will be one of the most important techniques in your JS skillset.
 
-You can think of closure as a way to "remember" and continue to access a function's scope (its variables) even once the function has finished running.
+La *fermeture*  est un des concepts les plus importants et souvent l'un des moins compris du JavaScript. Je ne vais pas le couvrir pas en détail ici, mais je vous invite à lire *Portée & Fermetures* de cette collection. Cependant je veux expliquer quelques petites choses à son sujet afin que vous comprenniez le concept général. C'est une des techniques les plus importantes pour votre ensemble de compétences en JavaScript.
 
-Consider:
+Vous pouvez penser à une fermeture comme à un moyen de se "souvenir" et continuer à accéder la portée d'une fonction (ses variables) même quand la fonction a fini son exécution.
+
+Voyez :
 
 ```js
-function makeAdder(x) {
-	// parameter `x` is an inner variable
+function faireAdditionneur(x) {
+	// le paramètre `x` est une variable interne
 
-	// inner function `add()` uses `x`, so
-	// it has a "closure" over it
-	function add(y) {
+	// la fonction interne `ajouter()` utilise `x`, donc
+	// elle possède une "fermeture" sur elle
+	function ajouter(y) {
 		return y + x;
 	};
 
-	return add;
+	return ajouter;
 }
 ```
 
-The reference to the inner `add(..)` function that gets returned with each call to the outer `makeAdder(..)` is able to remember whatever `x` value was passed in to `makeAdder(..)`. Now, let's use `makeAdder(..)`:
+La référence à la fonction interne `ajouter()`, qui est retournée à chaque appel à la fonction externe `faireAdditionneur(..)`, est capable de se souvenir de toute valeur `x` passée dans `faireAdditionneur(..)`. Maintenant, utilisons `faireAdditionneur(..)` :
 
 ```js
-// `plusOne` gets a reference to the inner `add(..)`
-// function with closure over the `x` parameter of
-// the outer `makeAdder(..)`
-var plusOne = makeAdder( 1 );
+// `plusUn` reçoit une référence à la fonction interne `ajouter()`
+// avec une fermeture sur le paramètre `x` de
+// la fonction externe `faireAdditionneur(..)`
+var plusUn = faireAdditionneur( 1 );
 
-// `plusTen` gets a reference to the inner `add(..)`
-// function with closure over the `x` parameter of
-// the outer `makeAdder(..)`
-var plusTen = makeAdder( 10 );
+// `plusDix` reçoit une référence à la fonction interne `add(..)`
+// avec une fermeture sur le paramètre `x` de
+// la fonction externe `faireAdditionneur(..)`
+var plusTen = faireAdditionneur( 10 );
 
-plusOne( 3 );		// 4  <-- 1 + 3
-plusOne( 41 );		// 42 <-- 1 + 41
+plusUn( 3 );		// 4  <-- 1 + 3
+plusUn( 41 );		// 42 <-- 1 + 41
 
-plusTen( 13 );		// 23 <-- 10 + 13
+plusDix( 13 );		// 23 <-- 10 + 13
 ```
 
-More on how this code works:
+Un peu plus d'explications sur comment fonctionne ce code :
 
-1. When we call `makeAdder(1)`, we get back a reference to its inner `add(..)` that remembers `x` as `1`. We call this function reference `plusOne(..)`.
-2. When we call `makeAdder(10)`, we get back another reference to its inner `add(..)` that remembers `x` as `10`. We call this function reference `plusTen(..)`.
-3. When we call `plusOne(3)`, it adds `3` (its inner `y`) to the `1` (remembered by `x`), and we get `4` as the result.
-4. When we call `plusTen(13)`, it adds `13` (its inner `y`) to the `10` (remembered by `x`), and we get `23` as the result.
+1. Quand nous appelons `faireAdditionneur(1)`, nous recevons en retour une référence à sa fonction interne `ajouter()` qui se souvient de `x` comme  valeur `1`. Nous appelons cette référence à la fonction : `plusUn(..)`.
+2. Quand nous appelons `faireAdditionneur(10)`, nous recevons une autre référence à sa fonction interne `add()` qui se souvient de `x` comme valeur `10`. Nous appelons cette référence à la fonction : `plusDix()`.
+3. Quand nous appelons `plusUn(3)`, ça ajoute `3` (son `y` interne) à `1` (souvenu par `x`), et nous obtenons `4` en résultat.
+4. Quand nous appelons `plusDix(13)`, ça ajoute `13` (son `y` interne) à `1` (souvenu par `x`), et nous obtenons `23` en résultat.
 
-Don't worry if this seems strange and confusing at first -- it can be! It'll take lots of practice to understand it fully.
+Ne vous inquietez pas si cela paraît étrange et déroutant au premier abord -- ça peut l'être en effet ! Il va falloir beaucoup de pratique pour le comprendre pleinement.
 
-But trust me, once you do, it's one of the most powerful and useful techniques in all of programming. It's definitely worth the effort to let your brain simmer on closures for a bit. In the next section, we'll get a little more practice with closure.
+Mais faites-moi confiance, une fois que vous l'avez compris, c'est l'une des techniques les plus puissante et utile dans tous le domaine de la programmation. Ca vaut définitivement l'effort de laisser votre cerveau méditer sur les fermetures pour un moment. Dans la prochaine section, nous pratiquerons d'avantage les fermetures.
 
 #### Modules
 
-The most common usage of closure in JavaScript is the module pattern. Modules let you define private implementation details (variables, functions) that are hidden from the outside world, as well as a public API that *is* accessible from the outside.
+L'usage le plus commun des fermetures en JavaScript est le pattern module. Les modules vous permettent de définir des détails d'implémentation (variables, fonctions) privés, qui sont caché du monde extérieur, ainsi qu'un API publique qui *est* accessible de l'extérieur.
 
-Consider:
+Considérez :
 
 ```js
 function User(){
@@ -734,7 +736,7 @@ function User(){
 		username = user;
 		password = pw;
 
-		// do the rest of the login work
+		// faire le reste du travail de login
 	}
 
 	var publicAPI = {
@@ -750,23 +752,23 @@ var fred = User();
 fred.login( "fred", "12Battery34!" );
 ```
 
-The `User()` function serves as an outer scope that holds the variables `username` and `password`, as well as the inner `doLogin()` function; these are all private inner details of this `User` module that cannot be accessed from the outside world.
+La fonction `User()` sert de portée externe qui maintient les variables `username` et `password`, ainsi que la fonction interne `doLogin()`; ce sont tous des détails internes privés de ce module `User` auxquels on ne peut pas accèder à partir du monde extérieur.
 
-**Warning:** We are not calling `new User()` here, on purpose, despite the fact that probably seems more common to most readers. `User()` is just a function, not a class to be instantiated, so it's just called normally. Using `new` would be inappropriate and actually waste resources.
+**Attention :** Nous n'appelons pas exprès `new User()` ici, en dépit du fait que ça puisse paraître d'usage pour la pluparts des lecteurs. `User()` est juste une fonction, non pas une classe à instancier, donc elle est juste appelée normalement. Utiliser `new` serait inapproprié et en fait un gâchîs de ressources.
 
-Executing `User()` creates an *instance* of the `User` module -- a whole new scope is created, and thus a whole new copy of each of these inner variables/functions. We assign this instance to `fred`. If we run `User()` again, we'd get a new instance entirely separate from `fred`.
+Exécuter `User()` crée une *instance* du module `User` -- une portée toute nouvelle est créée, et ainsi une toute nouvelle copie de chacune des ces variables/fonctions. Nous affectons cette instance à `fred`. Si nous lançons `User()` une fois de plus, nous obtiendrons une nouvelle instance entièrement à part de `fred`.
 
-The inner `doLogin()` function has a closure over `username` and `password`, meaning it will retain its access to them even after the `User()` function finishes running.
+La fonction interne `doLogin()` possède une fermeture sur `username` et `password`, ce qui signifie qu'elle va garder l'accès à ces variables même après que la fonction `User()` ait terminé son exécution.
 
-`publicAPI` is an object with one property/method on it, `login`, which is a reference to the inner `doLogin()` function. When we return `publicAPI` from `User()`, it becomes the instance we call `fred`.
+`publicAPI` est un objet avec une propriété/méthode, `login`, qui est une référence à la fonction interne `doLogin()`. Quand nous retournons `publicAPI` de `User()`, cela devient l'instance qu'on appelle `fred`.
 
-At this point, the outer `User()` function has finished executing. Normally, you'd think the inner variables like `username` and `password` have gone away. But here they have not, because there's a closure in the `login()` function keeping them alive.
+À ce stade, la fonction externe `User()` a terminé son exécution. Normalement, on pourrait penser que les variables internes `username` et `password` ont disparu. Mais ici, non, parcequ'il y a une fermeture dans la fonction `login()` qui les gardent en vie.
 
-That's why we can call `fred.login(..)` -- the same as calling the inner `doLogin(..)` -- and it can still access `username` and `password` inner variables.
+C'est pourquoi nous pouvons appeler `fred.login(..)` -- qui est pareil que d'appeler le `doLogin(..)` interne -- et elle peut toujours accèder aux variables internes `username` et `password`.
 
-There's a good chance that with just this brief glimpse at closure and the module pattern, some of it is still a bit confusing. That's OK! It takes some work to wrap your brain around it.
+Il y a de fortes chances qu'avec juste un coup d'oeil aux fermetures et au pattern module, certaines choses soient toujours déroutantes. C'est OK ! Ca prend du temps pour digérer tout ça.
 
-From here, go read the *Scope & Closures* title of this series for a much more in-depth exploration.
+A partir d'ici, allez lire *Portées et Fermetures* de cette collection pour une exploration en profondeur.
 
 ## `this` Identifier
 
