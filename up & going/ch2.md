@@ -372,7 +372,7 @@ function foo() {
 console.log( a );	// 2
 ```
 
-**Attention :** Il ni d'usage ni une bonne idée de s'appuyer sur le *hissage* pour utiliser une variable plus tôt dans sa portée avant que sa déclaration n'apparaîsse; ça peut être assez déroutant. Il est beaucoup plus courant et accepté d'utiliser les déclarations de fonctions *hissées*, comme nous le fesons avec l'appel `foo()` qui apparaît avant sa déclaration formelle.
+**Attention :** Il ni d'usage ni une bonne idée de s'appuyer sur le *hissage* pour utiliser une variable plus tôt dans sa portée avant que sa déclaration n'apparaîsse; ça peut être assez déroutant. Il est beaucoup plus courant et accepté d'utiliser les déclarations de fonctions *hissées*, comme nous le faisons avec l'appel `foo()` qui apparaît avant sa déclaration formelle.
 
 #### Portées imbriquées
 
@@ -770,17 +770,17 @@ Il y a de fortes chances qu'avec juste un coup d'oeil aux fermetures et au patte
 
 A partir d'ici, allez lire *Portées et Fermetures* de cette collection pour une exploration en profondeur.
 
-## `this` Identifier
+## L'identifiant `this`
 
-Another very commonly misunderstood concept in JavaScript is the `this` identifier. Again, there's a couple of chapters on it in the *this & Object Prototypes* title of this series, so here we'll just briefly introduce the concept.
+Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapître sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
 
-While it may often seem that `this` is related to "object-oriented patterns," in JS `this` is a different mechanism.
+Bien qu'il puisse parâitre que `this` est rattaché aux "patterns orientées-objet", en JS `this` est un mécanisme différent.
 
-If a function has a `this` reference inside it, that `this` reference usually points to an `object`. But which `object` it points to depends on how the function was called.
+Si une fonction possède une référence `this`, cette référence `this` pointe habituellement sur un `object`. Mais sur quel `object` elle point dépend de comment la fonction a été appelée.
 
-It's important to realize that `this` *does not* refer to the function itself, as is the most common misconception.
+Il est important de réaliser que `this` *ne se référe pas* à la fonction elle-même, comme c'est souvent compris incorrectement.
 
-Here's a quick illustration:
+En voici une illustration rapide :
 
 ```js
 function foo() {
@@ -806,70 +806,73 @@ foo.call( obj2 );		// "obj2"
 new foo();			// undefined
 ```
 
-There are four rules for how `this` gets set, and they're shown in those last four lines of that snippet.
+Il y a quatre règles pour comment `this` est initialisé, et elles sont démontrées dans les quatres dernière lignes de cet extrait de code.
 
-1. `foo()` ends up setting `this` to the global object in non-strict mode -- in strict mode, `this` would be `undefined` and you'd get an error in accessing the `bar` property -- so `"global"` is the value found for `this.bar`.
-2. `obj1.foo()` sets `this` to the `obj1` object.
-3. `foo.call(obj2)` sets `this` to the `obj2` object.
-4. `new foo()` sets `this` to a brand new empty object.
 
-Bottom line: to understand what `this` points to, you have to examine how the function in question was called. It will be one of those four ways just shown, and that will then answer what `this` is.
+1. `foo()` définit `this` comme objet global en mode non strict -- en mode strict, `this` serait `undefined` (indéfini) et vous recevriez lors de l'accès à la propriété `bar` -- donc `"global"` est la valeur trouvée pour `this.bar`.
+2. `obj1.foo()` définit `this` comme objet `obj1`.
+3. `foo.call(obj2)` définit `this` comme objet `obj2`.
+4. `new foo()` définit `this` comme un objet vide tout neuf.
 
-**Remarque :** For more information about `this`, see Chapters 1 and 2 of the *this & Object Prototypes* title of this series.
+En un mot : Pour comprendre vers quoi `this` pointe, vous devez examiner comment la fonction a été appelée. La réponse sera l'une des quatres manières vues précédemment, et vous obtientrez ainsi l'identité de `this`.
+
+**Remarque :** Pour plus d'informations au sujet de `this`, voir les Chapîtres 1 et 2 de *this et Prototypes d'Objets* de cette collection.
 
 ## Prototypes
 
-The prototype mechanism in JavaScript is quite complicated. We will only glance at it here. You will want to spend plenty of time reviewing Chapters 4-6 of the *this & Object Prototypes* title of this series for all the details.
+Le mécanisme de prototype est assez compliqué. Nous y jeterons seulement un oeil ici. Je vous conseillerais de passer plus de temps sur la révision des Chapîtres 4-6 de *this & Prototypes d'Objet* de cette collection pour tous les détails.
 
-When you reference a property on an object, if that property doesn't exist, JavaScript will automatically use that object's internal prototype reference to find another object to look for the property on. You could think of this almost as a fallback if the property is missing.
+Quand vous référencez une propriété sur un objet, si cette propriété n'existe pas, JavaScript va automatiquement utiliser la référence interne du prototype de cet objet pour trouver un autre objet dans lequel chercher la propriété. Vous pourriez voir cela un peu comme une solution de repli si une propriété est absente.
 
-The internal prototype reference linkage from one object to its fallback happens at the time the object is created. The simplest way to illustrate it is with a built-in utility called `Object.create(..)`.
+La liaison entre la référence interne au prototype d'un objet et sa "solution de repli" se produit au moment ou l'objet est créé. La façon la plus simple de l'illustrer est avec un utilitaire intégrée appelée `Object.create(..)`.
 
-Consider:
+Voyez :
 
 ```js
 var foo = {
 	a: 42
 };
 
-// create `bar` and link it to `foo`
+// création de `bar` et liaison à `foo`
 var bar = Object.create( foo );
 
 bar.b = "hello world";
 
 bar.b;		// "hello world"
-bar.a;		// 42 <-- delegated to `foo`
+bar.a;		// 42 <-- délégué à `foo`
 ```
 
-It may help to visualize the `foo` and `bar` objects and their relationship:
+Le schéma ci-dessous peut vous aider à visualiser les objets `foo` et `bar` et leurs relations :
 
 <img src="fig6.png">
 
-The `a` property doesn't actually exist on the `bar` object, but because `bar` is prototype-linked to `foo`, JavaScript automatically falls back to looking for `a` on the `foo` object, where it's found.
+La propriété `a` n'existe pas sur l'objet `bar`, mais puisque `bar` a un lien prototypal sur `foo`, JavaScript re-va automatiquement à la recherche de `a` sur l'objet `foo`, là où on peut le trouver.
 
-This linkage may seem like a strange feature of the language. The most common way this feature is used -- and I would argue, abused -- is to try to emulate/fake a "class" mechanism with "inheritance."
+Cette liaison semble être une fonctionnalité du langage quelque peu étrange. La façon la plus fréquente d'utiliser -- et je dirais même d'abuser -- cette fonctionnalité est d'essayer d'émuler/simuler un mécanisme de "classe" avec "héritage".
 
-But a more natural way of applying prototypes is a pattern called "behavior delegation," where you intentionally design your linked objects to be able to *delegate* from one to the other for parts of the needed behavior.
+Cependant, il y a une manière plus naturelle d'appliquer les prototypes. C'est une pattern qu'on appelle "délégation de comportement", où vous concevez intentionnellement vos objets reliés afin qu'ils soient capables de *déléguer* une partie des comportements nécessaires.
 
-**Remarque :** For more information about prototypes and behavior delegation, see Chapters 4-6 of the *this & Object Prototypes* title of this series.
+**Remarque :** Pour plus d'informations sur les prototypes et la délégation de comportement, voir les Chapîtres 4-6 de *this & Prototypes d'Objets* de cette collection.
 
-## Old & New
+## Ancien & Nouveau
 
-Some of the JS features we've already covered, and certainly many of the features covered in the rest of this series, are newer additions and will not necessarily be available in older browsers. In fact, some of the newest features in the specification aren't even implemented in any stable browsers yet.
+Quelqu'unes des fonctionnalités que nous avons déjà couvertes, et certainement plusieurs des fonctionnalités couvertes dans le reste de cette collection, sont de nouvelles additions au langage et ne seront pas nécessairement disponibles dans les navigateurs les plus anciens. En fait, certaines des fonctionnalités les plus récentes n'ont pas encore été implémentées dans aucun navigateur stable.
 
-So, what do you do with the new stuff? Do you just have to wait around for years or decades for all the old browsers to fade into obscurity?
+Alors, que faisons nous avec ces nouvelles choses ? Est-ce qu'on doit attendre des années ou des décennies avant que ces anciens navigateurs tombent dans les oubliettes ?
 
-That's how many people think about the situation, but it's really not a healthy approach to JS.
+C'est l'approche de nombreuses personnes au vue de cette situation, mais ce n'est vraiment pas la bonne approche à avoir envers le JS.
 
-There are two main techniques you can use to "bring" the newer JavaScript stuff to the older browsers: polyfilling and transpiling.
+Il existe deux techniques principales utilisables pour "apporter" le nouveau JavaScript dans les anciens navigateurs : le polyfilling et la transpilation.
 
 ### Polyfilling
 
-The word "polyfill" is an invented term (by Remy Sharp) (https://remysharp.com/2010/10/08/what-is-a-polyfill) used to refer to taking the definition of a newer feature and producing a piece of code that's equivalent to the behavior, but is able to run in older JS environments.
+Le mot "polyfill" est un terme inventé (par Remy Sharp) (https://remysharp.com/2010/10/08/what-is-a-polyfill) utilisé pour faire référence au fait de prendre la définition d'une nouvelle fonctionnalité et de produire un code avec un comportement équivalent, mais qui soit capable de s'executer dans des environnements JS plus anciens.
 
 For example, ES6 defines a utility called `Number.isNaN(..)` to provide an accurate non-buggy check for `NaN` values, deprecating the original `isNaN(..)` utility. But it's easy to polyfill that utility so that you can start using it in your code regardless of whether the end user is in an ES6 browser or not.
 
-Consider:
+Par exemple, ES6 défini un utilitaire appelé `Number.isNaN(..)` qui fournit une vérification exempt de bug pour les valeurs `NaN`, dépréciant ainsi l'utilitaire original `isNaN(..)`. Il est facile de polyfiller cet utilitaire afin de pouvoir l'utiliser dans votre code, quelque soit la navigateur de votre utilisateur final, qu'il soit compatible ES6 ou pas. 
+
+Voyez :
 
 ```js
 if (!Number.isNaN) {
@@ -879,31 +882,33 @@ if (!Number.isNaN) {
 }
 ```
 
-The `if` statement guards against applying the polyfill definition in ES6 browsers where it will already exist. If it's not already present, we define `Number.isNaN(..)`.
+La déclaration `if` empêche que le polyfill ne soit appliquée dans les navigateurs ES6, où cette fonctionalité existe déjà. Si elle n'existe pas, on définit `Number.isNaN(..)`.
 
-**Remarque :** The check we do here takes advantage of a quirk with `NaN` values, which is that they're the only value in the whole language that is not equal to itself. So the `NaN` value is the only one that would make `x !== x` be `true`.
+**Remarque :** La vérification que nous faisons ici tire avantage d'une bizzarerie sur la valeur `NaN`, qui est que c'est la seule valeur dans tout le langage qui n'est pas égale à elle-même.
 
-Not all new features are fully polyfillable. Sometimes most of the behavior can be polyfilled, but there are still small deviations. You should be really, really careful in implementing a polyfill yourself, to make sure you are adhering to the specification as strictly as possible.
+Toutes les nouvelles fonctionalités ne sont pas intégralement polyfiables. Parfois, la plupart du comportement peut être polyfié, mais il y a toujours quelques déviations. Vous devriez prendre de grandes précautions quand vous implementez vous-même un polyfill, en vous assurant d'ahdérer à la spécification aussi strictement que possible.
 
-Or better yet, use an already vetted set of polyfills that you can trust, such as those provided by ES5-Shim (https://github.com/es-shims/es5-shim) and ES6-Shim (https://github.com/es-shims/es6-shim).
+Ou mieux encore, utilisez un ensemble déjà contrôlé de polyfills auxquels vous pouvez vous fier, tels que ceux fournis par ES5-shim (https://github.com/es-shims/es5-shim) et ES6-Shim (https://github.com/es-shims/es6-shim).
 
-### Transpiling
+### Transpilation
 
-There's no way to polyfill new syntax that has been added to the language. The new syntax would throw an error in the old JS engine as unrecognized/invalid.
+Il n'existe aucun moyen de polyfié une nouvelle syntaxe ajouté au langage. Dans un ancien moteur JS, la nouvelle syntaxe lancerait une erreur de type unrecognized/invalid (syntaxe non reconnue ou invalide).
 
-So the better option is to use a tool that converts your newer code into older code equivalents. This process is commonly called "transpiling," a term for transforming + compiling.
+Ainsi donc, la meilleure option que nous avons est d'utiliser un outil qui converti votre code moderne en ancien code équivalent. Ce processus est appelé généralement "transpilation", une terminologie issue d'une fusion des verbes transfomer + compiler.
 
-Essentially, your source code is authored in the new syntax form, but what you deploy to the browser is the transpiled code in old syntax form. You typically insert the transpiler into your build process, similar to your code linter or your minifier.
+Fondamentalement, votre code est rédigé sous une forme syntaxique nouvelle, mais ce que vous déployez pour le navigateur est du code transpilé dans une forme syntaxique ancienne. Typiquement, on ajoutera le transpileur dans le processus de "build" (construction de l'application), de la même manière qu'avec votre linter (vérificateur de code) ou votre minifier (compresseur de code).
 
-You might wonder why you'd go to the trouble to write new syntax only to have it transpiled away to older code -- why not just write the older code directly?
+Vous devez sûrement vous demander pourquoi se fatiguer à écrire dans la nouvelle syntaxe alors qu'elle est finalement transpilée en ancien code -- pourquoi ne pas juste écrire en code ancien directement ?
 
-There are several important reasons you should care about transpiling:
+Il existe plusieurs raisons importantes, auxquelles vous devriez faire attention, qui jouent en faveur de la transpilation :
 
-* The new syntax added to the language is designed to make your code more readable and maintainable. The older equivalents are often much more convoluted. You should prefer writing newer and cleaner syntax, not only for yourself but for all other members of the development team.
-* If you transpile only for older browsers, but serve the new syntax to the newest browsers, you get to take advantage of browser performance optimizations with the new syntax. This also lets browser makers have more real-world code to test their implementations and optimizations on.
-* Using the new syntax earlier allows it to be tested more robustly in the real world, which provides earlier feedback to the JavaScript committee (TC39). If issues are found early enough, they can be changed/fixed before those language design mistakes become permanent.
+* La nouvelle syntaxe qui est ajouté au langage est conçue pour rendre votre code plus lisible et maintenable. Les équivalents plus anciens sont souvent beaucoup plus compliqués. Vous préférerez écrire dans une syntaxe plus neuve et claire, pas uniquement pour vous maus aussi pour tous les autres membres de l'équipe de développement.
+* Si vous transpilez uniquement pour les anciens navigateurs, mais livrez la nouvelle syntaxe aux nouveaux navigateurs, vous tirez avantage des optimisations de performance des navigateurs grâce à la nouvelle syntaxe. Cela permet aussi aux fabriquants de navigateurs d'avoir d'avantage de code en production sur lesquels tester leurs implémentations et optimisations.
+* L'utilisation de la nouvelle syntaxe plus tôt permet qu'elle soit testée de manière plus robuste dans le monde réel, ce qui fournit des retours précoces aux membres du comité JavaScript (TC39). Si les problèmes sont trouvés suffisamment tôt, ils peuvent être changés/corrigés avant que ces erreurs de conception deviennent permanentes.
 
 Here's a quick example of transpiling. ES6 adds a feature called "default parameter values." It looks like this:
+
+Voici un exemple rapide de transpilation. ES6 ajoute une fonctionalité appelée "valeurs de paramètre par défaut"
 
 ```js
 function foo(a = 2) {
@@ -914,7 +919,7 @@ foo();		// 2
 foo( 42 );	// 42
 ```
 
-Simple, right? Helpful, too! But it's new syntax that's invalid in pre-ES6 engines. So what will a transpiler do with that code to make it run in older environments?
+Simple, n'est-ce-pas ? Utile aussi ! Mais ceci appartient à la nouvelle syntaxe qui est invalide dans les moteurs pre-ES6. Donc, que va faire le transpileur afin de faire tourner ce code dans des environnements plus anciens ?
 
 ```js
 function foo() {
