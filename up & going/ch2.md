@@ -10,11 +10,11 @@ Si vous êtes nouveau en JavaScript, attendez-vous à passer un peu de temps à 
 
 Votre voyage pour apprendre profondemment JavaScript commence là.
 
-**Remarque :** Comme je l'ai dit dans le chapître 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapître. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" for 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
+**Remarque :** Comme je l'ai dit dans le chapître 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapître. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" pour 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
 
 ## Valeurs & Types
 
-Comme nous l'avons affirmer dans le Chapître 1, JavaScript possède des valeurs typées, pas des variables typées. Les types natifs suivants sont disponibles :
+Comme nous l'avons vu dans le Chapître 1, JavaScript possède des valeurs typées, et non pas des variables typées. Les types natifs suivants sont disponibles :
 
 * `string`
 * `number`
@@ -23,7 +23,7 @@ Comme nous l'avons affirmer dans le Chapître 1, JavaScript possède des valeurs
 * `object`
 * `symbol` (nouveau dans ES6)
 
-JavaScript fourni un opérateur `typeof` qui peut examiner une valeur et vous dire de quel type il s'agit :
+JavaScript fournit un opérateur `typeof` qui peut examiner une valeur et vous dire de quel type il s'agit :
 
 ```js
 var a;
@@ -48,7 +48,7 @@ a = { b: "c" };
 typeof a;				// "object"
 ```
 
-La valeur de retour de l'opérateur `typeof` est toujours l'une des six (sept en ES6 ! - le type symbole) chaîne de caractères. C'est à dire, `typeof "abc"` returns `"string"`, et non pas `string`.
+La valeur de retour de l'opérateur `typeof` est toujours l'une des six (sept en ES6 ! - le type symbole) chaîne de caractères. C'est à dire, `typeof "abc"` retourne `"string"`, et non pas `string`.
 
 Remarquez comment dans cet extrait, la variable `a` contient tous les différents types de valeurs, et en dépit des apparences, `typeof a` ne demande pas le "type de `a`" mais plutôt le "type de la valeur qui est en ce moment dans `a`". Seule les valeurs ont des types en JavaScript; les variables sont de simples conteneurs pour ces valeurs.
 
@@ -579,7 +579,7 @@ Non seulement le mode strict garde votre code sur le droit chemin, mais non seul
 
 ## Utiliser les fonctions comme valeurs
 
-Jusque là, nous avons parler des fonctions comme étant le principal mécanisme de *portée* en JavaScript. On se souvient de la syntaxe de la déclaration `function` comme ci-dessous :
+Jusque là, nous avons parlé des fonctions comme étant le principal mécanisme de *portée* en JavaScript. On se souvient de la syntaxe de la déclaration `function` comme ci-dessous :
 
 ```js
 function foo() {
@@ -591,7 +591,7 @@ Bien que cela ne paraîsse pas évident en regardant la syntaxe, `foo` est en fa
 
 Cela peut sembler être un concept un peu étrange à première vue, donc prenez un temps pour y songer. Non seulement vous pouvez passer une valeur (argument) *à* une fonction, mais *une fonction elle-même* peut être une valeur, assignable à des variables, ou passée d'autres fonctions ou une retournée d'autres fonctions.
 
-Ainsi, une fonction devrait être considérer comme une expression, tout comme quelconque autre valeur ou expression.
+Ainsi, une fonction devrait être considérée comme une expression, tout comme quelconque autre valeur ou expression.
 
 Considérez :
 
@@ -605,7 +605,7 @@ var x = function bar(){
 };
 ```
 
-La première expression de fonction assigné à la variable `foo` est appelée *anonyme* parcequ'elle n'a pas de `nom`.
+La première expression de fonction assignée à la variable `foo` est appelée *anonyme* parcequ'elle n'a pas de `nom`.
 
 La seconde expression de fonction est *nommée* (`bar`), et on lui a référencé `x` comme variable assignée. Les *expressions de fonction nommées* sont généralement préférables, bien que les *expressions de fonction anonymes* soient encore très courantes.
 
@@ -928,47 +928,49 @@ function foo() {
 }
 ```
 
-As you can see, it checks to see if the `arguments[0]` value is `void 0` (aka `undefined`), and if so provides the `2` default value; otherwise, it assigns whatever was passed.
+Comme vous le voyez, on vérifie si la valeur de `arguments[0]` est `void 0` (aussi dit `undefined`), et si c'est le cas, on fournit la valeur `2` par défault; sinon, on assigne ce qui est passé.
 
-In addition to being able to now use the nicer syntax even in older browsers, looking at the transpiled code actually explains the intended behavior more clearly.
+En plus de la possibilité d'utiliser maintenant une syntaxe plus jolie, même dans les anciens navigateurs, étudier le code transpilé permet d'expliquer le comportement voulu plus clairement.
 
-You may not have realized just from looking at the ES6 version that `undefined` is the only value that can't get explicitly passed in for a default-value parameter, but the transpiled code makes that much more clear.
+Vous ne l'avez peut être pas remarqué en regardant la version ES6, mais `undefined` est la seule valeur qui ne peut pas être explicitement passée comme paramètre avec valeur par défault, cependant le code transpilé rend ça plus clair.
 
-The last important detail to emphasize about transpilers is that they should now be thought of as a standard part of the JS development ecosystem and process. JS is going to continue to evolve, much more quickly than before, so every few months new syntax and new features will be added.
+Le dérnier détail qu'il est important de souligner au sujet des transpileurs est qu'ils devraient maintenant être considérer comme faisant parti du standard de l'ensemble de l'écosystème et processus de développement JS. JS va continuer à évoluer, bien plus rapidment qu'avant, et régulièrement de nouvelle formes syntaxiques et fonctionnalités vont être ajoutées.
 
-If you use a transpiler by default, you'll always be able to make that switch to newer syntax whenever you find it useful, rather than always waiting for years for today's browsers to phase out.
+Si vous utilisez une transpileur par défaut, vous serez toujours capable de passer à la dernière nouvelle syntaxe au moment où vous le jugerez utile, plutôt que d'attendre des années que les navigateurs d'aujourd'hui disapraissent.
 
-There are quite a few great transpilers for you to choose from. Here are some good options at the time of this writing:
+Vous pouvez choisir parmi un bon nombre de transpileur. Voici quelques bonnes options au moment où ces lignes sont écrites :
 
-* Babel (https://babeljs.io) (formerly 6to5): Transpiles ES6+ into ES5
-* Traceur (https://github.com/google/traceur-compiler): Transpiles ES6, ES7, and beyond into ES5
+* Babel (https://babeljs.io) (formerly 6to5): Transpile ES6+ en ES5
+* Traceur (https://github.com/google/traceur-compiler): Transpile ES6, ES7, et au delà en ES5
 
 ## Non-JavaScript
 
-So far, the only things we've covered are in the JS language itself. The reality is that most JS is written to run in and interact with environments like browsers. A good chunk of the stuff that you write in your code is, strictly speaking, not directly controlled by JavaScript. That probably sounds a little strange.
+Jusque là, la seule chose que nous ayons couverte est le langage JS lui-même. La réalité est que la plupart du JS est écrit pour tourner et intéragir dans des environnements commes les navigateurs. Un bon morceau du code que vous écrivez n'est pas, strictement parlant, controllé par JavaScript. Ca peut paraître un peu bizarre.
 
-The most common non-JavaScript JavaScript you'll encounter is the DOM API. For example:
+Le JavaScript non-JavaScript le plus fréquent que vous allez rencontré est l'API DOM. Par exemple : 
 
 ```js
 var el = document.getElementById( "foo" );
 ```
 
-The `document` variable exists as a global variable when your code is running in a browser. It's not provided by the JS engine, nor is it particularly controlled by the JavaScript specification. It takes the form of something that looks an awful lot like a normal JS `object`, but it's not really exactly that. It's a special `object,` often called a "host object."
+La variable `document` existe en tant que variable globale quand votre code tourne dans un navigateur. Ce n'est ni fourni par le moteur JS, ni controllé par la spécification JavaScript en particulier. Ca prend la forme de quelque chose qui ressemble terriblement à un `object` JS normal, mais ce n'est pas exactement ça. C'est un `object` spécial, souvent appelé un "objet hôte".
 
 Moreover, the `getElementById(..)` method on `document` looks like a normal JS function, but it's just a thinly exposed interface to a built-in method provided by the DOM from your browser. In some (newer-generation) browsers, this layer may also be in JS, but traditionally the DOM and its behavior is implemented in something more like C/C++.
 
-Another example is with input/output (I/O).
+De plus, la méthode `getElementById(..)` sur `document` ressemble à une fonction JS normale, mais il s'agit d'une interface finement exposée à une méthode native fournie par le DOM de votre navigateur. Dans quelques navigateurs (nouvelle génération), ce niveau peut aussi être en JS, mais traditionellement le DOM et son comportement est implémenté en quelquechose comme C/C++
 
-Everyone's favorite `alert(..)` pops up a message box in the user's browser window. `alert(..)` is provided to your JS program by the browser, not by the JS engine itself. The call you make sends the message to the browser internals and it handles drawing and displaying the message box.
+Un autre exemple est les entrées/sorties (I/O en anglais pour Input/Outpur)
 
-The same goes with `console.log(..)`; your browser provides such mechanisms and hooks them up to the developer tools.
+`alert(..)`, la favorite de tous, affiche une boîte de dialogue dans la fenêtre du navigateur de l'utilisateur. `alert(..)` est fournit à vos programmes JS par le navigateur, non pas par le moteur JS lui-même. L'appel que vous faîtes envoie un message aux mécaniques internes navigateur et celui-ci s'occupe de dessiner et afficher la boîte de dialogue.
 
-This book, and this whole series, focuses on JavaScript the language. That's why you don't see any substantial coverage of these non-JavaScript JavaScript mechanisms. Nevertheless, you need to be aware of them, as they'll be in every JS program you write!
+Il en va de même avec `console.log(..)`; votre navigateur fournit des tels mécanismes et les attaches à la boîte à outil pour développeur.
 
-## Review
+Ce livre, et toute cette collection, se focalise sur JavaScript le langage. C'est pourquoi vous ne verrez pas de couverture substentielle de ces mécanismes JavaScript non-JavaScript. Néanmoins, vous devez être conscient qu'ils existent, puisqu'ils seront dans tous les programmes JS que vous écrirez !
 
-The first step to learning JavaScript's flavor of programming is to get a basic understanding of its core mechanisms like values, types, function closures, `this`, and prototypes.
+## Passage en revue
 
-Of course, each of these topics deserves much greater coverage than you've seen here, but that's why they have chapters and books dedicated to them throughout the rest of this series. After you feel pretty comfortable with the concepts and code samples in this chapter, the rest of the series awaits you to really dig in and get to know the language deeply.
+La première étape pour apprendre la manière de programmer le JavaScript est d'avoir une compréhension basique des ces mécaniques fondamentales comme les valeurs, types, fonctions, fermetures, `this`, et prototypes.
 
-The final chapter of this book will briefly summarize each of the other titles in the series and the other concepts they cover besides what we've already explored.
+Evidemment, chacun de ces sujets mérite d'être couvert bien plus grandement que ce que vous avez pu voir ici, mais c'est pour cette raison qu'ils ont des chapîtres et livres qui leur sont dédiés tout le long du reste de cette collection. Une fois que vous êtes à l'aise avec les concepts et exemples de code de ce chapître, le reste de la collection vous attend pour vraiment creuser et connaître le langage en proondeur.
+
+Le chapître final de ce livre résumera brièvement chacun des titres de cette collection ainsiq ue les autres concepts qu'ils couvrent en plus de ce que nous avons déjà exploré.
