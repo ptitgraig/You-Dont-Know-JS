@@ -1,35 +1,35 @@
-# You Don't Know JS: Up & Going
+# You Don't Know JS: Démarrage
 
-## Table of Contents
+## Table des matières
 
-* Foreword
-* Preface
-* Chapter 1: Into Programming
+* Avant-propos
+* Préface
+* Chapitre 1: Dans la programmation
 	* Code
-	* Try It Yourself
-	* Operators
-	* Values & Types
-	* Code Comments
+	* A vous d'essayer
+	* Operateurs
+	* Valeurs et Types
+	* Commentaires de code
 	* Variables
-	* Blocks
-	* Conditionals
-	* Loops
-	* Functions
-	* Practice
-* Chapter 2: Into JavaScript
-	* Values & Types
+	* Blocs
+	* Conditions
+	* Boucles
+	* Fonctions
+	* Mise en pratique
+* Chapitre 2: Dans JavaScript
+	* Valeurs et Types
 	* Variables
-	* Conditionals
-	* Strict Mode
-	* Functions As Values
-	* `this` Keyword
+	* Conditions
+	* Mode Strict
+	* Fonctions Comme Valeurs
+	* Mot-clé `this`
 	* Prototypes
-	* Old & New
+	* Ancien et Nouveau
 	* Non-JavaScript
-* Chapter 3: Into YDKJS
-	* Scope & Closures
-	* this & Object Prototypes
-	* Types & Grammar
-	* Async & Performance
-	* ES6 & Beyond
-* Appendix A: Acknowledgments
+* Chapter 3: Dans YDKJS
+	* Portées et Fermetures
+	* this et Prototypes d'Objet
+	* Types et Grammaire
+	* Asynchronisme & Performance
+	* ES6 et Au-delé
+* Appendice A: Remerciements

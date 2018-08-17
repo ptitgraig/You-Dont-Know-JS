@@ -1,15 +1,15 @@
-# You Don't Know JS: Up & Going
-# Foreword
+# You Don't Know JS: Démarrage
+# Avant-Propos
 
-What was the last new thing you learned?
+Quel a été la dernière nouvelle chose que vous avez apprise ?
 
-Perhaps it was a foreign language, like Italian or German. Or maybe it was a graphics editor, like Photoshop. Or a cooking technique or woodworking or an exercise routine. I want you to remember that feeling when you finally got it: the lightbulb moment. When things went from blurry to crystal clear, as you mastered the table saw or understood the difference between masculine and feminine nouns in French. How did it feel? Pretty amazing, right?
+Peut-être s'agit t'il d'une langue étrangère, comme l'Italien ou l'Allemand. Ou peut-être s'agissait-il d'un éditeur graphique, comme Photoshop. Ou bien s'agit-il d'une technique de cuisine, d'un travail sur le bois, ou un exercice routinier. Je veux que vous vous souveniez de ce sentiment quand vous avez enfin compris: ce moment où vous vous êtes dit "Eureka". Quand les choses sont passées du flou à l'eclaircie, quand vous avez maîtrisé la scie circulaire ou compris la les prépositions en anglais. Comment vous-êtes vous senti ? Plutôt bien, non ?
 
-Now I want you to travel back a little bit further in your memory to right before you learned your new skill. How did *that* feel? Probably slightly intimidating and maybe a little bit frustrating, right? At one point, we all did not know the things that we know now and that’s totally OK; we all start somewhere. Learning new material is an exciting adventure, especially if you are looking to learn the subject efficiently.
+Maintenant, vogagez un petit plus loin dans vos souvenirs jusqu'au moment où vous commenciez tout juste à apprendre votre nouvelle compétence. Comment vous sentiez-vous à ce moment là? Surement quelque peu intimidé et peut-être quelque peu frustré, pas vrai ? A un certain moment, tous que nous sommes, nous ne connaissions pas les choses que nous connaissons maintenant et c'est tout à fait acceptable; nous commencons tous quelquepart. L'apprentissage de quelque chose de nouveau est une aventure motivante, en particulier si vous cherchez à apprendre le sujet efficacement.
 
-I teach a lot of beginner coding classes. The students who take my classes have often tried teaching themselves subjects like HTML or JavaScript by reading blog posts or copying and pasting code, but they haven’t been able to truly master the material that will allow them to code their desired outcome. And because they don’t truly grasp the ins and outs of certain coding topics, they can’t write powerful code or debug their own work, as they don’t really understand what is happening.
+Je donne beaucoup de cours pour débutants. Les étudiants qui suivent mes cours ont souvent tenté d'apprendre par eux-même des sujets comme le HTML ou le JavaScript en lisant des articles de blog ou en copiant-collant du code, mais ils n'ont pas pu vraiment maîtriser les outils qui leur permettrons de coder les résultats qu'ils recherchent. Et puisqu'ils ne comprennent pas les tenants et aboutissants de certains sujets de programmation, ils ne peuvent pas écrire du code puissant ou débuger leur propres travaux, puisqu'ils ne comprennent pas vraiment ce qui se passe.
 
-I always believe in teaching my classes the proper way, meaning I teach web standards, semantic markup, well-commented code, and other best practices. I cover the subject in a thorough manner to explain the hows and whys, without just tossing out code to copy and paste. When you strive to comprehend your code, you create better work and become better at what you do. The code isn’t just your *job* anymore, it’s your *craft*. This is why I love *Up & Going*. Kyle takes us on a deep dive through syntax and terminology to give a great introduction to JavaScript without cutting corners. This book doesn’t skim over the surface, but really allows us to genuinely understand the concepts we will be writing.
+Je crois toujours à l'enseignement de mes cours de manière appropriée, c'est à dire que j'enseigne les standards du web, le balisage sémantique, le code bien documenté, et d'autres bonnes pratiques. Je couvre le sujet de manière minutieuse pour éxpliquer les comments et les pourquois, sans balancer du code prêt-à-copier-coller. Quand vous aspirez à comprendre votre code, vous produisez un meilleur travail et devenez meilleur à ce que vous faites. Votre code n'est plus simplement votre *boulot*, c'est votre *artisanat*. C'est pourquoi j'aime *Démarrage*. Kyle nous amène à plonger dans la syntaxe et la terminologie afin de donner une superbe introduction à JavaScript et ce prendre de racourcis. Ce livre n'effleur pas la surface, mais nous permet vraiment de comprendre véritablement les concepts que nous allons mettre en écriture.
 
 Because it’s not enough to be able to duplicate jQuery snippets into your website, the same way it’s not enough to learn how to open, close, and save a document in Photoshop. Sure, once I learn a few basics about the program I could create and share a design I made. But without legitimately knowing the tools and what is behind them, how can I define a grid, or craft a legible type system, or optimize graphics for web use. The same goes for JavaScript. Without knowing how loops work, or how to define variables, or what scope is, we won’t be writing the best code we can. We don’t want to settle for anything less -- this is, after all, our craft.
 
@@ -17,4 +17,4 @@ The more you are exposed to JavaScript, the clearer it becomes. Words like closu
 
 Jenn Lukas<br>
 [jennlukas.com](http://jennlukas.com/), [@jennlukas](https://twitter.com/jennlukas)<br>
-Front-end consultant
+Consultant front-end

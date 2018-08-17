@@ -1,20 +1,20 @@
 # You Don't Know JS: Mise en route
-# Chapître 2: Dans le JavaScript
+# Chapitre 2 : Dans le JavaScript
 
-Dans le chapître précédent, j'ai fait l'introduction des blocs de base de construction d'un programme, tels que les variables, les boucles, les conditions et les fonctions. Bien sûr, tout le code affiché est écrit en JavaScript. Mais dans ce chapître, nous voulons nous focaliser de manière plus spécifique sur les choses que vous avez besoin de savoir au sujet de JavaScript afin de mettre le pied à l'étrier en tant que développeur JS.
+Dans le chapitre précédent, j'ai fait l'introduction des blocs de base de construction d'un programme, tels que les variables, les boucles, les conditions et les fonctions. Bien sûr, tout le code affiché est écrit en JavaScript. Mais dans ce chapitre, nous voulons nous focaliser de manière plus spécifique sur les choses que vous avez besoin de savoir au sujet de JavaScript afin de mettre le pied à l'étrier en tant que développeur JS.
 
-Nous allons présenter plusieurs concepts dans ce chapître qui ne seront explorés que plus tard dans d'autres livres *YDKJS*.
-You pouvez considerer ce chapître comme un survol des différents sujets couverts en détail au travers du reste de cette série.
+Nous allons présenter plusieurs concepts dans ce chapitre qui ne seront explorés que plus tard dans d'autres livres *YDKJS*.
+You pouvez considérer ce chapitre comme un survol des différents sujets couverts en détail au travers du reste de cette série.
 
 Si vous êtes nouveau en JavaScript, attendez-vous à passer un peu de temps à passer en revue plusieurs fois les concepts et exemples de code. Toute bonne fondation est posée brique par brique, donc ne vous attendez pas à tout comprendre lors de la première passe !
 
-Votre voyage pour apprendre profondemment JavaScript commence là.
+Votre voyage pour apprendre profondément JavaScript commence là.
 
-**Remarque :** Comme je l'ai dit dans le chapître 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapître. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" pour 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
+**Remarque :** Comme je l'ai dit dans le chapitre 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapitre. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" pour 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
 
 ## Valeurs & Types
 
-Comme nous l'avons vu dans le Chapître 1, JavaScript possède des valeurs typées, et non pas des variables typées. Les types natifs suivants sont disponibles :
+Comme nous l'avons vu dans le Chapitre 1, JavaScript possède des valeurs typées, et non pas des variables typées. Les types natifs suivants sont disponibles :
 
 * `string`
 * `number`
@@ -50,15 +50,15 @@ typeof a;				// "object"
 
 La valeur de retour de l'opérateur `typeof` est toujours l'une des six (sept en ES6 ! - le type symbole) chaîne de caractères. C'est à dire, `typeof "abc"` retourne `"string"`, et non pas `string`.
 
-Remarquez comment dans cet extrait, la variable `a` contient tous les différents types de valeurs, et en dépit des apparences, `typeof a` ne demande pas le "type de `a`" mais plutôt le "type de la valeur qui est en ce moment dans `a`". Seule les valeurs ont des types en JavaScript; les variables sont de simples conteneurs pour ces valeurs.
+Remarquez comment dans cet extrait, la variable `a` contient tous les différents types de valeurs, et en dépit des apparences, `typeof a` ne demande pas le "type de `a`" mais plutôt le "type de la valeur qui est en ce moment dans `a`". Seules les valeurs ont des types en JavaScript ; les variables sont de simples conteneurs pour ces valeurs.
 
-`typeof null` est un cas intéresant parcequ'il retourne de manière erronée `"objet"` , alors qu'on s'attendrait à ce qu'il retourne `"null"`.
+`typeof null` est un cas intéressant parce qu'il retourne de manière erronée `"objet"`, alors qu'on s'attendrait à ce qu'il retourne `"null"`.
 
-**Attention :** Il s'agit d'un bug qui est là depuis un moment en JS, mais qui a très peu de chance d'être corrigé. Il existe bien trop de code qui s'appuit sur ce bug et ainsi donc, le corriger causerait encore d'avantage de bugs !
+**Attention :** Il s'agit d'un bug qui est là depuis un moment en JS, mais qui a très peu de chance d'être corrigé. Il existe bien trop de code qui s'appuie sur ce bug et ainsi donc, le corriger causerait encore d'avantage de bugs !
 
 Aussi, notez `a = undefined`. Nous mettons explicitement `a` à la valeur `undefined`, mais cela n'a aucune différence comportementale avec une variable qui n'aurait aucune valeur, comme avec la ligne `var a;` au début de l'extrait de code. Une variable peut obtenir cet état "undefined" de plusieurs manières, comme par exemple les fonctions qui ne retourne aucune valeurs ou l'utilisation de l'opérateur `void`.
 
-### Objects
+### Objets
 
 Le type `objet` se réfère à une valeur composée à laquelle vous pouvez affecter des propriétés (que l'on nomme locations) qui possèdent toutes leurs propres valeurs de quelconque type.
 
@@ -78,7 +78,7 @@ obj["b"];	// 42
 obj["c"];	// true
 ```
 
-Il peut-être utile de représenter cette valeur `obj` visuellement :
+Il peut être utile de représenter cette valeur `obj` visuellement :
 
 <img src="fig4.png">
 
@@ -102,7 +102,7 @@ obj["b"];		// 42
 
  Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapître 3.
 
-Il existe un certain nombre d'autres types de valeurs avec lesquels vous intéragirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types natifs de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
+Il existe un certain nombre d'autres types de valeurs avec lesquels vous interagirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types natifs de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
 
 #### Tableaux
 
@@ -125,7 +125,7 @@ typeof arr;		// "object"
 
 **Remarque :** Les langages qui commencent à compter à partir de zéro, comme le JS, utilise `0` comme index du premier élément.
 
-Il peut-être utile de représenter `arr` visuellement :
+Il peut être utile de représenter `arr` visuellement :
 
 <img src="fig5.png">
 
@@ -151,9 +151,9 @@ typeof foo();		// "number"
 typeof foo.bar;		// "string"
 ```
 
-Une fois de plus, les fonctions sont des sous-types d'`objects` -- `typeof` retourne `"function"` ce qui suggère qu'une `function` est un type majeur -- et peut donc avoir des propriétés, mais vous n'allez utilisé les propriétés des objets fonctions (comme `foo.bar`) dans très peu de cas.
+Une fois de plus, les fonctions sont des sous-types d'`objects` -- `typeof` retourne `"function"` ce qui suggère qu'une `function` est un type majeur -- et peut donc avoir des propriétés, mais vous n'allez utiliser les propriétés des objets fonctions (comme `foo.bar`) dans très peu de cas.
 
-**Remarque :** Pour plus d'informations sur les valeurs et leurs types en JS, voir les deux premiers chapître de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations sur les valeurs et leurs types en JS, voir les deux premiers chapitre de *Types & Grammaire* de cette collection.
 
 ### Méthodes des types natifs
 
@@ -161,7 +161,7 @@ The built-in types and subtypes we've just discussed have behaviors exposed as p
 
 Les types natifs et sous-types, dont on vient de parler, ont des comportements qui sont exposés en tant que propriétés ainsi que des méthodes qui sont relativement puissantes et utiles.
 
-Par exemple :
+Par exemple:
 
 ```js
 var a = "hello world";
@@ -174,7 +174,7 @@ b.toFixed(4);			// "3.1416"
 
 Le "comment" derrière le fait d'être capable d'appeler `a.toUpperCase()` est plus compliqué que simplement l'existance d'une méthode sur cette valeur.
 
-En gros, il existe une forme "wrapper" (ou enrobeur) d'objet nommé `String` (avec `S` majuscule), qu'on appel une "native", qui fait pair avec le type natif `string`; c'est cet "enrobeur" d'objet qui définit la méthode `toUpperCase()` sur son prototype.
+En gros, il existe une forme "wrapper" (ou enrobeur) d'objet nommé `String` (avec `S` majuscule), qu'on appelle une "native", qui fait pair avec le type natif `string`; c'est cet "enrobeur" d'objet qui définit la méthode `toUpperCase()` sur son prototype.
 
 Quand vous utilisez une valeur native comme `"hello world"` en tant qu'objet en référencant une propriété ou une méthode (`a.toUpperCase()` dans l'extrait de code précédent), JS "emboîte" automatiquement la valeur dans sa contre-partie l'"enrobeur" d'objet (cachée sous le capot).
 
@@ -186,17 +186,17 @@ Une valeur `string` peut être wrappée par un objet `String`, un `number` peut 
 
 Il y a deux principaux types de comparaison de valeur dont vous aurez besoin dans vos programmes JS : *égalité* et *inégalité*. Le résultat de quelconque comparaison est une valeur `boolean` au sens strict (`true` ou `false`), quels que soient les types de valeurs comparés.
 
-#### Coercition
+#### Contrainte
 
-Nous avons vu brièvement la coercition dans le chapître 1, revisitons cela maintenant.
+Nous avons vu brièvement la coercition dans le chapitre 1, revisitons cela maintenant.
 
-La coercition se présente sous deux formes en JavaScript : *explicite* et *implicite*. La coercition explicite, c'est simplement quand vous pouvez voir de manière évidente dans le code qu'une conversion d'un type à un autre va se produire, alors que la coercition implicite est quand la conversion de type se passe plus comme un effet de bord d'une autre opération.
+La contrainte se présente sous deux formes en JavaScript : *explicite* et *implicite*. La contrainte explicite, c'est simplement quand vous pouvez voir de manière évidente dans le code qu'une conversion d'un type à un autre va se produire, alors que la contrainte implicite est quand la conversion de type se passe plus comme un effet de bord d'une autre opération.
 
-Vous avez probablement entendu dire que la "coercition c'est le mal" du fait qu'il y a clairement des endroites où la coercition peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
+Vous avez probablement entendu dire que la "coercition c'est le mal" du fait qu'il y a clairement des endroits où la contrainte peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
 
-La coercition n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec coercition de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapître 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
+La coercition n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec coercition de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapitre 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
 
-Voici un exemple de coercition *explicite* :
+Voici un exemple de contrainte *explicite* :
 
 ```js
 var a = "42";
@@ -207,12 +207,12 @@ a;				// "42"
 b;				// 42 -- le nombre !
 ```
 
-Et voici un exemple de coercition implicite :
+Et voici un exemple de contrainte implicite :
 
 ```js
 var a = "42";
 
-var b = a * 1;	// "42" coercé implicitement en 42 ici
+var b = a * 1;	// "42" contraint implicitement en 42 ici
 
 a;				// "42"
 b;				// 42 -- le nombre !
@@ -220,7 +220,7 @@ b;				// 42 -- le nombre !
 
 #### Truthy & Falsy
 
-Dans le Chapître 1, nous avons brièvement mentionné la nature "truthy" et "falsy" des valeurs : quand une valeur non-`boolean` est contrainte en un `boolean`, est ce qu'elle devient `true` ou `false`, respectivement ?
+Dans le Chapitre 1, nous avons brièvement mentionné la nature "truthy" et "falsy" des valeurs : quand une valeur non-`boolean` est contrainte en un `boolean`, est ce qu'elle devient `true` ou `false`, respectivement ?
 
 La liste des valeurs "falsy" en JavaScript est comme suit :
 
@@ -244,7 +244,7 @@ It's important to remember that a non-`boolean` value only follows this "truthy"
 
 Il y a quatre opérateurs d'égalité : `==`, `===`, `!=`, et `!==`. Les formes `!` sont bien sûr les versions symétriques "non-égales" de leurs contreparties; la *non-égalité* ne devrait pas être confondue avec l'*inégalité*.
 
-La différence entre `==` et `===` est habituellement caractérisé par le fait que `==` vérifie l'égalité de valeur et `===` vérifie l'égalité de valeur et de type. Cependant, c'est imprécis. La façon convenable de les caractérisés est que `==` vérifie l'égalité de valeur avec la coercition autorisée, et `===` vérifie l'égalité de valeur sans permettre que la coercition intervienne; `===` est souvent appelé "égalité strict" pour cette raison.
+La différence entre `==` et `===` est habituellement caractérisé par le fait que `==` vérifie l'égalité de valeur et `===` vérifie l'égalité de valeur et de type. Cependant, c'est imprécis. La façon convenable de les caractérisés est que `==` vérifie l'égalité de valeur avec la coercition autorisée, et `===` vérifie l'égalité de valeur sans permettre que la contrainte intervienne ; `===` est souvent appelé "égalité strict" pour cette raison.
 
 Considérez la coercition implicite qui est autorisée par la comparaison d'égalité-faible `==` et pas autorisé avec l'égalité-stricte `===` :
 
@@ -256,15 +256,15 @@ a == b;			// true
 a === b;		// false
 ```
 
-Dans la comparaison `a == b`, JS remarque que les types ne concordent pas, donc il passe par une série ordonnée d'étapes pour coercé l'une ou les deux  valeurs dans un type différent jusqu'à ce que les types concordent, là où alors une simple égalité de valeur peut être vérifiée.
+Dans la comparaison `a == b`, JS remarque que les types ne concordent pas, donc il passe par une série ordonnée d'étapes pour contraindre l'une ou les deux valeurs dans un type différent jusqu'à ce que les types concordent, là où alors une simple égalité de valeur peut être vérifiée.
 
-Si vous y réfléchissez, il y a deux façons possibles que `a == b` donne `true` via coercition. Soit on fini par comparer `42 == 42` soit `"42" == "42"`. De laquelle s'agit-il ?
+Si vous y réfléchissez, il y a deux façons possibles que `a == b` donne `true` via coercition. Soit on finit par comparer `42 == 42` soit `"42" == "42"`. De laquelle s'agit-il ?
 
 La réponse est : `"42"` devient `42`, pour effectuer la comparaison `42 == 42`. Dans un exemple si simple, ça n'a pas l'air d'avoir de l'importance de quelle manière le processus s'effectue, car au final le résultat est le même. Il existe des cas plus complexes où l'important n'est pas seulement le résultat mais *comment* on y arrive.
 
-Le `a === b` produit `false`, car la coercition n'est pas autorisé, donc la comparaison de simple valeur échoue évidemment. Plusieurs développeurs sentent que `===` est plus prévisible, donc ils insistent toujours sur l'utilisation de cette forme et préconisent de rester éloigner de la forme `==`. Je pense que cette perspective est vraiment étroite. Je crois que `==` est un outil puissant qui est utile dans vos programmes, *si vous prenez le temps d'apprendre comment ça marche.*
+Le `a === b` produit `false`, car la contrainte n'est pas autorisée, donc la comparaison de simple valeur échoue évidemment. Plusieurs développeurs sentent que `===` est plus prévisible, donc ils insistent toujours sur l'utilisation de cette forme et préconisent de rester éloigner de la forme `==`. Je pense que cette perspective est vraiment étroite. Je crois que `==` est un outil puissant qui est utile dans vos programmes, *si vous prenez le temps d'apprendre comment ça marche. *
 
-Nous n'allons pas couvrir tous les détails de comment la coercition fonctionne dans la comparaison `==`. La majeur partie fait sens, mais il existe des cas particuliers auxquels il faut faire attention. Vous pouvez lire la section 11.9.3 de la specification ES5 (http://www.ecma-international.org/ecma-262/5.1/) pour voir les règles exactes, et vous serez surpris par combien cette mécanique est simple et direct, comparée à toute la hype qui l'entoure.
+Nous n'allons pas couvrir tous les détails de comment la coercition fonctionne dans la comparaison `==`. La majeur partie fait sens, mais il existe des cas particuliers auxquels il faut faire attention. Vous pouvez lire la section 11.9.3 de la spécification ES5 (http://www.ecma-international.org/ecma-262/5.1/) pour voir les règles exactes, et vous serez surpris par combien cette mécanique est simple et direct, comparée à toute la hype qui l'entoure.
 
 Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aider à savoir quand utiliser `==` ou `===` dans diverses situations, voici mes règles simples :
 
@@ -272,13 +272,13 @@ Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aid
 * Si une des valeurs de la comparaison a une chance d'être ces valeurs spécifiques (`0`, `""`, or `[]` -- tableau vide), évitez `==` et utilisez `===`.
 * Dans *tous* les autres cas, vous êtes sauf pour utiliser `==`. Non seulement c'est sûr, mais dans de nombreux cas cela simplifie votre code d'une manière qui améliore la lisibilité.
 
-Ces règles se résument à vous conduire à avoir un oeil critique sur votre code et à penser à quelles sortes de valeurs peuvent se présenter dans les variables qui sont comparées par égalité. Si vous êtes certains de ces valeurs, et que `==` est sûr, utilisez le ! Si vous n'êtes pas sûr des valeurs, utilisez `===`. C'est aussi simple que ça.
+Ces règles se résument à vous conduire à avoir un oeil critique sur votre code et à penser à quelles sortes de valeurs peuvent se présenter dans les variables qui sont comparées par égalité. Si vous êtes certains de ces valeurs, et que `==` est sûr, utilisez-le ! Si vous n'êtes pas sûr des valeurs, utilisez `===`. C'est aussi simple que ça.
 
 La forme de non-égalité `!=` va de pair avec `==`, et la forme `!==` va de pair avec `===`. Toutes les règles et observations dont nous venons de discuter s'appliquent symétriquement aux comparaisons de non-égalité.
 
-Vous devriez faire particulièrement attention aux règles de comparaison `==` et `===` si vous comparez deux valeurs non-primitives, comme `objects` (cela inclut `function` et `array`). Car ces valeurs sont tenuent pour référence, les deux comparaisons `==` et `===`  vérifieront simplement si les références correspondent, mais rien de ce qui est des valeurs sous-jacentes.
+Vous devriez faire particulièrement attention aux règles de comparaison `==` et `===` si vous comparez deux valeurs non-primitives, comme `objects` (cela inclut `function` et `array`). Car ces valeurs sont tenues pour référence, les deux comparaisons `==` et `===` vérifieront simplement si les références correspondent, mais rien de ce qui est des valeurs sous-jacentes.
 
-Par exemple, les `array`s sont par défaut coercés en `string` par le simple fait de joindre toutes les valeurs avec des virgules (`,`). Il se peut que vous pensiez que deux `array`s avec le même contenu soient égaux avec `==`, mais en fait il ne le sont pas :
+Par exemple, les `array`s sont par défaut contraints en `string` par le simple fait de joindre toutes les valeurs avec des virgules (`,`). Il se peut que vous pensiez que deux `array`s avec le même contenu soient égaux avec `==`, mais en fait ils ne le sont pas :
 
 ```js
 var a = [1,2,3];
@@ -290,7 +290,7 @@ b == c;		// true
 a == b;		// false
 ```
 
-**Remarque :** Pour plus d'informations sur les règles de comparaison d'égalité avec `==`, voir la spécification ES5 (section 11.9.3) et aussi consultez le Chapître 4 de *Types & Grammaire* de cette collection; voir le Chapître 2 pour plus d'informations sur ce qui différencie valeurs et références.
+**Remarque :** Pour plus d'informations sur les règles de comparaison d'égalité avec `==`, voir la spécification ES5 (section 11.9.3) et aussi consultez le Chapitre 4 de *Types & Grammaire* de cette collection; voir le Chapitre 2 pour plus d'informations sur ce qui différencie valeurs et références.
 
 #### Inégalité
 
@@ -311,9 +311,9 @@ a < b;		// true
 b < c;		// true
 ```
 
-Que se passe t-il ici ? Dans la section 11.8.5 de la spécification ES5, il est dit que si les deux valeurs dans une comparaison `<` sont des `string`s, comme dans `b < c`, la comparaison est faite lexicographiquement (soit alphabétiquement comme un dictionnaire). Mais si l'une ou les deux n'est pas une `string`, comme dans `a < b`, alors les deux valeurs sont coercées en `number`s, et typiquement une comparaison numérique a lieu.
+Que se passe-t-il ici ? Dans la section 11.8.5 de la spécification ES5, il est dit que si les deux valeurs dans une comparaison `<` sont des `string`s, comme dans `b < c`, la comparaison est faite lexico-graphiquement (soit alphabétiquement comme un dictionnaire). Mais si l'une ou les deux ne sont pas une `string`, comme dans `a < b`, alors les deux valeurs sont contraintes en `number`s, et typiquement une comparaison numérique a lieu.
 
-Le plus gros piège dans lequel vous pourriez tombé ici dans le cas de comparaison entre deux types de valeurs potentiellement différents -- souvenez-vous, il n'existe pas de formes d'"inégalité strict" utilisable -- est quand une des valeurs ne peut pas être changée en un nombre valide, tel que :
+Le plus gros piège dans lequel vous pourriez tomber ici dans le cas de comparaison entre deux types de valeurs potentiellement différents -- souvenez-vous, il n'existe pas de formes d'"inégalité strict" utilisable -- est quand une des valeurs ne peut pas être changée en un nombre valide, tel que :
 
 ```js
 var a = 42;
@@ -324,19 +324,19 @@ a > b;		// false
 a == b;		// false
 ```
 
-Un instant, comment est-ce que ces trois comparaisons peuvent-elles être toutes `false` ? Parceque la valeur `b` est coercée en une "valeur numérique invalide" `NaN` dans les comparaisons `<` et `>`, et la spécification dit que `NaN` n'est ni supérieur ni inférieur à quelconque autre valeur.
+Un instant, comment est-ce que ces trois comparaisons peuvent-elles être toutes `false` ? Parce que la valeur `b` est contrainte en une "valeur numérique invalide" `NaN` dans les comparaisons `<` et `>`, et la spécification dit que `NaN` n'est ni supérieur ni inférieur à quelconque autre valeur.
 
-La comparaison `==` échoue pour d'autres raisons. `a == b` a des chances d'échouer si elle est intérprétée comme `42 == NaN` ou `"42" == "foo"` -- comme nous l'avons expliqué précédemment, le premier est en effet le cas.
+La comparaison `==` échoue pour d'autres raisons. `a == b` a des chances d'échouer si elle est interprétée comme `42 == NaN` ou `"42" == "foo"` -- comme nous l'avons expliqué précédemment, le premier est en effet le cas.
 
-**Remarque :** Pour plus d'informations au sujet des règles de comparaisons d'inégalité, voir la section 11.8.5 de la spécification ES5 et consulter également le Chapître 4 de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations au sujet des règles de comparaisons d'inégalité, voir la section 11.8.5 de la spécification ES5 et consulter également le Chapitre 4 de *Types & Grammaire* de cette collection.
 
 ## Variables
 
-En JavaScript, les noms de variables (de même que les noms de fonctions) doivent être des *identifiants* valides. Les règles strictes et complètes pour les caractères valides dans les identifiants sont un peu complexes quand on considère les caractères non-traditionnels tel que l'Unicdode. Cependant, si vous considérez uniquement les caractères alphanumériques ASCII typiques, les règles sont simples.
+En JavaScript, les noms de variables (de même que les noms de fonctions) doivent être des *identifiants* valides. Les règles strictes et complètes pour les caractères valides dans les identifiants sont un peu complexes quand on considère les caractères non-traditionnels tel que l'Unicode. Cependant, si vous considérez uniquement les caractères alphanumériques ASCII typiques, les règles sont simples.
 
 Un identifiant doit commencer avec `a`-`z`, `A`-`Z`, `$`, ou `_`. Il peut alors contenir n'importe quel caractère en plus des numéros `0`-`9`.
 
-Générallement, la même règle s'applique aussi bien à un nom de propriété qu'à un identifiant de variable. Cependant, certains mots ne peuvent pas être utilisés comme des variables, mais sont valides pour des noms de propriété. 
+Généralement, la même règle s'applique aussi bien à un nom de propriété qu'à un identifiant de variable. Cependant, certains mots ne peuvent pas être utilisés comme des variables, mais sont valides pour des noms de propriété. 
 Ces mots sont appelés "mots réservés", et incluent les mots-clés JS (`for`, `in`, `if`, etc.) ainsi que `null`, `true`, et `false`.
 
 
@@ -348,16 +348,16 @@ Vous pouvez utiliser le mot-clé `var` pour déclarer une variable qui appartien
 
 #### Hissage (hoisting)
 
-A chaque fois qu'une `var` apparaît dans une portée, cette déclaration est prise  pour appertenir à la oprtée entière et accessible partout et tout au long.
+A chaque fois qu'une `var` apparaît dans une portée, cette déclaration est prise pour appartenir à la portée entière et accessible partout et tout au long.
 
-De manière métaphorique, le comportement est appelé *hissage*, quand une déclaration `var` est conceptuellement "déplacée" en haut de sa portée englobante. Techniquement, ce processus est expliqué plus précisement par comment le code est compilé, mais nous pouvons passer ces détails pour le moment.
+De manière métaphorique, le comportement est appelé *hissage*, quand une déclaration `var` est conceptuellement "déplacée" en haut de sa portée englobante. Techniquement, ce processus est expliqué plus précisément par comment le code est compilé, mais nous pouvons passer ces détails pour le moment.
 
 Voyez :
 
 ```js
 var a = 2;
 
-foo();					// fonctionne parceque la 
+foo();					// fonctionne parce que la 
 						// déclaration `foo()` est "hissée"
 
 function foo() {
@@ -372,7 +372,7 @@ function foo() {
 console.log( a );	// 2
 ```
 
-**Attention :** Il ni d'usage ni une bonne idée de s'appuyer sur le *hissage* pour utiliser une variable plus tôt dans sa portée avant que sa déclaration n'apparaîsse; ça peut être assez déroutant. Il est beaucoup plus courant et accepté d'utiliser les déclarations de fonctions *hissées*, comme nous le faisons avec l'appel `foo()` qui apparaît avant sa déclaration formelle.
+**Attention :** Il ni d'usage ni une bonne idée de s'appuyer sur le *hissage* pour utiliser une variable plus tôt dans sa portée avant que sa déclaration n'apparaisse; ça peut être assez déroutant. Il est beaucoup plus courant et accepté d'utiliser les déclarations de fonctions *hissées*, comme nous le faisons avec l'appel `foo()` qui apparaît avant sa déclaration formelle.
 
 #### Portées imbriquées
 
@@ -418,7 +418,7 @@ a;			// 1 -- oops, automatiquement en variable globale :(
 
 C'est une très mauvaise pratique. Ne le faites pas ! Déclarer toujours vos variables formellement.
 
-En plus de créer des déclarations pour variables au niveau des fonctions, ES6 vous permet (*let* en anglais) de déclarer des variables qui n'appartiennet qu'à des blocs individuels (paires de `{ .. }`), en utilisant le mot clé `let`. Hormis quelques détails nuancés, les règles de portées seront grossièrement les mêmes comme nous l'avons vu avec les fonctions :
+En plus de créer des déclarations pour variables au niveau des fonctions, ES6 vous permet (*let* en anglais) de déclarer des variables qui n'appartiennent qu'à des blocs individuels (paires de `{ .. }`), en utilisant le mot clé `let`. Hormis quelques détails nuancés, les règles de portées seront grossièrement les mêmes comme nous l'avons vu avec les fonctions :
 
 ```js
 function foo() {
@@ -440,13 +440,13 @@ foo();
 // 5 7 9
 ```
 
-Parcequ'on utilise `let` au lieu de `var`, `b` appartiendra seulement à la déclaration `if` et ainsi pas à toute la portée de la fonction `foo()`. De manière similaire, `c` appartient seulement à la boucle `while`. Le portée de bloc est très utile pour gérer les portées de vos variables d'une manière plus fine, ce qui rend votre code plus maintenable au fil du temps.
+Parce qu'on utilise `let` au lieu de `var`, `b` appartiendra seulement à la déclaration `if` et ainsi pas à toute la portée de la fonction `foo()`. De manière similaire, `c` appartient seulement à la boucle `while`. La portée de bloc est très utile pour gérer les portées de vos variables d'une manière plus fine, ce qui rend votre code plus maintenable au fil du temps.
 
-**Remarque :** Pour plus d'informations au sujet des portées, voir *Portées & Fermetures* dans cette collection. Voir *ES6 et au delà* de cette collection pour plus d'informations au sujet de la portée de bloc `let`.
+**Remarque :** Pour plus d'informations au sujet des portées, voir *Portées & Fermetures* dans cette collection. Voir *ES6 et au-delà* de cette collection pour plus d'informations au sujet de la portée de bloc `let`.
 
 ## Conditions
 
-En addition à la déclaration `if` que nous avons introduite brièvement dans le Chapître 1, JavaScript fourni quelques autres mécanismes de conditions auxquels on devrait jeter un oeil.
+En addition à la déclaration `if` que nous avons introduite brièvement dans le Chapitre 1, JavaScript fourni quelques autres mécanismes de conditions auxquels on devrait jeter un oeil.
 
 Parfois, vous vous retrouverez à écrire une série de déclarations `if..else.if` comme cela :
 
@@ -465,7 +465,7 @@ else {
 }
 ```
 
-Cette structure fonctionne, mais elle est un peu verbeuse parcequ'il faut définir `un` test pour chaque cas. Voici une autre option, la déclaratiion `switch`:
+Cette structure fonctionne, mais elle est un peu verbeuse parce qu'il faut définir `un` test pour chaque cas. Voici une autre option, la déclaratiion `switch`:
 
 ```js
 switch (a) {
@@ -483,7 +483,7 @@ switch (a) {
 }
 ```
 
-Le `break` est important si vous voulez que les déclarations dans un `cas` uniquement s'executent. Si vous omettez le `break` d'un `case`, et que ce `case` concorde ou s'execute, l'execution continuera dans les prochaines déclarations `case` même si ce `case` ne concorde pas. Ce soit-disant "échec" est parfois voulu/désiré :
+Le `break` est important si vous voulez que les déclarations dans un `cas` uniquement s'exécutent. Si vous omettez le `break` d'un `case`, et que ce `case` concorde ou s'exécute, l'execution continuera dans les prochaines déclarations `case` même si ce `case` ne concorde pas. Ce soi-disant "échec" est parfois voulu/désiré :
 
 ```js
 switch (a) {
@@ -499,7 +499,7 @@ switch (a) {
 }
 ```
 
-Ici, si `a` est soit `2` ou `10`, le code "des trucs cools" sera executé.
+Ici, si `a` est soit `2` ou `10`, le code "des trucs cools" sera exécuté.
 
 Une autre forme de condition en JavaScript est l'"opérateur de condition", souvent appelé "opérateur ternaire". C'est comme une version plus concise de la simple déclaration `if..else`, telle que :
 
@@ -520,7 +520,7 @@ var b = (a > 41) ? "hello" : "world";
 
 Si l'expression de test (`a < 41`) est évaluée comme `true`, la première clause (`"hello"`) sera le résultat, sinon ça sera la seconde clause (`"world"`), et quelque soit le résultat, il sera ensuite affecté à `b`.
 
-L'opérateur de condition n'a pas à être utilisé dans un affectation, mais c'est généralement l'usage le plus commun.
+L'opérateur de condition n'a pas à être utilisé dans une affectation, mais c'est généralement l'usage le plus commun.
 
 **Remarque :** Pour plus d'informations sur les conditions de test et autres pattern pour `switch` et `? :`, voir *Types & Grammaire* dans cette collection.
 
@@ -560,7 +560,7 @@ function foo() {
 // ce code est en mode strict
 ```
 
-Une différence clé (amélioration !) avec le mode strict est qu'il intérdit la déclaration implicite de variable globale automatique qui se produit quand on oubli le `var` :
+Une différence clé (amélioration !) avec le mode strict est qu'il interdit la déclaration implicite de variable globale automatique qui se produit quand on oubli le `var` :
 
 ```js
 function foo() {
@@ -571,15 +571,15 @@ function foo() {
 foo();
 ```
 
-Si vous enclenchez le mode strict dans votre code, et que vous recevez des erreurs, ou que votre code commence à se comporter étrangement, vous serez sûrement tenter d'éviter le mode strict. Mais ça serait une mauvaise idée de céder à cet instint. Si le mode strict provoque des problèmes dans votre programme, c'est un signe quasi-sûr qu'il a des choses à corriger dans votre programme.
+Si vous enclenchez le mode strict dans votre code, et que vous recevez des erreurs, ou que votre code commence à se comporter étrangement, vous serez sûrement tenter d'éviter le mode strict. Mais ça serait une mauvaise idée de céder à cet instinct. Si le mode strict provoque des problèmes dans votre programme, c'est un signe quasi-sûr qu'il a des choses à corriger dans votre programme.
 
 Non seulement le mode strict garde votre code sur le droit chemin, mais non seulement il le rendra plus optimisable, mais il représente aussi la direction future du langage. Il serait plus simple pour vous de vous habituer au mode strict maintenant que de sans cesse le repousser -- il sera juste plus dur de s'y mettre plus tard !
 
-**Remarque :** Pour plus d'informations sur le mode strict, voir le Chapître 5 de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations sur le mode strict, voir le Chapitre 5 de *Types & Grammaire* de cette collection.
 
 ## Utiliser les fonctions comme valeurs
 
-Jusque là, nous avons parlé des fonctions comme étant le principal mécanisme de *portée* en JavaScript. On se souvient de la syntaxe de la déclaration `function` comme ci-dessous :
+Jusque-là, nous avons parlé des fonctions comme étant le principal mécanisme de *portée* en JavaScript. On se souvient de la syntaxe de la déclaration `function` comme ci-dessous :
 
 ```js
 function foo() {
@@ -587,7 +587,7 @@ function foo() {
 }
 ```
 
-Bien que cela ne paraîsse pas évident en regardant la syntaxe, `foo` est en fait juste une variable située dans la portée englobante extérieure à laquelle est donnée une référence à la `function` déclarée. Ainsi, la `function` elle-même est une valeur, juste comme `42` ou `[1,2,3]` le seraient.
+Bien que cela ne paraisse pas évident en regardant la syntaxe, `foo` est en fait juste une variable située dans la portée englobante extérieure à laquelle est donnée une référence à la `function` déclarée. Ainsi, la `function` elle-même est une valeur, juste comme `42` ou `[1,2,3]` le seraient.
 
 Cela peut sembler être un concept un peu étrange à première vue, donc prenez un temps pour y songer. Non seulement vous pouvez passer une valeur (argument) *à* une fonction, mais *une fonction elle-même* peut être une valeur, assignable à des variables, ou passée d'autres fonctions ou une retournée d'autres fonctions.
 
@@ -605,7 +605,7 @@ var x = function bar(){
 };
 ```
 
-La première expression de fonction assignée à la variable `foo` est appelée *anonyme* parcequ'elle n'a pas de `nom`.
+La première expression de fonction assignée à la variable `foo` est appelée *anonyme* parce qu'elle n'a pas de `nom`.
 
 La seconde expression de fonction est *nommée* (`bar`), et on lui a référencé `x` comme variable assignée. Les *expressions de fonction nommées* sont généralement préférables, bien que les *expressions de fonction anonymes* soient encore très courantes.
 
@@ -613,9 +613,9 @@ Pour plus d'information, voir *Portée & Fermetures* de cette collection.
 
 ### Expression de Fonction Invoquée Immédiatement (IIFEs en anglais)
 
-Dans l'extrait de code précédent, aucun des expressions de fonction n'est executée -- nous le pourrions seulement si nous avions inclut `foo()` ou `x()`, par exemple.
+Dans l'extrait de code précédent, aucun des expressions de fonction n'est exécutée -- nous le pourrions seulement si nous avions inclut `foo()` ou `x()`, par exemple.
 
-Il existe une autre manière d'excuter une expression de fonction, qu'on appel plus généralement *expression de fonction executée immédiatement* (IIFE) :
+Il existe une autre manière d'exécuter une expression de fonction, qu'on appelle plus généralement *expression de fonction exécutée immédiatement* (IIFE) :
 
 ```js
 (function IIFE(){
@@ -628,7 +628,7 @@ La notation `( .. )` extérieure qui entoure l'expression de fonction `(function
 
 Le `()` à la fin de l'expression -- la ligne `})();` -- est ce qui en fait exécute l'expression de fonction référencée immédiatement avant.
 
-Ca peut paraître étrange, mais ça n'est pas aussi bizarre que ça en à l'air au premier coup d'oeil. Voyez les similitudes entre `foo` et `IIFE` ici :
+Ça peut paraître étrange, mais ça n'est pas aussi bizarre que ça en a l'air au premier coup d'œil. Voyez les similitudes entre `foo` et `IIFE` ici :
 
 ```js
 function foo() { .. }
@@ -667,12 +667,12 @@ var x = (function IIFE(){
 x;	// 42
 ```
 
-La valeur `42` est retournée par la fonction nommée `IIFE`, qui elle-même est executée, puis assignée à `x`;
+La valeur `42` est retournée par la fonction nommée `IIFE`, qui elle-même est exécutée, puis assignée à `x`;
 
 ### Fermetures
 
 
-La *fermeture*  est un des concepts les plus importants et souvent l'un des moins compris du JavaScript. Je ne vais pas le couvrir pas en détail ici, mais je vous invite à lire *Portée & Fermetures* de cette collection. Cependant je veux expliquer quelques petites choses à son sujet afin que vous comprenniez le concept général. C'est une des techniques les plus importantes pour votre ensemble de compétences en JavaScript.
+La *fermeture* est un des concepts les plus importants et souvent l'un des moins compris du JavaScript. Je ne vais pas le couvrir pas en détail ici, mais je vous invite à lire *Portée & Fermetures* de cette collection. Cependant je veux expliquer quelques petites choses à son sujet afin que vous compreniez le concept général. C'est une des techniques les plus importantes pour votre ensemble de compétences en JavaScript.
 
 Vous pouvez penser à une fermeture comme à un moyen de se "souvenir" et continuer à accéder la portée d'une fonction (ses variables) même quand la fonction a fini son exécution.
 
@@ -703,7 +703,7 @@ var plusUn = faireAdditionneur( 1 );
 // `plusDix` reçoit une référence à la fonction interne `add(..)`
 // avec une fermeture sur le paramètre `x` de
 // la fonction externe `faireAdditionneur(..)`
-var plusTen = faireAdditionneur( 10 );
+var plusDix = faireAdditionneur( 10 );
 
 plusUn( 3 );		// 4  <-- 1 + 3
 plusUn( 41 );		// 42 <-- 1 + 41
@@ -718,9 +718,9 @@ Un peu plus d'explications sur comment fonctionne ce code :
 3. Quand nous appelons `plusUn(3)`, ça ajoute `3` (son `y` interne) à `1` (souvenu par `x`), et nous obtenons `4` en résultat.
 4. Quand nous appelons `plusDix(13)`, ça ajoute `13` (son `y` interne) à `1` (souvenu par `x`), et nous obtenons `23` en résultat.
 
-Ne vous inquietez pas si cela paraît étrange et déroutant au premier abord -- ça peut l'être en effet ! Il va falloir beaucoup de pratique pour le comprendre pleinement.
+Ne vous inquiétez pas si cela paraît étrange et déroutant au premier abord -- ça peut l'être en effet ! Il va falloir beaucoup de pratique pour le comprendre pleinement.
 
-Mais faites-moi confiance, une fois que vous l'avez compris, c'est l'une des techniques les plus puissante et utile dans tous le domaine de la programmation. Ca vaut définitivement l'effort de laisser votre cerveau méditer sur les fermetures pour un moment. Dans la prochaine section, nous pratiquerons d'avantage les fermetures.
+Mais faites-moi confiance, une fois que vous l'avez compris, c'est l'une des techniques les plus puissante et utile dans tout le domaine de la programmation. Ça vaut définitivement l'effort de laisser votre cerveau méditer sur les fermetures pour un moment. Dans la prochaine section, nous pratiquerons d'avantage les fermetures.
 
 #### Modules
 
@@ -752,33 +752,33 @@ var fred = User();
 fred.login( "fred", "12Battery34!" );
 ```
 
-La fonction `User()` sert de portée externe qui maintient les variables `username` et `password`, ainsi que la fonction interne `doLogin()`; ce sont tous des détails internes privés de ce module `User` auxquels on ne peut pas accèder à partir du monde extérieur.
+La fonction `User()` sert de portée externe qui maintient les variables `username` et `password`, ainsi que la fonction interne `doLogin()`; ce sont tous des détails internes privés de ce module `User` auxquels on ne peut pas accéder à partir du monde extérieur.
 
-**Attention :** Nous n'appelons pas exprès `new User()` ici, en dépit du fait que ça puisse paraître d'usage pour la pluparts des lecteurs. `User()` est juste une fonction, non pas une classe à instancier, donc elle est juste appelée normalement. Utiliser `new` serait inapproprié et en fait un gâchîs de ressources.
+**Attention :** Nous n'appelons pas exprès `new User()` ici, en dépit du fait que ça puisse paraître d'usage pour la plupart des lecteurs. `User()` est juste une fonction, non pas une classe à instancier, donc elle est juste appelée normalement. Utiliser `new` serait inapproprié et en fait un gâchis de ressources.
 
-Exécuter `User()` crée une *instance* du module `User` -- une portée toute nouvelle est créée, et ainsi une toute nouvelle copie de chacune des ces variables/fonctions. Nous affectons cette instance à `fred`. Si nous lançons `User()` une fois de plus, nous obtiendrons une nouvelle instance entièrement à part de `fred`.
+Exécuter `User()` crée une *instance* du module `User` -- une portée toute nouvelle est créée, et ainsi une toute nouvelle copie de chacune de ces variables/fonctions. Nous affectons cette instance à `fred`. Si nous lançons `User()` une fois de plus, nous obtiendrons une nouvelle instance entièrement à part de `fred`.
 
 La fonction interne `doLogin()` possède une fermeture sur `username` et `password`, ce qui signifie qu'elle va garder l'accès à ces variables même après que la fonction `User()` ait terminé son exécution.
 
 `publicAPI` est un objet avec une propriété/méthode, `login`, qui est une référence à la fonction interne `doLogin()`. Quand nous retournons `publicAPI` de `User()`, cela devient l'instance qu'on appelle `fred`.
 
-À ce stade, la fonction externe `User()` a terminé son exécution. Normalement, on pourrait penser que les variables internes `username` et `password` ont disparu. Mais ici, non, parcequ'il y a une fermeture dans la fonction `login()` qui les gardent en vie.
+À ce stade, la fonction externe `User()` a terminé son exécution. Normalement, on pourrait penser que les variables internes `username` et `password` ont disparu. Mais ici, non, parce qu'il y a une fermeture dans la fonction `login()` qui les gardent en vie.
 
-C'est pourquoi nous pouvons appeler `fred.login(..)` -- qui est pareil que d'appeler le `doLogin(..)` interne -- et elle peut toujours accèder aux variables internes `username` et `password`.
+C'est pourquoi nous pouvons appeler `fred.login(..)` -- qui est pareil que d'appeler le `doLogin(..)` interne -- et elle peut toujours accéder aux variables internes `username` et `password`.
 
-Il y a de fortes chances qu'avec juste un coup d'oeil aux fermetures et au pattern module, certaines choses soient toujours déroutantes. C'est OK ! Ca prend du temps pour digérer tout ça.
+Il y a de fortes chances qu'avec juste un coup d'œil aux fermetures et au pattern module, certaines choses soient toujours déroutantes. C'est pas grave ! Ça prend du temps pour digérer tout ça.
 
 A partir d'ici, allez lire *Portées et Fermetures* de cette collection pour une exploration en profondeur.
 
 ## L'identifiant `this`
 
-Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapître sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
+Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapitre sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
 
-Bien qu'il puisse parâitre que `this` est rattaché aux "patterns orientées-objet", en JS `this` est un mécanisme différent.
+Bien qu'il puisse paraître que `this` est rattaché aux "patterns orientées-objet", en JS `this` est un mécanisme différent.
 
 Si une fonction possède une référence `this`, cette référence `this` pointe habituellement sur un `object`. Mais sur quel `object` elle point dépend de comment la fonction a été appelée.
 
-Il est important de réaliser que `this` *ne se référe pas* à la fonction elle-même, comme c'est souvent compris incorrectement.
+Il est important de réaliser que `this` *ne se réfère pas* à la fonction elle-même, comme c'est souvent compris incorrectement.
 
 En voici une illustration rapide :
 
@@ -806,7 +806,7 @@ foo.call( obj2 );		// "obj2"
 new foo();			// undefined
 ```
 
-Il y a quatre règles pour comment `this` est initialisé, et elles sont démontrées dans les quatres dernière lignes de cet extrait de code.
+Il y a quatre règles pour comment `this` est initialisé, et elles sont démontrées dans les quatre dernière lignes de cet extrait de code.
 
 
 1. `foo()` définit `this` comme objet global en mode non strict -- en mode strict, `this` serait `undefined` (indéfini) et vous recevriez lors de l'accès à la propriété `bar` -- donc `"global"` est la valeur trouvée pour `this.bar`.
@@ -814,17 +814,17 @@ Il y a quatre règles pour comment `this` est initialisé, et elles sont démont
 3. `foo.call(obj2)` définit `this` comme objet `obj2`.
 4. `new foo()` définit `this` comme un objet vide tout neuf.
 
-En un mot : Pour comprendre vers quoi `this` pointe, vous devez examiner comment la fonction a été appelée. La réponse sera l'une des quatres manières vues précédemment, et vous obtientrez ainsi l'identité de `this`.
+En un mot : Pour comprendre vers quoi `this` pointe, vous devez examiner comment la fonction a été appelée. La réponse sera l'une des quatre manières vues précédemment, et vous obtiendrez ainsi l'identité de `this`.
 
-**Remarque :** Pour plus d'informations au sujet de `this`, voir les Chapîtres 1 et 2 de *this et Prototypes d'Objets* de cette collection.
+**Remarque :** Pour plus d'informations au sujet de `this`, voir les Chapitres 1 et 2 de *this et Prototypes d'Objets* de cette collection.
 
 ## Prototypes
 
-Le mécanisme de prototype est assez compliqué. Nous y jeterons seulement un oeil ici. Je vous conseillerais de passer plus de temps sur la révision des Chapîtres 4-6 de *this & Prototypes d'Objet* de cette collection pour tous les détails.
+Le mécanisme de prototype est assez compliqué. Nous y jetterons seulement un oeil ici. Je vous conseillerais de passer plus de temps sur la révision des Chapitres 4-6 de *this & Prototypes d'Objet* de cette collection pour tous les détails.
 
 Quand vous référencez une propriété sur un objet, si cette propriété n'existe pas, JavaScript va automatiquement utiliser la référence interne du prototype de cet objet pour trouver un autre objet dans lequel chercher la propriété. Vous pourriez voir cela un peu comme une solution de repli si une propriété est absente.
 
-La liaison entre la référence interne au prototype d'un objet et sa "solution de repli" se produit au moment ou l'objet est créé. La façon la plus simple de l'illustrer est avec un utilitaire intégrée appelée `Object.create(..)`.
+La liaison entre la référence interne au prototype d'un objet et sa "solution de repli" se produit au moment où l'objet est créé. La façon la plus simple de l'illustrer est avec un utilitaire intégrée appelée `Object.create(..)`.
 
 Voyez :
 
@@ -846,33 +846,33 @@ Le schéma ci-dessous peut vous aider à visualiser les objets `foo` et `bar` et
 
 <img src="fig6.png">
 
-La propriété `a` n'existe pas sur l'objet `bar`, mais puisque `bar` a un lien prototypal sur `foo`, JavaScript re-va automatiquement à la recherche de `a` sur l'objet `foo`, là où on peut le trouver.
+La propriété `a` n'existe pas sur l'objet `bar`, mais puisque `bar` a un lien prototypal sur `foo`, JavaScript va automatiquement de nouveau à la recherche de `a` sur l'objet `foo`, là où on peut le trouver.
 
 Cette liaison semble être une fonctionnalité du langage quelque peu étrange. La façon la plus fréquente d'utiliser -- et je dirais même d'abuser -- cette fonctionnalité est d'essayer d'émuler/simuler un mécanisme de "classe" avec "héritage".
 
-Cependant, il y a une manière plus naturelle d'appliquer les prototypes. C'est une pattern qu'on appelle "délégation de comportement", où vous concevez intentionnellement vos objets reliés afin qu'ils soient capables de *déléguer* une partie des comportements nécessaires.
+Cependant, il y a une manière plus naturelle d'appliquer les prototypes. C'est un pattern qu'on appelle "délégation de comportement", où vous concevez intentionnellement vos objets reliés afin qu'ils soient capables de *déléguer* une partie des comportements nécessaires.
 
-**Remarque :** Pour plus d'informations sur les prototypes et la délégation de comportement, voir les Chapîtres 4-6 de *this & Prototypes d'Objets* de cette collection.
+**Remarque :** Pour plus d'informations sur les prototypes et la délégation de comportement, voir les Chapitres 4-6 de *this & Prototypes d'Objets* de cette collection.
 
 ## Ancien & Nouveau
 
-Quelqu'unes des fonctionnalités que nous avons déjà couvertes, et certainement plusieurs des fonctionnalités couvertes dans le reste de cette collection, sont de nouvelles additions au langage et ne seront pas nécessairement disponibles dans les navigateurs les plus anciens. En fait, certaines des fonctionnalités les plus récentes n'ont pas encore été implémentées dans aucun navigateur stable.
+Quelques-unes des fonctionnalités que nous avons déjà couvertes, et certainement plusieurs des fonctionnalités couvertes dans le reste de cette collection, sont de nouvelles additions au langage et ne seront pas nécessairement disponibles dans les navigateurs les plus anciens. En fait, certaines des fonctionnalités les plus récentes n'ont pas encore été implémentées dans aucun navigateur stable.
 
-Alors, que faisons nous avec ces nouvelles choses ? Est-ce qu'on doit attendre des années ou des décennies avant que ces anciens navigateurs tombent dans les oubliettes ?
+Alors, que faisons-nous avec ces nouvelles choses ? Est-ce qu'on doit attendre des années ou des décennies avant que ces anciens navigateurs tombent dans les oubliettes ?
 
-C'est l'approche de nombreuses personnes au vue de cette situation, mais ce n'est vraiment pas la bonne approche à avoir envers le JS.
+C'est l'approche de nombreuses personnes à la vue de cette situation, mais ce n'est vraiment pas la bonne approche à avoir envers le JS.
 
 Il existe deux techniques principales utilisables pour "apporter" le nouveau JavaScript dans les anciens navigateurs : le polyfilling et la transpilation.
 
 ### Polyfilling
 
-Le mot "polyfill" est un terme inventé (par Remy Sharp) (https://remysharp.com/2010/10/08/what-is-a-polyfill) utilisé pour faire référence au fait de prendre la définition d'une nouvelle fonctionnalité et de produire un code avec un comportement équivalent, mais qui soit capable de s'executer dans des environnements JS plus anciens.
+Le mot "polyfill" est un terme inventé (par Remy Sharp) (https://remysharp.com/2010/10/08/what-is-a-polyfill) utilisé pour faire référence au fait de prendre la définition d'une nouvelle fonctionnalité et de produire un code avec un comportement équivalent, mais qui soit capable de s'exécuter dans des environnements JS plus anciens.
 
 For example, ES6 defines a utility called `Number.isNaN(..)` to provide an accurate non-buggy check for `NaN` values, deprecating the original `isNaN(..)` utility. But it's easy to polyfill that utility so that you can start using it in your code regardless of whether the end user is in an ES6 browser or not.
 
-Par exemple, ES6 défini un utilitaire appelé `Number.isNaN(..)` qui fournit une vérification exempt de bug pour les valeurs `NaN`, dépréciant ainsi l'utilitaire original `isNaN(..)`. Il est facile de polyfiller cet utilitaire afin de pouvoir l'utiliser dans votre code, quelque soit la navigateur de votre utilisateur final, qu'il soit compatible ES6 ou pas. 
+Par exemple, ES6 défini un utilitaire appelé `Number.isNaN(..)` qui fournit une vérification exempte de bug pour les valeurs `NaN`, dépréciant ainsi l'utilitaire original `isNaN(..)`. Il est facile de polyfiller cet utilitaire afin de pouvoir l'utiliser dans votre code, quel que soit le navigateur de votre utilisateur final, qu'il soit compatible ES6 ou pas. 
 
-Voyez :
+Considérez :
 
 ```js
 if (!Number.isNaN) {
@@ -882,19 +882,19 @@ if (!Number.isNaN) {
 }
 ```
 
-La déclaration `if` empêche que le polyfill ne soit appliquée dans les navigateurs ES6, où cette fonctionalité existe déjà. Si elle n'existe pas, on définit `Number.isNaN(..)`.
+La déclaration `if` empêche que le polyfill ne soit appliquée dans les navigateurs ES6, où cette fonctionnalité existe déjà. Si elle n'existe pas, on définit `Number.isNaN(..)`.
 
-**Remarque :** La vérification que nous faisons ici tire avantage d'une bizzarerie sur la valeur `NaN`, qui est que c'est la seule valeur dans tout le langage qui n'est pas égale à elle-même.
+**Remarque :** La vérification que nous faisons ici tire avantage d'une bizarrerie sur la valeur `NaN`, qui est que c'est la seule valeur dans tout le langage qui n'est pas égale à elle-même.
 
-Toutes les nouvelles fonctionalités ne sont pas intégralement polyfiables. Parfois, la plupart du comportement peut être polyfié, mais il y a toujours quelques déviations. Vous devriez prendre de grandes précautions quand vous implementez vous-même un polyfill, en vous assurant d'ahdérer à la spécification aussi strictement que possible.
+Toutes les nouvelles fonctionnalités ne sont pas intégralement polyfiables. Parfois, la plupart du comportement peut être polyfié, mais il y a toujours quelques déviations. Vous devriez prendre de grandes précautions quand vous implémentez vous-même un polyfill, en vous assurant d'adhérer à la spécification aussi strictement que possible.
 
 Ou mieux encore, utilisez un ensemble déjà contrôlé de polyfills auxquels vous pouvez vous fier, tels que ceux fournis par ES5-shim (https://github.com/es-shims/es5-shim) et ES6-Shim (https://github.com/es-shims/es6-shim).
 
 ### Transpilation
 
-Il n'existe aucun moyen de polyfié une nouvelle syntaxe ajouté au langage. Dans un ancien moteur JS, la nouvelle syntaxe lancerait une erreur de type unrecognized/invalid (syntaxe non reconnue ou invalide).
+Il n'existe aucun moyen de polyfié une nouvelle syntaxe ajoutée au langage. Dans un ancien moteur JS, la nouvelle syntaxe lancerait une erreur de type unrecognized/invalid (syntaxe non reconnue ou invalide).
 
-Ainsi donc, la meilleure option que nous avons est d'utiliser un outil qui converti votre code moderne en ancien code équivalent. Ce processus est appelé généralement "transpilation", une terminologie issue d'une fusion des verbes transfomer + compiler.
+Ainsi donc, la meilleure option que nous avons est d'utiliser un outil qui converti votre code moderne en ancien code équivalent. Ce processus est appelé généralement "transpilation", une terminologie issue d'une fusion des verbes transformer + compiler.
 
 Fondamentalement, votre code est rédigé sous une forme syntaxique nouvelle, mais ce que vous déployez pour le navigateur est du code transpilé dans une forme syntaxique ancienne. Typiquement, on ajoutera le transpileur dans le processus de "build" (construction de l'application), de la même manière qu'avec votre linter (vérificateur de code) ou votre minifier (compresseur de code).
 
@@ -902,13 +902,11 @@ Vous devez sûrement vous demander pourquoi se fatiguer à écrire dans la nouve
 
 Il existe plusieurs raisons importantes, auxquelles vous devriez faire attention, qui jouent en faveur de la transpilation :
 
-* La nouvelle syntaxe qui est ajouté au langage est conçue pour rendre votre code plus lisible et maintenable. Les équivalents plus anciens sont souvent beaucoup plus compliqués. Vous préférerez écrire dans une syntaxe plus neuve et claire, pas uniquement pour vous maus aussi pour tous les autres membres de l'équipe de développement.
-* Si vous transpilez uniquement pour les anciens navigateurs, mais livrez la nouvelle syntaxe aux nouveaux navigateurs, vous tirez avantage des optimisations de performance des navigateurs grâce à la nouvelle syntaxe. Cela permet aussi aux fabriquants de navigateurs d'avoir d'avantage de code en production sur lesquels tester leurs implémentations et optimisations.
+* La nouvelle syntaxe qui est ajouté au langage est conçue pour rendre votre code plus lisible et maintenable. Les équivalents plus anciens sont souvent beaucoup plus compliqués. Vous préférerez écrire dans une syntaxe plus neuve et claire, pas uniquement pour vous mais aussi pour tous les autres membres de l'équipe de développement.
+* Si vous transpilez uniquement pour les anciens navigateurs, mais livrez la nouvelle syntaxe aux nouveaux navigateurs, vous tirez avantage des optimisations de performance des navigateurs grâce à la nouvelle syntaxe. Cela permet aussi aux fabricants de navigateurs d'avoir d'avantage de code en production sur lesquels tester leurs implémentations et optimisations.
 * L'utilisation de la nouvelle syntaxe plus tôt permet qu'elle soit testée de manière plus robuste dans le monde réel, ce qui fournit des retours précoces aux membres du comité JavaScript (TC39). Si les problèmes sont trouvés suffisamment tôt, ils peuvent être changés/corrigés avant que ces erreurs de conception deviennent permanentes.
 
-Here's a quick example of transpiling. ES6 adds a feature called "default parameter values." It looks like this:
-
-Voici un exemple rapide de transpilation. ES6 ajoute une fonctionalité appelée "valeurs de paramètre par défaut"
+Voici un exemple rapide de transpilation. ES6 ajoute une fonctionnalité appelée "valeurs de paramètre par défaut"
 
 ```js
 function foo(a = 2) {
@@ -928,49 +926,47 @@ function foo() {
 }
 ```
 
-Comme vous le voyez, on vérifie si la valeur de `arguments[0]` est `void 0` (aussi dit `undefined`), et si c'est le cas, on fournit la valeur `2` par défault; sinon, on assigne ce qui est passé.
+Comme vous le voyez, on vérifie si la valeur de `arguments[0]` est `void 0` (aussi dit `undefined`), et si c'est le cas, on fournit la valeur `2` par défaut; sinon, on assigne ce qui est passé.
 
 En plus de la possibilité d'utiliser maintenant une syntaxe plus jolie, même dans les anciens navigateurs, étudier le code transpilé permet d'expliquer le comportement voulu plus clairement.
 
-Vous ne l'avez peut être pas remarqué en regardant la version ES6, mais `undefined` est la seule valeur qui ne peut pas être explicitement passée comme paramètre avec valeur par défault, cependant le code transpilé rend ça plus clair.
+Vous ne l'avez peut-être pas remarqué en regardant la version ES6, mais `undefined` est la seule valeur qui ne peut pas être explicitement passée comme paramètre avec valeur par défaut, cependant le code transpilé rend ça plus clair.
 
-Le dérnier détail qu'il est important de souligner au sujet des transpileurs est qu'ils devraient maintenant être considérer comme faisant parti du standard de l'ensemble de l'écosystème et processus de développement JS. JS va continuer à évoluer, bien plus rapidment qu'avant, et régulièrement de nouvelle formes syntaxiques et fonctionnalités vont être ajoutées.
+Le dernier détail qu'il est important de souligner au sujet des transpileurs est qu'ils devraient maintenant être considérer comme faisant partie du standard de l'ensemble de l'écosystème et processus de développement JS. JS va continuer à évoluer, bien plus rapidement qu'avant, et régulièrement de nouvelle formes syntaxiques et fonctionnalités vont être ajoutées.
 
-Si vous utilisez une transpileur par défaut, vous serez toujours capable de passer à la dernière nouvelle syntaxe au moment où vous le jugerez utile, plutôt que d'attendre des années que les navigateurs d'aujourd'hui disapraissent.
+Si vous utilisez une transpileur par défaut, vous serez toujours capable de passer à la dernière nouvelle syntaxe au moment où vous le jugerez utile, plutôt que d'attendre des années que les navigateurs d'aujourd'hui disparaissent.
 
 Vous pouvez choisir parmi un bon nombre de transpileur. Voici quelques bonnes options au moment où ces lignes sont écrites :
 
-* Babel (https://babeljs.io) (formerly 6to5): Transpile ES6+ en ES5
-* Traceur (https://github.com/google/traceur-compiler): Transpile ES6, ES7, et au delà en ES5
+* Babel (https://babeljs.io) (formerly 6to5) : Transpile ES6+ en ES5
+* Traceur (https://github.com/google/traceur-compiler) : Transpile ES6, ES7, et au-delà en ES5
 
 ## Non-JavaScript
 
-Jusque là, la seule chose que nous ayons couverte est le langage JS lui-même. La réalité est que la plupart du JS est écrit pour tourner et intéragir dans des environnements commes les navigateurs. Un bon morceau du code que vous écrivez n'est pas, strictement parlant, controllé par JavaScript. Ca peut paraître un peu bizarre.
+Jusque-là, la seule chose que nous ayons couverte est le langage JS lui-même. La réalité est que la plupart du JS est écrit pour tourner et interagir dans des environnements comme les navigateurs. Un bon morceau du code que vous écrivez n'est pas, strictement parlant, contrôlé par JavaScript. Ça peut paraître un peu bizarre.
 
-Le JavaScript non-JavaScript le plus fréquent que vous allez rencontré est l'API DOM. Par exemple : 
+Le JavaScript non-JavaScript le plus fréquent que vous allez rencontrer est l'API DOM. Par exemple : 
 
 ```js
 var el = document.getElementById( "foo" );
 ```
 
-La variable `document` existe en tant que variable globale quand votre code tourne dans un navigateur. Ce n'est ni fourni par le moteur JS, ni controllé par la spécification JavaScript en particulier. Ca prend la forme de quelque chose qui ressemble terriblement à un `object` JS normal, mais ce n'est pas exactement ça. C'est un `object` spécial, souvent appelé un "objet hôte".
+La variable `document` existe en tant que variable globale quand votre code tourne dans un navigateur. Ce n'est ni fourni par le moteur JS, ni contrôlé par la spécification JavaScript en particulier. Ça prend la forme de quelque chose qui ressemble terriblement à un `object` JS normal, mais ce n'est pas exactement ça. C'est un `object` special, souvent appelé un "objet hôte".
 
-Moreover, the `getElementById(..)` method on `document` looks like a normal JS function, but it's just a thinly exposed interface to a built-in method provided by the DOM from your browser. In some (newer-generation) browsers, this layer may also be in JS, but traditionally the DOM and its behavior is implemented in something more like C/C++.
+De plus, la méthode `getElementById(..)` sur `document` ressemble à une fonction JS normale, mais il s'agit d'une interface finement exposée à une méthode native fournie par le DOM de votre navigateur. Dans quelques navigateurs (nouvelle génération), ce niveau peut aussi être en JS, mais traditionnellement le DOM et son comportement est implémenté en quelque chose comme C/C++
 
-De plus, la méthode `getElementById(..)` sur `document` ressemble à une fonction JS normale, mais il s'agit d'une interface finement exposée à une méthode native fournie par le DOM de votre navigateur. Dans quelques navigateurs (nouvelle génération), ce niveau peut aussi être en JS, mais traditionellement le DOM et son comportement est implémenté en quelquechose comme C/C++
+Un autre exemple est les entrées/sorties (I/O en anglais pour Input/Output)
 
-Un autre exemple est les entrées/sorties (I/O en anglais pour Input/Outpur)
+`alert(..)`, la favorite de tous, affiche une boîte de dialogue dans la fenêtre du navigateur de l'utilisateur. `alert(..)` est fourni à vos programmes JS par le navigateur, non pas par le moteur JS lui-même. L'appel que vous faîtes envoie un message aux mécaniques internes navigateur et celui-ci s'occupe de dessiner et afficher la boîte de dialogue.
 
-`alert(..)`, la favorite de tous, affiche une boîte de dialogue dans la fenêtre du navigateur de l'utilisateur. `alert(..)` est fournit à vos programmes JS par le navigateur, non pas par le moteur JS lui-même. L'appel que vous faîtes envoie un message aux mécaniques internes navigateur et celui-ci s'occupe de dessiner et afficher la boîte de dialogue.
+Il en va de même avec `console.log(..)` ; votre navigateur fournit des tels mécanismes et les attaches à la boîte à outil pour développeur.
 
-Il en va de même avec `console.log(..)`; votre navigateur fournit des tels mécanismes et les attaches à la boîte à outil pour développeur.
-
-Ce livre, et toute cette collection, se focalise sur JavaScript le langage. C'est pourquoi vous ne verrez pas de couverture substentielle de ces mécanismes JavaScript non-JavaScript. Néanmoins, vous devez être conscient qu'ils existent, puisqu'ils seront dans tous les programmes JS que vous écrirez !
+Ce livre, et toute cette collection, se focalise sur JavaScript le langage. C'est pourquoi vous ne verrez pas de couverture substantielle de ces mécanismes JavaScript non-JavaScript. Néanmoins, vous devez être conscient qu'ils existent, puisqu'ils seront dans tous les programmes JS que vous écrirez !
 
 ## Passage en revue
 
-La première étape pour apprendre la manière de programmer le JavaScript est d'avoir une compréhension basique des ces mécaniques fondamentales comme les valeurs, types, fonctions, fermetures, `this`, et prototypes.
+La première étape pour apprendre la manière de programmer le JavaScript est d'avoir une compréhension basique de ces mécaniques fondamentales comme les valeurs, types, fonctions, fermetures, `this`, et prototypes.
 
-Evidemment, chacun de ces sujets mérite d'être couvert bien plus grandement que ce que vous avez pu voir ici, mais c'est pour cette raison qu'ils ont des chapîtres et livres qui leur sont dédiés tout le long du reste de cette collection. Une fois que vous êtes à l'aise avec les concepts et exemples de code de ce chapître, le reste de la collection vous attend pour vraiment creuser et connaître le langage en proondeur.
+Évidemment, chacun de ces sujets mérite d'être couvert bien plus grandement que ce que vous avez pu voir ici, mais c'est pour cette raison qu'ils ont des chapitres et livres qui leur sont dédiés tout le long du reste de cette collection. Une fois que vous êtes à l'aise avec les concepts et exemples de code de ce chapitre, le reste de la collection vous attend pour vraiment creuser et connaître le langage en profondeur.
 
-Le chapître final de ce livre résumera brièvement chacun des titres de cette collection ainsiq ue les autres concepts qu'ils couvrent en plus de ce que nous avons déjà exploré.
+Le chapitre final de ce livre résumera brièvement chacun des titres de cette collection ainsi que les autres concepts qu'ils couvrent en plus de ce que nous avons déjà exploré.

@@ -1,4 +1,4 @@
-# You Don't Know JS: Up & Going
+# You Don't Know JS: Démarrage
 
 <img src="cover.jpg" width="300">
 
@@ -8,11 +8,11 @@
 
 -----
 
-[Table of Contents](toc.md)
+[Table des matières](toc.md)
 
-* [Foreword](foreword.md) (by [Jenn Lukas](http://jennlukas.com))
+* [Avant-propos](foreword.md) (par [Jenn Lukas](http://jennlukas.com))
 * [Preface](../preface.md)
-* [Chapter 1: Into Programming](ch1.md)
-* [Chapter 2: Into JavaScript](ch2.md)
-* [Chapter 3: Into YDKJS](ch3.md)
-* [Appendix A: Thank You's!](apA.md)
+* [Chapitre 1: Dans la programmation](ch1.md)
+* [Chapitre 2: Dans JavaScript](ch2.md)
+* [Chaptitre 3: Dans YDKJS](ch3.md)
+* [Appendice A: Remerciements !](apA.md)
