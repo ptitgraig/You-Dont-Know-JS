@@ -82,11 +82,11 @@ Il peut être utile de représenter cette valeur `obj` visuellement :
 
 <img src="fig4.png">
 
-On peut accèder aux propriétés avec la *notation par point* (c'est à dire, `obj.a`) ou avec la *notation par crochets* (c'est à dire, `obj["a"]`). La notation par point est généralement facile à lire et donc préférable autant que possible.
+On peut accéder aux propriétés avec la *notation par point* (c'est à dire, `obj.a`) ou avec la *notation par crochets* (c'est à dire, `obj["a"]`). La notation par point est généralement facile à lire et donc préférable autant que possible.
 
-La notation par crochet est utile si le nom d'une propriété a des caractères spéciaux, comme `obj["hello world!"]` -- de telles propriétés sont souvent appelées *clés* quand on y accède via la notation par crochets. La notation `[]` requiert soit une variable (voir plus tard pour explication) ou une litérale de type `string` (qu'il faut entouré de `" .. "` ou `' .. '`).
+La notation par crochet est utile si le nom d'une propriété a des caractères spéciaux, comme `obj["hello world!"]` -- de telles propriétés sont souvent appelées *clés* quand on y accède via la notation par crochets. La notation `[]` requiert soit une variable (voir plus tard pour explication) ou une littérale de type `string` (qu'il faut entouré de `" .. "` ou `' .. '`).
 
-Evidemment, la notation par crochets est aussi utile si vous voulez accèder à une propriété/clé mais dont le nom est stocké dans une autre variable, tel que :
+Évidemment, la notation par crochets est aussi utile si vous voulez accéder à une propriété/clé mais dont le nom est stocké dans une autre variable, tel que :
 
 ```js
 var obj = {
@@ -100,13 +100,13 @@ obj[b];			// "hello world"
 obj["b"];		// 42
 ```
 
- Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapître 3.
+ Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapitre 3.
 
 Il existe un certain nombre d'autres types de valeurs avec lesquels vous interagirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types natifs de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
 
 #### Tableaux
 
-Un tableau est un `object` qui contient des valeurs (de quelconque type) non pas forcement dans des propriétés/clés nommées, mais plutôt dans des positions indéxées numériquement.
+Un tableau est un `object` qui contient des valeurs (de quelconque type) non pas forcement dans des propriétés/clés nommées, mais plutôt dans des positions indexées numériquement.
 
 ```js
 var arr = [
@@ -172,7 +172,7 @@ a.toUpperCase();		// "HELLO WORLD"
 b.toFixed(4);			// "3.1416"
 ```
 
-Le "comment" derrière le fait d'être capable d'appeler `a.toUpperCase()` est plus compliqué que simplement l'existance d'une méthode sur cette valeur.
+Le "comment" derrière le fait d'être capable d'appeler `a.toUpperCase()` est plus compliqué que simplement l'existence d'une méthode sur cette valeur.
 
 En gros, il existe une forme "wrapper" (ou enrobeur) d'objet nommé `String` (avec `S` majuscule), qu'on appelle une "native", qui fait pair avec le type natif `string`; c'est cet "enrobeur" d'objet qui définit la méthode `toUpperCase()` sur son prototype.
 
@@ -180,7 +180,7 @@ Quand vous utilisez une valeur native comme `"hello world"` en tant qu'objet en 
 
 Une valeur `string` peut être wrappée par un objet `String`, un `number` peut être wrappé par un objet `Number`, et un `boolean` peut être wrappé par un objet `Boolean`. Le plus souvent, vous n'avez pas besoin de vous soucier d'utiliser directement cette forme d'objet wrappers de valeurs -- préférez la forme native dans pratiquement tous les cas et JavaScript prendra soin du reste pour vous.
 
-**Remarque :** Pour plus d'informations sur les natifs JS et l'"emboîtement", voir le Chapître 3 de *Types & Grammaire* de cette collection. Afin de mieux comprendre le prototype d'un objet, voir le Chapître 5 de *this & Prototypes d'Objets* de cette collection.
+**Remarque :** Pour plus d'informations sur les natifs JS et l'"emboîtement", voir le Chapitre 3 de *Types & Grammaire* de cette collection. Afin de mieux comprendre le prototype d'un objet, voir le Chapitre 5 de *this & Prototypes d'Objets* de cette collection.
 
 ### Comparer les valeurs
 
@@ -188,13 +188,13 @@ Il y a deux principaux types de comparaison de valeur dont vous aurez besoin dan
 
 #### Contrainte
 
-Nous avons vu brièvement la coercition dans le chapitre 1, revisitons cela maintenant.
+Nous avons vu brièvement la contrainte dans le chapitre 1, revisitons cela maintenant.
 
 La contrainte se présente sous deux formes en JavaScript : *explicite* et *implicite*. La contrainte explicite, c'est simplement quand vous pouvez voir de manière évidente dans le code qu'une conversion d'un type à un autre va se produire, alors que la contrainte implicite est quand la conversion de type se passe plus comme un effet de bord d'une autre opération.
 
-Vous avez probablement entendu dire que la "coercition c'est le mal" du fait qu'il y a clairement des endroits où la contrainte peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
+Vous avez probablement entendu dire que la "contrainte c'est le mal" du fait qu'il y a clairement des endroits où la contrainte peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
 
-La coercition n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec coercition de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapitre 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
+La contrainte n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec contrainte de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapitre 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
 
 Voici un exemple de contrainte *explicite* :
 
@@ -244,9 +244,9 @@ It's important to remember that a non-`boolean` value only follows this "truthy"
 
 Il y a quatre opérateurs d'égalité : `==`, `===`, `!=`, et `!==`. Les formes `!` sont bien sûr les versions symétriques "non-égales" de leurs contreparties; la *non-égalité* ne devrait pas être confondue avec l'*inégalité*.
 
-La différence entre `==` et `===` est habituellement caractérisé par le fait que `==` vérifie l'égalité de valeur et `===` vérifie l'égalité de valeur et de type. Cependant, c'est imprécis. La façon convenable de les caractérisés est que `==` vérifie l'égalité de valeur avec la coercition autorisée, et `===` vérifie l'égalité de valeur sans permettre que la contrainte intervienne ; `===` est souvent appelé "égalité strict" pour cette raison.
+La différence entre `==` et `===` est habituellement caractérisé par le fait que `==` vérifie l'égalité de valeur et `===` vérifie l'égalité de valeur et de type. Cependant, c'est imprécis. La façon convenable de les caractérisés est que `==` vérifie l'égalité de valeur avec la contrainte autorisée, et `===` vérifie l'égalité de valeur sans permettre que la contrainte intervienne ; `===` est souvent appelé "égalité strict" pour cette raison.
 
-Considérez la coercition implicite qui est autorisée par la comparaison d'égalité-faible `==` et pas autorisé avec l'égalité-stricte `===` :
+Considérez la contrainte implicite qui est autorisée par la comparaison d'égalité-faible `==` et pas autorisé avec l'égalité-stricte `===` :
 
 ```js
 var a = "42";
@@ -258,13 +258,13 @@ a === b;		// false
 
 Dans la comparaison `a == b`, JS remarque que les types ne concordent pas, donc il passe par une série ordonnée d'étapes pour contraindre l'une ou les deux valeurs dans un type différent jusqu'à ce que les types concordent, là où alors une simple égalité de valeur peut être vérifiée.
 
-Si vous y réfléchissez, il y a deux façons possibles que `a == b` donne `true` via coercition. Soit on finit par comparer `42 == 42` soit `"42" == "42"`. De laquelle s'agit-il ?
+Si vous y réfléchissez, il y a deux façons possibles que `a == b` donne `true` via contrainte. Soit on finit par comparer `42 == 42` soit `"42" == "42"`. De laquelle s'agit-il ?
 
 La réponse est : `"42"` devient `42`, pour effectuer la comparaison `42 == 42`. Dans un exemple si simple, ça n'a pas l'air d'avoir de l'importance de quelle manière le processus s'effectue, car au final le résultat est le même. Il existe des cas plus complexes où l'important n'est pas seulement le résultat mais *comment* on y arrive.
 
 Le `a === b` produit `false`, car la contrainte n'est pas autorisée, donc la comparaison de simple valeur échoue évidemment. Plusieurs développeurs sentent que `===` est plus prévisible, donc ils insistent toujours sur l'utilisation de cette forme et préconisent de rester éloigner de la forme `==`. Je pense que cette perspective est vraiment étroite. Je crois que `==` est un outil puissant qui est utile dans vos programmes, *si vous prenez le temps d'apprendre comment ça marche. *
 
-Nous n'allons pas couvrir tous les détails de comment la coercition fonctionne dans la comparaison `==`. La majeur partie fait sens, mais il existe des cas particuliers auxquels il faut faire attention. Vous pouvez lire la section 11.9.3 de la spécification ES5 (http://www.ecma-international.org/ecma-262/5.1/) pour voir les règles exactes, et vous serez surpris par combien cette mécanique est simple et direct, comparée à toute la hype qui l'entoure.
+Nous n'allons pas couvrir tous les détails de comment la contrainte fonctionne dans la comparaison `==`. La majeur partie fait sens, mais il existe des cas particuliers auxquels il faut faire attention. Vous pouvez lire la section 11.9.3 de la spécification ES5 (http://www.ecma-international.org/ecma-262/5.1/) pour voir les règles exactes, et vous serez surpris par combien cette mécanique est simple et direct, comparée à toute la hype qui l'entoure.
 
 Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aider à savoir quand utiliser `==` ou `===` dans diverses situations, voici mes règles simples :
 
@@ -272,7 +272,7 @@ Pour résumé un tas de détails en quelques morceaux digestes, et pour vous aid
 * Si une des valeurs de la comparaison a une chance d'être ces valeurs spécifiques (`0`, `""`, or `[]` -- tableau vide), évitez `==` et utilisez `===`.
 * Dans *tous* les autres cas, vous êtes sauf pour utiliser `==`. Non seulement c'est sûr, mais dans de nombreux cas cela simplifie votre code d'une manière qui améliore la lisibilité.
 
-Ces règles se résument à vous conduire à avoir un oeil critique sur votre code et à penser à quelles sortes de valeurs peuvent se présenter dans les variables qui sont comparées par égalité. Si vous êtes certains de ces valeurs, et que `==` est sûr, utilisez-le ! Si vous n'êtes pas sûr des valeurs, utilisez `===`. C'est aussi simple que ça.
+Ces règles se résument à vous conduire à avoir un œil critique sur votre code et à penser à quelles sortes de valeurs peuvent se présenter dans les variables qui sont comparées par égalité. Si vous êtes certains de ces valeurs, et que `==` est sûr, utilisez-le ! Si vous n'êtes pas sûr des valeurs, utilisez `===`. C'est aussi simple que ça.
 
 La forme de non-égalité `!=` va de pair avec `==`, et la forme `!==` va de pair avec `===`. Toutes les règles et observations dont nous venons de discuter s'appliquent symétriquement aux comparaisons de non-égalité.
 
@@ -298,7 +298,7 @@ Les opérateurs `<`, `>`, `<=`, et `>=` sont utilisés pour l'inégalité, réf�
 
 Mais les valeurs JavaScript `string` peuvent aussi être comparées par inégalité, en utilisant les règles typiques alphabétiques (`"bar" < "foo"`).
 
-Quant est-il de la coercition ? Des règles similaires comme la comparaison `==` (bien que pas exactement identique) s'appliquent aux opérateurs d'inégalité. Notez qu'il n'existe pas d'opérateurs de "strict inégalité" qui empêcheraient la coercition de la même manière que l'opérateur `===` le fait.
+Quant est-il de la contrainte ? Des règles similaires comme la comparaison `==` (bien que pas exactement identique) s'appliquent aux opérateurs d'inégalité. Notez qu'il n'existe pas d'opérateurs de "strict inégalité" qui empêcheraient la contrainte de la même manière que l'opérateur `===` le fait.
 
 Voyez :
 
@@ -376,7 +376,7 @@ console.log( a );	// 2
 
 #### Portées imbriquées
 
-Quand vous déclarer une variable, elle est disponible n'importe où dans cette portée, ainsi que dans les portées inférieures/intérieures. Par example :
+Quand vous déclarer une variable, elle est disponible n'importe où dans cette portée, ainsi que dans les portées inférieures/intérieures. Par exemple:
 
 ```js
 function foo() {
@@ -446,7 +446,7 @@ Parce qu'on utilise `let` au lieu de `var`, `b` appartiendra seulement à la dé
 
 ## Conditions
 
-En addition à la déclaration `if` que nous avons introduite brièvement dans le Chapitre 1, JavaScript fourni quelques autres mécanismes de conditions auxquels on devrait jeter un oeil.
+En addition à la déclaration `if` que nous avons introduite brièvement dans le Chapitre 1, JavaScript fourni quelques autres mécanismes de conditions auxquels on devrait jeter un œil.
 
 Parfois, vous vous retrouverez à écrire une série de déclarations `if..else.if` comme cela :
 
@@ -465,7 +465,7 @@ else {
 }
 ```
 
-Cette structure fonctionne, mais elle est un peu verbeuse parce qu'il faut définir `un` test pour chaque cas. Voici une autre option, la déclaratiion `switch`:
+Cette structure fonctionne, mais elle est un peu verbeuse parce qu'il faut définir `un` test pour chaque cas. Voici une autre option, la déclaration `switch`:
 
 ```js
 switch (a) {
@@ -483,7 +483,7 @@ switch (a) {
 }
 ```
 
-Le `break` est important si vous voulez que les déclarations dans un `cas` uniquement s'exécutent. Si vous omettez le `break` d'un `case`, et que ce `case` concorde ou s'exécute, l'execution continuera dans les prochaines déclarations `case` même si ce `case` ne concorde pas. Ce soi-disant "échec" est parfois voulu/désiré :
+Le `break` est important si vous voulez que les déclarations dans un `cas` uniquement s'exécutent. Si vous omettez le `break` d'un `case`, et que ce `case` concorde ou s'exécute, l'exécution continuera dans les prochaines déclarations `case` même si ce `case` ne concorde pas. Ce soi-disant "échec" est parfois voulu/désiré :
 
 ```js
 switch (a) {
@@ -518,7 +518,7 @@ var b = (a > 41) ? "hello" : "world";
 // }
 ```
 
-Si l'expression de test (`a < 41`) est évaluée comme `true`, la première clause (`"hello"`) sera le résultat, sinon ça sera la seconde clause (`"world"`), et quelque soit le résultat, il sera ensuite affecté à `b`.
+Si l'expression de test (`a < 41`) est évaluée comme `true`, la première clause (`"hello"`) sera le résultat, sinon ça sera la seconde clause (`"world"`), et quel que soit le résultat, il sera ensuite affecté à `b`.
 
 L'opérateur de condition n'a pas à être utilisé dans une affectation, mais c'est généralement l'usage le plus commun.
 
@@ -766,13 +766,13 @@ La fonction interne `doLogin()` possède une fermeture sur `username` et `passwo
 
 C'est pourquoi nous pouvons appeler `fred.login(..)` -- qui est pareil que d'appeler le `doLogin(..)` interne -- et elle peut toujours accéder aux variables internes `username` et `password`.
 
-Il y a de fortes chances qu'avec juste un coup d'œil aux fermetures et au pattern module, certaines choses soient toujours déroutantes. C'est pas grave ! Ça prend du temps pour digérer tout ça.
+Il y a de fortes chances qu'avec juste un coup d'œil aux fermetures et au pattern module, certaines choses soient toujours déroutantes. Ce n'est pas grave ! Ça prend du temps pour digérer tout ça.
 
 A partir d'ici, allez lire *Portées et Fermetures* de cette collection pour une exploration en profondeur.
 
 ## L'identifiant `this`
 
-Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapitre sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
+Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapitres sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
 
 Bien qu'il puisse paraître que `this` est rattaché aux "patterns orientées-objet", en JS `this` est un mécanisme différent.
 
@@ -806,7 +806,7 @@ foo.call( obj2 );		// "obj2"
 new foo();			// undefined
 ```
 
-Il y a quatre règles pour comment `this` est initialisé, et elles sont démontrées dans les quatre dernière lignes de cet extrait de code.
+Il y a quatre règles pour comment `this` est initialisé, et elles sont démontrées dans les quatre dernières lignes de cet extrait de code.
 
 
 1. `foo()` définit `this` comme objet global en mode non strict -- en mode strict, `this` serait `undefined` (indéfini) et vous recevriez lors de l'accès à la propriété `bar` -- donc `"global"` est la valeur trouvée pour `this.bar`.
@@ -903,7 +903,7 @@ Vous devez sûrement vous demander pourquoi se fatiguer à écrire dans la nouve
 Il existe plusieurs raisons importantes, auxquelles vous devriez faire attention, qui jouent en faveur de la transpilation :
 
 * La nouvelle syntaxe qui est ajouté au langage est conçue pour rendre votre code plus lisible et maintenable. Les équivalents plus anciens sont souvent beaucoup plus compliqués. Vous préférerez écrire dans une syntaxe plus neuve et claire, pas uniquement pour vous mais aussi pour tous les autres membres de l'équipe de développement.
-* Si vous transpilez uniquement pour les anciens navigateurs, mais livrez la nouvelle syntaxe aux nouveaux navigateurs, vous tirez avantage des optimisations de performance des navigateurs grâce à la nouvelle syntaxe. Cela permet aussi aux fabricants de navigateurs d'avoir d'avantage de code en production sur lesquels tester leurs implémentations et optimisations.
+* Si vous transpilez uniquement pour les anciens navigateurs, mais livrez la nouvelle syntaxe aux nouveaux navigateurs, vous tirez avantage des optimisations de performance des navigateurs grâce à la nouvelle syntaxe. Cela permet aussi aux fabricants de navigateurs d'avoir davantage de code en production sur lesquels tester leurs implémentations et optimisations.
 * L'utilisation de la nouvelle syntaxe plus tôt permet qu'elle soit testée de manière plus robuste dans le monde réel, ce qui fournit des retours précoces aux membres du comité JavaScript (TC39). Si les problèmes sont trouvés suffisamment tôt, ils peuvent être changés/corrigés avant que ces erreurs de conception deviennent permanentes.
 
 Voici un exemple rapide de transpilation. ES6 ajoute une fonctionnalité appelée "valeurs de paramètre par défaut"
