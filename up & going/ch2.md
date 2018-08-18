@@ -12,7 +12,7 @@ Votre voyage pour apprendre profondément JavaScript commence là.
 
 **Remarque :** Comme je l'ai dit dans le chapitre 1, vous devriez définitivement essayer tout ce code vous-même quand vous lisez et travaillez tout au long de ce chapitre. Notez que certains morceaux de code ici utilisent des fonctionnalités introduites dans la nouvelle version de JavaScript à l'heure où sont écrites ces lignes (communément appelé "ES6" pour 6ème édition de ECMAScript -- le nom officiel de la spécification JS). S'il s'avère que vous utilisez un navigateur plus ancien, prè-ES6, le code pourrait ne pas fonctionner. Une mise à jour récente d'un navigateur moderne (comme Chrome, Firefox, ou IE) devrait être utilisé.
 
-## Valeurs & Types
+## Valeurs et Types
 
 Comme nous l'avons vu dans le Chapitre 1, JavaScript possède des valeurs typées, et non pas des variables typées. Les types natifs suivants sont disponibles :
 
@@ -100,7 +100,7 @@ obj[b];			// "hello world"
 obj["b"];		// 42
 ```
 
- Pour plus d'informations sur les `objets` JavaScript, voir *this & Prototype d'Objet* dans cette même collection, en particulier le Chapitre 3.
+ Pour plus d'informations sur les `objets` JavaScript, voir *this et Prototype d'Objet* dans cette même collection, en particulier le Chapitre 3.
 
 Il existe un certain nombre d'autres types de valeurs avec lesquels vous interagirez fréquemment dans les programmes JavaScript : *array* (tableau) et *function* (fonction). Mais plutôt que d'être des types natifs de bonne et due forme, ceux-ci devraient être considérés comme des sous-types -- des versions spécialisés du type `object`.
 
@@ -153,7 +153,7 @@ typeof foo.bar;		// "string"
 
 Une fois de plus, les fonctions sont des sous-types d'`objects` -- `typeof` retourne `"function"` ce qui suggère qu'une `function` est un type majeur -- et peut donc avoir des propriétés, mais vous n'allez utiliser les propriétés des objets fonctions (comme `foo.bar`) dans très peu de cas.
 
-**Remarque :** Pour plus d'informations sur les valeurs et leurs types en JS, voir les deux premiers chapitre de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations sur les valeurs et leurs types en JS, voir les deux premiers chapitre de *Types et Grammaire* de cette collection.
 
 ### Méthodes des types natifs
 
@@ -180,7 +180,7 @@ Quand vous utilisez une valeur native comme `"hello world"` en tant qu'objet en 
 
 Une valeur `string` peut être wrappée par un objet `String`, un `number` peut être wrappé par un objet `Number`, et un `boolean` peut être wrappé par un objet `Boolean`. Le plus souvent, vous n'avez pas besoin de vous soucier d'utiliser directement cette forme d'objet wrappers de valeurs -- préférez la forme native dans pratiquement tous les cas et JavaScript prendra soin du reste pour vous.
 
-**Remarque :** Pour plus d'informations sur les natifs JS et l'"emboîtement", voir le Chapitre 3 de *Types & Grammaire* de cette collection. Afin de mieux comprendre le prototype d'un objet, voir le Chapitre 5 de *this & Prototypes d'Objets* de cette collection.
+**Remarque :** Pour plus d'informations sur les natifs JS et l'"emboîtement", voir le Chapitre 3 de *Types et Grammaire* de cette collection. Afin de mieux comprendre le prototype d'un objet, voir le Chapitre 5 de *this et Prototypes d'Objets* de cette collection.
 
 ### Comparer les valeurs
 
@@ -194,7 +194,7 @@ La contrainte se présente sous deux formes en JavaScript : *explicite* et *impl
 
 Vous avez probablement entendu dire que la "contrainte c'est le mal" du fait qu'il y a clairement des endroits où la contrainte peut produire des résultats surprenants. Il n'y a rien de plus frustrant pour des développeurs que quand le langage les surprend.
 
-La contrainte n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec contrainte de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapitre 4 de *Types & Grammaire* de cette collection en couvrent la totalité.
+La contrainte n'est pas le mal, et n'a pas non plus à être surprenante. En fait, la majorité des cas que vous pouvez construire avec contrainte de type sont tout à fait raisonnables et compréhensibles, et peuvent même être utilisés pour *améliorer* la lisibilité de votre code. Mais nous n'irons pas beaucoup plus loin dans ce débat -- le Chapitre 4 de *Types et Grammaire* de cette collection en couvrent la totalité.
 
 Voici un exemple de contrainte *explicite* :
 
@@ -218,7 +218,7 @@ a;				// "42"
 b;				// 42 -- le nombre !
 ```
 
-#### Truthy & Falsy
+#### Truthy et Falsy
 
 Dans le Chapitre 1, nous avons brièvement mentionné la nature "truthy" et "falsy" des valeurs : quand une valeur non-`boolean` est contrainte en un `boolean`, est ce qu'elle devient `true` ou `false`, respectivement ?
 
@@ -290,7 +290,7 @@ b == c;		// true
 a == b;		// false
 ```
 
-**Remarque :** Pour plus d'informations sur les règles de comparaison d'égalité avec `==`, voir la spécification ES5 (section 11.9.3) et aussi consultez le Chapitre 4 de *Types & Grammaire* de cette collection; voir le Chapitre 2 pour plus d'informations sur ce qui différencie valeurs et références.
+**Remarque :** Pour plus d'informations sur les règles de comparaison d'égalité avec `==`, voir la spécification ES5 (section 11.9.3) et aussi consultez le Chapitre 4 de *Types et Grammaire* de cette collection; voir le Chapitre 2 pour plus d'informations sur ce qui différencie valeurs et références.
 
 #### Inégalité
 
@@ -328,7 +328,7 @@ Un instant, comment est-ce que ces trois comparaisons peuvent-elles être toutes
 
 La comparaison `==` échoue pour d'autres raisons. `a == b` a des chances d'échouer si elle est interprétée comme `42 == NaN` ou `"42" == "foo"` -- comme nous l'avons expliqué précédemment, le premier est en effet le cas.
 
-**Remarque :** Pour plus d'informations au sujet des règles de comparaisons d'inégalité, voir la section 11.8.5 de la spécification ES5 et consulter également le Chapitre 4 de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations au sujet des règles de comparaisons d'inégalité, voir la section 11.8.5 de la spécification ES5 et consulter également le Chapitre 4 de *Types et Grammaire* de cette collection.
 
 ## Variables
 
@@ -442,7 +442,7 @@ foo();
 
 Parce qu'on utilise `let` au lieu de `var`, `b` appartiendra seulement à la déclaration `if` et ainsi pas à toute la portée de la fonction `foo()`. De manière similaire, `c` appartient seulement à la boucle `while`. La portée de bloc est très utile pour gérer les portées de vos variables d'une manière plus fine, ce qui rend votre code plus maintenable au fil du temps.
 
-**Remarque :** Pour plus d'informations au sujet des portées, voir *Portées & Fermetures* dans cette collection. Voir *ES6 et au-delà* de cette collection pour plus d'informations au sujet de la portée de bloc `let`.
+**Remarque :** Pour plus d'informations au sujet des portées, voir *Portées et Fermetures* dans cette collection. Voir *ES6 et au-delà* de cette collection pour plus d'informations au sujet de la portée de bloc `let`.
 
 ## Conditions
 
@@ -522,7 +522,7 @@ Si l'expression de test (`a < 41`) est évaluée comme `true`, la première clau
 
 L'opérateur de condition n'a pas à être utilisé dans une affectation, mais c'est généralement l'usage le plus commun.
 
-**Remarque :** Pour plus d'informations sur les conditions de test et autres pattern pour `switch` et `? :`, voir *Types & Grammaire* dans cette collection.
+**Remarque :** Pour plus d'informations sur les conditions de test et autres pattern pour `switch` et `? :`, voir *Types et Grammaire* dans cette collection.
 
 ## Mode Strict
 
@@ -575,7 +575,7 @@ Si vous enclenchez le mode strict dans votre code, et que vous recevez des erreu
 
 Non seulement le mode strict garde votre code sur le droit chemin, mais non seulement il le rendra plus optimisable, mais il représente aussi la direction future du langage. Il serait plus simple pour vous de vous habituer au mode strict maintenant que de sans cesse le repousser -- il sera juste plus dur de s'y mettre plus tard !
 
-**Remarque :** Pour plus d'informations sur le mode strict, voir le Chapitre 5 de *Types & Grammaire* de cette collection.
+**Remarque :** Pour plus d'informations sur le mode strict, voir le Chapitre 5 de *Types et Grammaire* de cette collection.
 
 ## Utiliser les fonctions comme valeurs
 
@@ -609,7 +609,7 @@ La première expression de fonction assignée à la variable `foo` est appelée 
 
 La seconde expression de fonction est *nommée* (`bar`), et on lui a référencé `x` comme variable assignée. Les *expressions de fonction nommées* sont généralement préférables, bien que les *expressions de fonction anonymes* soient encore très courantes.
 
-Pour plus d'information, voir *Portée & Fermetures* de cette collection.
+Pour plus d'information, voir *Portée et Fermetures* de cette collection.
 
 ### Expression de Fonction Invoquée Immédiatement (IIFEs en anglais)
 
@@ -672,7 +672,7 @@ La valeur `42` est retournée par la fonction nommée `IIFE`, qui elle-même est
 ### Fermetures
 
 
-La *fermeture* est un des concepts les plus importants et souvent l'un des moins compris du JavaScript. Je ne vais pas le couvrir pas en détail ici, mais je vous invite à lire *Portée & Fermetures* de cette collection. Cependant je veux expliquer quelques petites choses à son sujet afin que vous compreniez le concept général. C'est une des techniques les plus importantes pour votre ensemble de compétences en JavaScript.
+La *fermeture* est un des concepts les plus importants et souvent l'un des moins compris du JavaScript. Je ne vais pas le couvrir pas en détail ici, mais je vous invite à lire *Portée et Fermetures* de cette collection. Cependant je veux expliquer quelques petites choses à son sujet afin que vous compreniez le concept général. C'est une des techniques les plus importantes pour votre ensemble de compétences en JavaScript.
 
 Vous pouvez penser à une fermeture comme à un moyen de se "souvenir" et continuer à accéder la portée d'une fonction (ses variables) même quand la fonction a fini son exécution.
 
@@ -772,7 +772,7 @@ A partir d'ici, allez lire *Portées et Fermetures* de cette collection pour une
 
 ## L'identifiant `this`
 
-Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapitres sur ce sujet dans *this & Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
+Un autre concept généralement mal compris en JavaScript est l'identifiant `this`. De nouveau, il y a plusieurs chapitres sur ce sujet dans *this et Prototypes d'Objets* de cette collection, donc nous allons simplement introduire le concept.
 
 Bien qu'il puisse paraître que `this` est rattaché aux "patterns orientées-objet", en JS `this` est un mécanisme différent.
 
@@ -820,7 +820,7 @@ En un mot : Pour comprendre vers quoi `this` pointe, vous devez examiner comment
 
 ## Prototypes
 
-Le mécanisme de prototype est assez compliqué. Nous y jetterons seulement un oeil ici. Je vous conseillerais de passer plus de temps sur la révision des Chapitres 4-6 de *this & Prototypes d'Objet* de cette collection pour tous les détails.
+Le mécanisme de prototype est assez compliqué. Nous y jetterons seulement un oeil ici. Je vous conseillerais de passer plus de temps sur la révision des Chapitres 4-6 de *this et Prototypes d'Objet* de cette collection pour tous les détails.
 
 Quand vous référencez une propriété sur un objet, si cette propriété n'existe pas, JavaScript va automatiquement utiliser la référence interne du prototype de cet objet pour trouver un autre objet dans lequel chercher la propriété. Vous pourriez voir cela un peu comme une solution de repli si une propriété est absente.
 
@@ -852,9 +852,9 @@ Cette liaison semble être une fonctionnalité du langage quelque peu étrange. 
 
 Cependant, il y a une manière plus naturelle d'appliquer les prototypes. C'est un pattern qu'on appelle "délégation de comportement", où vous concevez intentionnellement vos objets reliés afin qu'ils soient capables de *déléguer* une partie des comportements nécessaires.
 
-**Remarque :** Pour plus d'informations sur les prototypes et la délégation de comportement, voir les Chapitres 4-6 de *this & Prototypes d'Objets* de cette collection.
+**Remarque :** Pour plus d'informations sur les prototypes et la délégation de comportement, voir les Chapitres 4-6 de *this et Prototypes d'Objets* de cette collection.
 
-## Ancien & Nouveau
+## Ancien et Nouveau
 
 Quelques-unes des fonctionnalités que nous avons déjà couvertes, et certainement plusieurs des fonctionnalités couvertes dans le reste de cette collection, sont de nouvelles additions au langage et ne seront pas nécessairement disponibles dans les navigateurs les plus anciens. En fait, certaines des fonctionnalités les plus récentes n'ont pas encore été implémentées dans aucun navigateur stable.
 

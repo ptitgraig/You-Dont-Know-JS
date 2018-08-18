@@ -1,4 +1,4 @@
-# You Don't Know JS : Mettre le pied à l'étrier
+# You Don't Know JS : Mise en route
 # Chapitre 1 : Dans la programmation
 
 Bienvenue dans la série *You Don't Know JS* (*YDKJS*).
@@ -203,10 +203,10 @@ Voici quelques-uns des opérateurs les plus communs en JavaScript :
    Les objets sont des valeurs qui contiennent d'autres valeurs à des endroits qui portent un nom spécifique appelés propriétés. `obj.a` signifie qu'il y a un objet `obj` avec une propriété nommée `a`. On peut aussi accéder à une propriété par `obj["a"]`. Voir Chapitre 2.
 * Égalité : `==` (égalité-faible), `===` (égalité-stricte), `!=` (inégalité-faible), `!==` (inégalité-stricte), comme dans `a == b`.
 
-   Voir "Valeurs & Types" dans le Chapitre 2.
+   Voir "Valeurs et Types" dans le Chapitre 2.
 * Comparaison : `<` (inférieur à), `>` (supérieur à), `<=` (inférieur à ou égalité-faible), `>=` (supérieur à ou égalité-faible), comme dans `a <= b`.
 
-   Voir "Valeurs & Types" dans le Chapitre 2.
+   Voir "Valeurs et Types" dans le Chapitre 2.
 * Logique : `&&` (et), `||` (ou), comme dans `a || b` qui sélectionne soit `a` *ou* `b`.
 
    Ces opérateurs sont utilisés pour exprimer des conditions composées (voir "Conditions"), comme soit `a` *ou* `b` est vrai (true).
@@ -273,7 +273,7 @@ Bien que conçue pour vous aider, la contrainte implicite peut être source de c
 
 Cependant, la coercition implicite est une mécanique qui *peut être apprise*, et de surcroit *devrait être apprise* par quiconque souhaitant sérieusement programmer en JavaScript. Non seulement, le sentiment de confusion se dissipe une fois les règles apprises, mais elle peut améliorer vos programmes ! L'effort vaut le coup.
 
-**Remarque : ** Pour plus d'informations sur la contrainte, voir le Chapitre 2 de ce titre et le Chapitre 4 du titre *Types & Grammaire* de cette série.
+**Remarque : ** Pour plus d'informations sur la contrainte, voir le Chapitre 2 de ce titre et le Chapitre 4 du titre *Types et Grammaire* de cette série.
 
 ## Commentaires de code
 
@@ -418,7 +418,7 @@ Les constantes sont utiles tout comme les variables dont les valeurs ne changent
 
 A ce propos, ce genre de "protection" contre les erreurs est similaire au renforcement de type du typage statique, vous voyez donc pourquoi le typage statique d'autres langages peut être attrayant !
 
-*Remarque : * Pour plus d'informations sur comment peuvent être utilisées les différentes valeurs dans les variables dans vos programmes, voir le titre *Types & Grammaire* de cette collection.
+*Remarque : * Pour plus d'informations sur comment peuvent être utilisées les différentes valeurs dans les variables dans vos programmes, voir le titre *Types et Grammaire* de cette collection.
 
 ## Blocs
 
@@ -496,13 +496,13 @@ else {
 
 Ici, si `amount < bank_balance` est `true`, nous afficherons `Je vais prendre l'accessoire ! ` et ajouter `9.99` à notre variable `amount`. Sinon, la clause `else` dira que nous répondrons poliment `"Non, merci."` et laisserons le montant tel quel.
 
-Comme nous l'avons vu plus tôt dans "Valeurs & Types", les valeurs qui ne sont pas déjà du type attendu sont souvent contraintes dans ce type. La déclaration `if` s'attend à un `boolean`, mais si vous lui passez quelque chose qui n'est pas un `boolean`, il va y avoir coercition.
+Comme nous l'avons vu plus tôt dans "Valeurs et Types", les valeurs qui ne sont pas déjà du type attendu sont souvent contraintes dans ce type. La déclaration `if` s'attend à un `boolean`, mais si vous lui passez quelque chose qui n'est pas un `boolean`, il va y avoir coercition.
 
-JavaScript défini une liste de valeurs spécifiques qui sont considérées comme "falsy" (falsifiable) car quand elles sont contraintes en `boolean`, elles deviennent `false` -- comme les valeurs `0` et `""`. Toutes autres valeurs qui ne sont pas sur la liste des valeurs "falsy" sont automatiquement "thruthy" (véridiques). -- quand contraintes dans un `boolean` elles deviennent `true`. Les valeurs dites véridiques sont par exemple `99.99` et `"free"`. Voir le Chapitre "Truthy & Falsy" dans le Chapitre 2 pour plus d'informations.
+JavaScript défini une liste de valeurs spécifiques qui sont considérées comme "falsy" (falsifiable) car quand elles sont contraintes en `boolean`, elles deviennent `false` -- comme les valeurs `0` et `""`. Toutes autres valeurs qui ne sont pas sur la liste des valeurs "falsy" sont automatiquement "thruthy" (véridiques). -- quand contraintes dans un `boolean` elles deviennent `true`. Les valeurs dites véridiques sont par exemple `99.99` et `"free"`. Voir le Chapitre "Truthy et Falsy" dans le Chapitre 2 pour plus d'informations.
 
 Les *Conditions* existent sous d'autres formes en dehors des `if`. Par exemple, la déclaration `switch` peut être utilisée comme raccourci pour une série de déclarations `if..else` (voir Chapitre 2). Les boucles (voir "Boucles") utilisent une *condition* pour déterminer si la boucle doit continuer ou stopper.
 
-**Remarque : ** Pour creuser d'avantage le sujet de la coercition qui peut se produire implicitement dans les expressions de test d'une *condition*, voir le Chapitre 4 de *Types & Grammaire* de cette collection.
+**Remarque : ** Pour creuser d'avantage le sujet de la coercition qui peut se produire implicitement dans les expressions de test d'une *condition*, voir le Chapitre 4 de *Types et Grammaire* de cette collection.
 
 ## Boucles
 

@@ -21,7 +21,7 @@ Comprendre la "portée lexicale" est critique, c'est ce sur quoi nous basons not
 
 Une application pratique importante des fermetures est le modèle de "module", comme nous l'avons introduit brièvement dans le Chapitre 2 de ce livre. Le modèle de module est probablement le modèle d'organisation de code le plus prévalent dans tout JavaScript ; une compréhension profonde de ce modèle devrait être une de vos plus grandes priorités.
 
-## this & Prototypes d'Objet
+## this et Prototypes d'Objet
 
 La fausse-vérité probablement le plus répandue au sujet de JavaScript est que le mot-clé `this` fait référence à la fonction dans laquelle il apparaît. C'est affreusement faux.
 
@@ -37,7 +37,7 @@ Il y a là plus qu'une préférence syntaxique. La délégation est un modèle d
 
 Les affirmations que je fais concernant la délégation par opposition à l'héritage ne viennent pas d'une aversion pour le langage et sa syntaxe, mais du désir de voir la véritable capacité de la langue correctement utilisée et les interminables frustrations et confusions balayées.
 
-Mais le cas que je fais concernant les prototypes et la délégation me tiens bien plus à cœur que ce que je voudrais me laisser dire ici. Si vous êtes prêt à reconsidérer tout ce que vous connaissez des "classes" JavaScript et de l'"héritage", je vous offre la chance de "prendre la pilule rouge" (*Matrix* 1999) et de consulter les Chapitres 4-6 de *this & Prototypes d'Objet* de cette collection.
+Mais le cas que je fais concernant les prototypes et la délégation me tiens bien plus à cœur que ce que je voudrais me laisser dire ici. Si vous êtes prêt à reconsidérer tout ce que vous connaissez des "classes" JavaScript et de l'"héritage", je vous offre la chance de "prendre la pilule rouge" (*Matrix* 1999) et de consulter les Chapitres 4-6 de *this et Prototypes d'Objet* de cette collection.
 
 ## Grammaire et Types
 
@@ -51,9 +51,9 @@ Je dis non. Après s'être équipé et compris comment les types et les valeurs 
 
 Mais je ne suggère pas seulement que la coercition est censée et apprenable, j'affirme que la coercition est un outil incroyablement utile et totalement sous-estimé que *vous pouvez utiliser dans votre code*. Je dis que la coercition, quand utilisée convenablement, non seulement fonctionne, mais rend votre code meilleur. Tous ce qui doutent s'étoufferont sûrement à la vue d'une telle prise de position, mais je crois qu'il s'agit là d'une des principales clés pour passer dans un autre niveau de JS.
 
-Est-ce que vous voulez simplement suivre ce que la foule dit, ou êtes-vous prêt à mettre de côté tous vos aprioris de côté et à regarder la coercition d'un point de vue nouveau ? *Types & Grammaire* de cette collection va *contraindre* votre manière de penser.
+Est-ce que vous voulez simplement suivre ce que la foule dit, ou êtes-vous prêt à mettre de côté tous vos aprioris de côté et à regarder la coercition d'un point de vue nouveau ? *Types et Grammaire* de cette collection va *contraindre* votre manière de penser.
 
-## Asynchronisme & Performance
+## Asynchronisme et Performance
 
 
 Les trois premiers titres de cette collection se focalisent sur les mécanismes fondamentaux du langage, mais le quatrième titre s'écarte légèrement afin de couvrir les modèles qui plafonnent les mécaniques du langage pour gérer la programmation asynchrone. L'asynchronisme n'est pas simplement critique pour la performance de vos applications, il devient de plus en plus le facteur critique d'écriture et de maintenance.
@@ -77,9 +77,9 @@ Le Chapitre 5 explore des sujets tels que le parallélisme de programmes avec le
 
 Écrire du JavaScript de manière efficace signifie écrire du code qui peut casser les barrières que pose la contrainte d'être exécuté dynamiquement dans un large éventail de navigateurs et d'autres environnements. Cela nécessite beaucoup de planification complexe et détaillée et des efforts de notre part pour faire en sorte qu'un programme fasse mieux que "marcher.
 
-Le livre * Asynchronisme & Performance * est conçu pour vous donner tous les outils et les compétences dont vous avez besoin pour écrire du code JavaScript qui fait sens et performant.
+Le livre * Asynchronisme et Performance * est conçu pour vous donner tous les outils et les compétences dont vous avez besoin pour écrire du code JavaScript qui fait sens et performant.
 
-## ES6 & Au-delà
+## ES6 et Au-delà
 
 
 Peu importe à quel point vous avez maîtrisé JavaScript à ce stade, la vérité est que JavaScript n'arrêtera jamais d'évoluer, et de plus, la fréquence d'évolution augmente rapidement. Ce fait est presque une métaphore pour l'esprit que je veux donner à cette collection : reconnaître que nous ne *connaîtrons* jamais complètement chaque recoin de JS, parce que dès que vous pensez maîtriser tout, il y a de nouvelles choses qui vont voir le jour et que vous devrez apprendre.
@@ -88,7 +88,7 @@ Ce titre est dédié à la fois à une vision à court et à moyen terme de l'or
 
 Alors que tous les titres de cette collection abordent le statut de JavaScript au moment de la rédaction de ce texte, qui est à mi-chemin de l'adoption d'ES6, l'accent principal de la collection a été davantage sur ES5. Maintenant, nous voulons attirer notre attention sur ES6, ES7, et ...
 
-Comme ES6 est presque terminé au moment de l'écriture de ces lignes, * ES6 & Au-delà * commence par diviser les éléments concrets du paysage ES6 en plusieurs catégories clés, y compris la nouvelle syntaxe, les nouvelles structures de données (collections) et les nouvelles capacités de traitement et API. Nous couvrons chacune de ces nouvelles fonctionnalités ES6, avec différents niveaux de détail, y compris l'examen des détails qui sont abordés dans d'autres livres de cette collection.
+Comme ES6 est presque terminé au moment de l'écriture de ces lignes, * ES6 et Au-delà * commence par diviser les éléments concrets du paysage ES6 en plusieurs catégories clés, y compris la nouvelle syntaxe, les nouvelles structures de données (collections) et les nouvelles capacités de traitement et API. Nous couvrons chacune de ces nouvelles fonctionnalités ES6, avec différents niveaux de détail, y compris l'examen des détails qui sont abordés dans d'autres livres de cette collection.
 
 Voici quelqu'une des choses passionnantes à lire sur ES6 : déstructuration, valeurs de paramètres par défaut, symboles, méthodes concises, propriétés calculées, fonctions de flèches, délimitation de bloc, promesses, générateurs, itérateurs, modules, proxies, weakmaps, et bien plus encore! Ouf, ES6 nous met un sacré coup !
 
