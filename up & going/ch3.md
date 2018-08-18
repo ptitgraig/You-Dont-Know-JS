@@ -1,4 +1,4 @@
-# You Don't Know JS : Démarrage
+# You Don't Know JS : Mise en route
 # Chapitre 3 : Dans YDKJS
 
 De quoi traite toute cette collection de livres ? Dit simplement, il s'agit de prendre au sérieux la tâche d'apprendre *toutes les parties de JavaScript*, pas simplement un sous-ensemble du langage que quelqu'un a appelé les "bonnes parties", et pas juste la quantité minimale dont vous avez besoin pour terminer votre travail.

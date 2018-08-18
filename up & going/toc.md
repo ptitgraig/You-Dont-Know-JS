@@ -30,6 +30,6 @@
 	* Portées et Fermetures
 	* this et Prototypes d'Objet
 	* Types et Grammaire
-	* Asynchronisme & Performance
-	* ES6 et Au-delé
+	* Asynchronisme et Performance
+	* ES6 et Au-delà
 * Appendice A: Remerciements
