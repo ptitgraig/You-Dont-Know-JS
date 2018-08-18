@@ -7,7 +7,7 @@
 * Chapitre 1: Dans la programmation
 	* Code
 	* A vous d'essayer
-	* Operateurs
+	* Opérateurs
 	* Valeurs et Types
 	* Commentaires de code
 	* Variables
@@ -21,7 +21,7 @@
 	* Variables
 	* Conditions
 	* Mode Strict
-	* Fonctions Comme Valeurs
+	* Utiliser les fonctions comme valeurs
 	* Mot-clé `this`
 	* Prototypes
 	* Ancien et Nouveau
